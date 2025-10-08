@@ -1,0 +1,108 @@
+$default-green-tooltip: #11884C;
+$default-item-tooltip: #774521;
+$default-rule-tooltip: #9B740B;
+$default-action-tooltip: #DD003C;
+$default-sense-tooltip: #A41B96;
+// $default-condition-tooltip: #5a8100;
+// $default-wprop-tooltip: #586A79;
+$default-condition-tooltip: #11884C;
+$default-wprop-tooltip: #11884C;
+
+:root {
+    --compendium-default-tooltip: #{$default-green-tooltip};
+    --compendium-rule-tooltip: #{$default-rule-tooltip};
+    --compendium-item-tooltip: #{$default-item-tooltip};
+    --compendium-action-tooltip: #{$default-action-tooltip};
+    --compendium-condition-tooltip: #{$default-condition-tooltip};
+    --compendium-sense-tooltip: #{$default-sense-tooltip};
+    --compendium-wprop-tooltip: #{$default-wprop-tooltip};
+}
+
+.body-page .p-article-a .p-article-content {
+    .tooltip-hover {
+        &.rule-tooltip {
+            color: var(--compendium-rule-tooltip, #9B740B) !important;
+        }
+        &.item-tooltip {
+            color: var(--compendium-item-tooltip, #774521) !important;
+        }
+        &.condition-tooltip {
+            color: var(--compendium-condition-tooltip, var(--compendium-default-tooltip, #11884C)) !important;
+        }
+        &.sense-tooltip {
+            color: var(--compendium-sense-tooltip, var(--compendium-default-tooltip, #11884C)) !important;
+        }
+        &.skill-tooltip {
+            color: var(--compendium-skill-tooltip, var(--compendium-default-tooltip, #11884C)) !important;
+        }
+        &.action-tooltip {
+            color: var(--compendium-action-tooltip, var(--compendium-default-tooltip, #11884C)) !important;
+        }
+        &.weapon-properties-tooltip {
+            color: var(--compendium-wprop-tooltip, var(--compendium-default-tooltip, #11884C)) !important;
+        }
+    }
+}
+
+// .body-page .p-article-a .p-article-content {
+//     .text--rules-sidebar, .table-compendium {
+//         .tooltip-hover {
+//             &.rule-tooltip {
+//                 color: var(--compendium-rule-contrast-tooltip, #9B740B);
+//             }
+//             &.item-tooltip {
+//                 color: var(--compendium-item-contrast-tooltip, #774521);
+//             }
+//             &.condition-tooltip {
+//                 color: var(--compendium-condition-contrast-tooltip, var(--compendium-default-contrast-tooltip, #11884C));
+//             }
+//             &.sense-tooltip {
+//                 color: var(--compendium-sense-contrast-tooltip, var(--compendium-default-contrast-tooltip, #11884C));
+//             }
+//             &.skill-tooltip {
+//                 color: var(--compendium-skill-contrast-tooltip, var(--compendium-default-contrast-tooltip, #11884C));
+//             }
+//             &.action-tooltip {
+//                 color: var(--compendium-action-contrast-tooltip, var(--compendium-default-contrast-tooltip, #11884C));
+//             }
+//             &.weapon-properties-tooltip {
+//                 color: var(--compendium-wprop-contrast-tooltip, var(--compendium-default-contrast-tooltip, #11884C));
+//             }
+//         }
+//     }
+// }
+
+.waterdeep-tooltip {
+    .tooltip-header-identifier {
+        &.tooltip-header-identifier-action {
+            background-color: var(--compendium-action-tooltip, var(--compendium-default-tooltip, #11884C));
+            border-color: lighten($default-action-tooltip, 20);
+        }
+        &.tooltip-header-identifier-condition {
+            background-color: var(--compendium-condition-tooltip, var(--compendium-default-tooltip, #11884C));
+            border-color: lighten($default-condition-tooltip, 20);
+        }
+        &.tooltip-header-identifier-sense {
+            background-color: var(--compendium-sense-tooltip, var(--compendium-default-tooltip, #11884C));
+            border-color: lighten($default-sense-tooltip, 20);
+        }
+        &.tooltip-header-identifier-skill {
+            background-color: var(--compendium-skill-tooltip, var(--compendium-default-tooltip, #11884C));
+            border-color: lighten($default-green-tooltip, 20);
+        }
+        &.tooltip-header-identifier-wprop {
+            background-color: var(--compendium-wprop-tooltip, var(--compendium-default-tooltip, #11884C));
+            border-color: lighten($default-wprop-tooltip, 20);
+        }
+        &.tooltip-header-identifier-gear,
+        &.tooltip-header-identifier-armor,
+        &.tooltip-header-identifier-weapon {
+            background-color: var(--compendium-item-tooltip, var(--compendium-default-tooltip, #11884C));
+            border-color: lighten($default-item-tooltip, 20);
+        }
+        &.tooltip-header-identifier-rule {
+            background-color: var(--compendium-rule-tooltip, var(--compendium-default-tooltip, #11884C));
+            border-color: lighten($default-rule-tooltip, 20);
+        }
+    }
+}

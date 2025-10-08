@@ -1,0 +1,50 @@
+// Shorteners
+$media: 'https://media.dndbeyond.com/compendium-images';
+$media-stg: 'https://media-stg.dndbeyond.com/compendium-images';
+
+
+// Tooltips
+$default-tooltip: #11884C;
+$default-action-tooltip: $default-tooltip;
+$default-skill-tooltip: $default-tooltip;
+$default-wprop-tooltip: $default-tooltip;
+
+$default-item-tooltip: #774521;
+$default-rule-tooltip: #9B740B;
+$default-sense-tooltip: #A41B96;
+$default-condition-tooltip: #5a8100;
+
+$default-monster-tooltip: #bc0f0f;
+$default-magic-item-tooltip: #0f5cbc;
+$default-spell-tooltip: #704cd9;
+$default-vehicle-tooltip: #1b9af0;
+
+
+// Links
+
+$href-link: #006ABE;
+$href-link-contrast: #0053A3;
+
+// Misc
+
+$body: ".body-page .p-article-a .p-article-content";
+$for-contrast: ":is(.text--rules-sidebar, .table-compendium)";
+
+
+// Nav bar icons (differing colors)
+
+$gold-comp: url("#{$media}/components/gold-comp-icon.svg");
+$gold-next: url("#{$media}/components/gold-chevron-right.svg");
+$gold-prev: url("#{$media}/components/gold-chevron-left.svg");
+
+$purple-comp: url("#{$media}/components/purple-comp-icon.svg");
+$purple-next: url("#{$media}/components/purple-chevron-right.svg");
+$purple-prev: url("#{$media}/components/purple-chevron-left.svg");
+
+$red-comp: url("#{$media}/components/red-comp-icon.svg");
+$red-next: url("#{$media}/components/red-chevron-right.svg");
+$red-prev: url("#{$media}/components/red-chevron-left.svg");
+
+$white-comp: url("#{$media}/components/white-comp-icon.svg");
+$white-next: url("#{$media}/components/white-chevron-right.svg");
+$white-prev: url("#{$media}/components/white-chevron-left.svg");

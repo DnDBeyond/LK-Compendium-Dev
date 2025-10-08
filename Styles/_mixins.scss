@@ -1,0 +1,127 @@
+@use 'vars' as *;
+
+@mixin new-tooltips {
+    --compendium-default-tooltip: #{$default-tooltip};
+    // --compendium-skill-tooltip: #{$default-skill-tooltip};
+    --compendium-rule-tooltip: #{$default-rule-tooltip};
+    --compendium-item-tooltip: #{$default-item-tooltip};
+    // --compendium-action-tooltip: #{$default-action-tooltip};
+    --compendium-condition-tooltip: #{$default-condition-tooltip};
+    --compendium-sense-tooltip: #{$default-sense-tooltip};
+    // --compendium-wprop-tooltip: #{$default-wprop-tooltip};
+    --compendium-link-color: #{$href-link};
+}
+
+@mixin hover-tooltips {
+    .waterdeep-tooltip {
+        .tooltip-header-identifier {
+            &.tooltip-header-identifier-action {
+                background-color: var(--compendium-action-tooltip, var(--compendium-default-tooltip, $default-action-tooltip));
+                border-color: lighten($default-action-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-condition {
+                background-color: var(--compendium-condition-tooltip, var(--compendium-default-tooltip, $default-condition-tooltip));
+                border-color: lighten($default-condition-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-sense {
+                background-color: var(--compendium-sense-tooltip, var(--compendium-default-tooltip, $default-sense-tooltip));
+                border-color: lighten($default-sense-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-skill {
+                background-color: var(--compendium-skill-tooltip, var(--compendium-default-tooltip, $default-skill-tooltip));
+                border-color: lighten($default-skill-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-wprop {
+                background-color: var(--compendium-wprop-tooltip, var(--compendium-default-tooltip, $default-wprop-tooltip));
+                border-color: lighten($default-wprop-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-gear,
+            &.tooltip-header-identifier-armor,
+            &.tooltip-header-identifier-weapon {
+                background-color: var(--compendium-item-tooltip, var(--compendium-default-tooltip, $default-item-tooltip));
+                border-color: lighten($default-item-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-rule {
+                background-color: var(--compendium-rule-tooltip, var(--compendium-default-tooltip, $default-rule-tooltip));
+                border-color: lighten($default-rule-tooltip, 20);
+            }
+
+            ///These are the normal ones
+            &.tooltip-header-identifier-monster {
+                background-color: var(--compendium-monster-tooltip, #bc0f0f);
+                border-color: lighten($default-monster-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-magic-item {
+                background-color: var(--compendium-magic-item-tooltip, #0f5cbc);
+                border-color: lighten($default-magic-item-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-spell {
+                background-color: var(--compendium-spell-tooltip, #704cd9);
+                border-color: lighten($default-spell-tooltip, 20);
+            }
+
+            &.tooltip-header-identifier-vehicle {
+                background-color: var(--compendium-vehicle-tooltip, #1b9af0);
+                border-color: lighten($default-vehicle-tooltip, 20);
+            }
+        }
+    }
+}
+
+@mixin single-page {
+    .body-page-details div.container header.p-article-header {
+        min-height: revert;
+        margin-bottom: revert !important;
+    }
+
+    li.b-breadcrumb-item:nth-child(3) {
+        display: none;
+    }
+}
+
+@mixin nav-red {
+    --nav-comp-icon: #{$red-comp};
+    --nav-prev-icon: #{$red-prev};
+    --nav-next-icon: #{$red-next};
+}
+
+@mixin nav-gold {
+    --nav-comp-icon: #{$gold-comp};
+    --nav-prev-icon: #{$gold-prev};
+    --nav-next-icon: #{$gold-next};
+}
+
+@mixin nav-purple {
+    --nav-comp-icon: #{$purple-comp};
+    --nav-prev-icon: #{$purple-prev};
+    --nav-next-icon: #{$purple-next};
+}
+
+@mixin nav-white {
+    --nav-comp-icon: #{$white-comp};
+    --nav-prev-icon: #{$white-prev};
+    --nav-next-icon: #{$white-next};
+}
+
+@mixin new-header-sizes {
+    #{$body} :is(h2, .h2-override) {
+        font-size: var(--h2-font-size, var(--header-font-override, 28px));
+    }
+    #{$body} :is(h3, .h3-override) {
+        font-size: var(--h3-font-size, var(--header-font-override, 24px));
+    }
+    #{$body} :is(h4, .h4-override) {
+        font-size: var(--h4-font-size, var(--header-font-override, 20px));
+    }
+    #{$body} :is(h5, .h5-override) {
+        font-size: var(--h5-font-size, var(--header-font-override, 18px));
+    }
+}

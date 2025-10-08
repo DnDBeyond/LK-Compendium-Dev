@@ -1,0 +1,114 @@
+@use "..//Styles/mixins.scss";
+@import '..//Styles/vars.scss';
+$slug-primarycolor: #a72e29;
+$slug-secondarycolor: #d7e8ee;
+:root {
+    --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
+    --theme-page-bg-image-1024: url();
+    --theme-page-bg-image-1921: url();
+    --theme-page-bg-image-2561: url();
+    --theme-table-row-bg-hover: #{darken($slug-secondarycolor, 10%)};
+    --theme-table-row-bg-dark: #{$slug-secondarycolor};
+    --theme-table-row-bg-light: #{lighten($slug-secondarycolor, 7%)};
+    --compendium-rules-sidebar-color: #{lighten($slug-secondarycolor, 5%)};
+    --compendium-quote-box-color: #{lighten($slug-primarycolor, 53%)};
+    --compendium-quote-box-border: #{darken($slug-secondarycolor, 50%)};
+    --compendium-quote-box-corner: #{darken($slug-secondarycolor, 50%)};
+    --header-underline: #{$slug-primarycolor};
+    --sidebar-active-border: #{$slug-primarycolor};
+    --sidebar-hover-border: #{darken($slug-primarycolor, 10%)};
+    --sidebar-active-bg: #{$slug-secondarycolor};
+    --sidebar-hover-bg: #{darken($slug-secondarycolor, 8%)};
+    --nav-active-text: #3c3c3c;
+    --nav-hover-text: #1d1d1d;
+    @include mixins.nav-red;
+    --nav-to-top-bg: #{$slug-primarycolor};
+    --nav-to-top-hover-bg: #{darken($slug-primarycolor, 10%)};
+    --theme-image-caption-link-bg-color: #{$slug-primarycolor};
+    --theme-image-caption-link-hover-color: #{darken($slug-primarycolor, 10%)};
+    --compendium-button-bg: #{$slug-primarycolor};
+    --compendium-button-hover-bg: #{darken($slug-primarycolor, 10%)};
+    --compendium-link-contrast: #024687;
+    @include mixins.new-tooltips;
+}
+@include mixins.hover-tooltips;
+#{$for-contrast} {
+    --compendium-default-tooltip: #056736;
+    --compendium-rule-tooltip: #836000;
+    --compendium-spell-tooltip: #5a35c5;
+    --compendium-magicitem-tooltip: #054ea9;
+    --compendium-monster-tooltip: #A70000;
+    --compendium-condition-tooltip: #466501;
+}
+strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
+li::marker {
+    color: #{$slug-primarycolor}; 
+}
+
+.monster--stat-block {
+    --stat-block-divider: #{$slug-primarycolor};
+    --stat-block-bg-override: #{lighten($slug-secondarycolor, 7%)};
+    //--stat-block-header-size: 18px;
+    font-family: "Open Sans";
+    .monster--stats p:nth-child(odd) {
+        color: #{$slug-primarycolor};
+    }
+    .monster--action-header {
+        font-family: "Open Sans";
+        color: #{$slug-primarycolor};
+    }
+    &::before, &::after {
+        //--stat-block-scrollbar: url("#{$media-stg}/slug/ui/file-name.png");
+        --stat-block-scrollbar: none;
+        background-color: #{$slug-primarycolor};
+        left: -4px;
+        right: -4px;
+        border-radius: 8px;
+        height: 8px;
+    }
+    /*&::after {
+        transform: scaleY(-1);
+    }*/
+    /*.flexible-double-column & {
+        --stat-block-scrollbar: url("#{$media-stg}/slug/ui/file-name.png");
+    }
+    @media (max-width: 760px) {
+        --stat-block-scrollbar: url("#{$media-stg}/slug/ui/file-name.png");
+    }*/
+} 
+
+/*.text--rules-sidebar {
+    border-color: #204d4c;
+    border-width: 5px;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 18px 20px;
+    filter: drop-shadow(0 3px 5px #ccc);
+    p:first-of-type {
+        color: #204d4c;
+        font-size: 20px;
+        + p {
+            margin-top: 8px !important;
+        }
+    }
+    &::after {
+        all: unset;
+    }
+    &::before {
+        content: "";
+        background-image: url("https://media-stg.dndbeyond.com/compendium-images/fm/ui/sidebar-border.svg");
+        background-position: 0, 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 15px;
+        top: -6px;
+        left: -7px;
+        right: -7px;
+    }
+}*/
+
+/*.text--quote-box{
+    //add custom quote box style here
+}*/
+
+//Add additional custom styles here

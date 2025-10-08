@@ -1,0 +1,17 @@
+{
+  "liveSassCompile.settings.includeItems": [
+    "/Sheets/**/*.{scss,sass}",
+  ],
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    ".vscode/**",
+    "/Sheets/Compendium/_template"
+  ],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css"
+    }
+  ],
+  "liveSassCompile.settings.generateMap": true
+}

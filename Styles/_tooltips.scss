@@ -1,0 +1,80 @@
+$default-tooltip: #47D18C !default;
+
+$default-item-tooltip: #47D18C !default;
+$default-rule-tooltip: #47D18C !default;
+$default-action-tooltip: #47D18C !default;
+$default-sense-tooltip: #47D18C !default;
+$default-skill-tooltip: #47D18C !default;
+$default-condition-tooltip: #47D18C !default;
+$default-wprop-tooltip: #47D18C !default;
+
+//New Colors
+$default-item-tooltip: #774521 !default;
+$default-rule-tooltip: #9B740B !default;
+$default-sense-tooltip: #A41B96 !default;
+$default-condition-tooltip: #5a8100 !default;
+// $default-action-tooltip: #DD003C !default;
+// $default-wprop-tooltip: #586A79;
+
+//Established Colors
+$default-monster-tooltip: #bc0f0f !default;
+$default-magic-item-tooltip: #0f5cbc !default;
+$default-spell-tooltip: #704cd9 !default;
+$default-vehicle-tooltip: #1b9af0 !default;
+
+// //Links (for testing)
+$href-link: #47D18C !default;
+$href-link-contrast: #47D18C !default;
+
+
+// This is for links
+
+.primary-content .p-article-a .p-article-content {
+    a:not(.tooltip-hover, .ddb-lightbox-outer, .compendium--button) {
+        color: var(--compendium-link-color, $href-link);
+    }
+    :is(.text--rules-sidebar, .table-compendium) a:not(.tooltip-hover) {
+        color: var(--compendium-link-contrast, $href-link-contrast);
+    }
+}
+
+
+// This is for tooltips in the running text
+
+.primary-content .p-article-a .p-article-content {
+    .tooltip-hover {
+        &.action-tooltip {
+            color: var(--compendium-action-tooltip, var(--compendium-default-tooltip, $default-action-tooltip)) !important;
+        }
+        &.condition-tooltip {
+            color: var(--compendium-condition-tooltip, var(--compendium-default-tooltip, $default-condition-tooltip)) !important;
+        }
+        &.item-tooltip {
+            color: var(--compendium-item-tooltip, $default-item-tooltip) !important;
+        }
+        &.monster-tooltip {
+            color: var(--compendium-monster-tooltip, #bc0f0f) !important;
+        }
+        &.magic-item-tooltip {
+            color: var(--compendium-magic-item-tooltip, #0f5cbc) !important;
+        }
+        &.rule-tooltip {
+            color: var(--compendium-rule-tooltip, $default-rule-tooltip) !important;
+        }
+        &.sense-tooltip {
+            color: var(--compendium-sense-tooltip, var(--compendium-default-tooltip, $default-sense-tooltip)) !important;
+        }
+        &.spell-tooltip {
+            color: var(--compendium-spell-tooltip, #704cd9) !important;
+        }
+        &.skill-tooltip {
+            color: var(--compendium-skill-tooltip, var(--compendium-default-tooltip, $default-skill-tooltip)) !important;
+        }
+        &.weapon-properties-tooltip {
+            color: var(--compendium-wprop-tooltip, var(--compendium-default-tooltip, $default-wprop-tooltip)) !important;
+        }
+        &.vehicle-tooltip {
+            color: var(--compendium-vehicle-tooltip, #1b9af0) !important;
+        }
+    }
+}

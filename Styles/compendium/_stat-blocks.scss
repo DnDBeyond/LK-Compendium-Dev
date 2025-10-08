@@ -1,0 +1,24 @@
+.Basic-Text-Frame.stat-block-background {
+    & {
+        column-fill: balance;
+    }
+
+    @media (max-width: 767px) {
+        & br {
+            display: none;
+        }
+    }
+
+    :is(.stat-block-ability-scores, .Stat-Block-Styles_Stat-Block-Data, .Stat-Block-Styles_Stat-Block-Body, .Stat-Block-Styles_Stat-Block-Hanging, .Stat-Block-Styles_Stat-Block-Heading) {
+        break-inside: avoid;
+    }
+
+    a.ddb-lightbox-outer img:not(.flexible-double-column .Basic-Text-Frame.stat-block-background a.ddb-lightbox-outer img) {
+        margin-bottom: -20px;
+        padding-bottom: 5px;
+    }
+
+    .Stat-Block-Styles_Stat-Block-Heading {
+        break-after: avoid;
+    }
+}

@@ -1,0 +1,21 @@
+To set up a project:
+
+Duplicate /Sheets/Compendium/_template
+Rename child files accordingly
+
+
+To preview work
+open generic-compendium-test.html
+Ctrl+F search for "Add CSS" and find the style code:
+<link rel="stylesheet" href="./Compendium/[project name]/[file name].css">
+Fill in the snippet to target your css (NOT the scss). eg:
+<link rel="stylesheet" href="./Compendium/Wheat/Chapter2.css">
+
+Ctrl+F serach for "Add HTML" and find the HTMLpath variable: 
+const HTMLPath = "./Compendium/[project]/[file name].html";
+Replace the variable with your target HTML, eg:
+const HTMLPath = "./Compendium/Wheat/Chapter2.html";
+
+Save all files.
+
+Be sure your SASS live watcher compiles your scss into a css file!

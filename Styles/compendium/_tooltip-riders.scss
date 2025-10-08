@@ -1,0 +1,54 @@
+$default-green-tooltip: #11884C;
+$default-item-tooltip: #774521;
+$default-rule-tooltip: #9B740B;
+
+
+#{$body} {
+    .tooltip-hover {
+        &:is(.condition-tooltip, .sense-tooltip, .skill-tooltip, .action-tooltip, .weapon-properties-tooltip) {
+            color: $default-green-tooltip !important;
+        }
+        &.rule-tooltip {
+            color: $default-rule-tooltip !important;
+        }
+        &.item-tooltip {
+            color: $default-item-tooltip !important;
+        }
+    }
+    & :is(.table-compendium, .text--rules-sidebar) {
+        .tooltip-hover {
+            &:is(.condition-tooltip, .sense-tooltip, .skill-tooltip, .action-tooltip, .weapon-properties-tooltip) {
+                color: $contrast-green-tooltip !important;
+            }
+            @if $contrast-rule-tooltip == null {
+            } @else {
+                &.rule-tooltip {
+                    color: $contrast-rule-tooltip !important;
+                }
+            }
+            @if $contrast-item-tooltip == null {
+            } @else {
+                &.item-tooltip {
+                    color: $contrast-item-tooltip !important;
+                }
+            }
+        }
+    }
+}
+
+.waterdeep-tooltip {
+    .tooltip-header-identifier {
+        &-condition, &-sense, &-skill, &-action, &-wprop {
+            background-color: $default-green-tooltip;
+            border-color: lighten($default-green-tooltip, 20);
+        }
+        &-gear, &-armor, &-weapon {
+            background-color: $default-item-tooltip;
+            border-color: lighten($default-item-tooltip, 20);
+        }
+        &-rule {
+            background-color: $default-rule-tooltip;
+            border-color: lighten($default-rule-tooltip, 20);
+        }
+    }
+}

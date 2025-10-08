@@ -1,0 +1,10 @@
+$body: ".body-page .p-article-a .p-article-content";
+
+#{$body} {
+    a:not(.tooltip-hover, .ddb-lightbox-outer) {
+        color: #006ABE;
+    }
+    :is(.text--rules-sidebar, .table-compendium) a:not(.tooltip-hover) {
+        color: $href-link-contrast !important;
+    }
+}

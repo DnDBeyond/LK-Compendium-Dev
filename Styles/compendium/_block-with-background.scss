@@ -1,0 +1,21 @@
+%text--with-background {
+    display: block !important;
+    width: auto !important;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: visible !important;
+    line-height: 1.8 !important;
+    font-size: 16px !important;
+    margin: 50px 5px !important;
+    padding: 30px 28px 25px 40px !important;
+    font-style: oblique;
+
+    p:last-of-type {
+        padding-left: 0.5em;
+        line-height: 1.5;
+    }
+
+    .flexible-double-column & {
+        margin: 10px 5px !important;
+    }
+}
