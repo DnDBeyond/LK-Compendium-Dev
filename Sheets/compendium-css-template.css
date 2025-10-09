@@ -85,7 +85,7 @@
   --compendium-rule-tooltip: #836000;
   --compendium-spell-tooltip: #5a35c5;
   --compendium-magicitem-tooltip: #054ea9;
-  --compendium-monster-tooltip: #A70000;
+  --compendium-monster-tooltip: #a70000;
   --compendium-condition-tooltip: #466501;
 }
 
@@ -99,14 +99,14 @@ li::marker {
   --stat-block-bg-override: rgb(240.0526315789, 246.4052631579, 248.6473684211);
   font-family: "Open Sans";
   /*&::after {
-      transform: scaleY(-1);
-  }*/
+        transform: scaleY(-1);
+    }*/
   /*.flexible-double-column & {
-      --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
-  }
-  @media (max-width: 760px) {
-      --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
-  }*/
+        --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
+    }
+    @media (max-width: 760px) {
+        --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
+    }*/
 }
 .monster--stat-block .monster--stats p:nth-child(odd) {
   color: #a72e29;
