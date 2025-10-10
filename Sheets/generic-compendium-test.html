@@ -1,6 +1,6 @@
 <!-- #region -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us" class="no-js">
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
@@ -103,10 +103,10 @@
                       Waterdeep.ElasticSearch.initialize($('#es-form-global .es-form-field-query'));
                       Waterdeep.ElasticSearch.BaseSearchUrl = '/search';
                       $('#es-form-global .es-form-icon').click(
-                        Waterdeep.ElasticSearch.navigateToSearchWithQuery,
+                        Waterdeep.ElasticSearch.navigateToSearchWithQuery
                       );
                       $('#es-form-global').submit(
-                        Waterdeep.ElasticSearch.navigateToSearchWithQuery,
+                        Waterdeep.ElasticSearch.navigateToSearchWithQuery
                       );
                     </script>
                   </div>
@@ -1091,7 +1091,7 @@
                   <!-- Add HTML -->
                   <div id="main-content-injection"></div>
                   <script>
-                    const HTMLPath = './Compendium/Wheat/TestCss.html';
+                    const HTMLPath = './Compendium/Wheat/Chapter2-GuideToTheRealms.html';
                     async function loadFragment(id, path) {
                       const container = document.getElementById(id);
                       if (!container) throw new Error(`No element found with ID: ${id}`);
