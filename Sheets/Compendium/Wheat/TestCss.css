@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
   --theme-page-bg-image-1024: url();
@@ -156,6 +157,37 @@ li::marker {
 /*.text--quote-box{
     //add custom quote box style here
 }*/
+/* TTJenevers */
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversRegular-5632637.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversItalic-5632639.otf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversMedium-5632641.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversBold-5632645.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversBoldItalic-5632647.otf");
+  font-weight: 700;
+  font-style: italic;
+}
 @font-face {
   font-family: "Mrs Eaves All Small Caps OT";
   src: url("https://fonts.dndbeyond.com/MrsEavesAllSmallCapsOT-a6a50f89-41ae-4f40-bfda-b0fc6f8744b0.otf_v.otf");
@@ -180,19 +212,65 @@ li::marker {
   font-weight: 700;
   font-style: normal;
 }
+/* Scala Sans Offc */
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffc-f34f269d-8464-48b4-b0e6-c0c2937ddb84.ttf_v.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffcItalic-528aad9e-fdbf-4cca-8c7e-094ca41d88dc.ttf_v.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffcBold-077eb635-4f4b-49cd-b62e-545088246eee.ttf_v.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffcBoldItalic-4ffee848-75be-4b5f-9c02-7d644be2e718.ttf_v.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Scala Sans SC Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansSCOffcBold-25813ff8-4562-40b4-a92a-32fce25e8eb5.TTF_v.TTF");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Scala Sans SC Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansSCOffc-f6a98972-664f-45f8-a117-04a500ae5f10.TTF_v.TTF");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Harbour";
+  src: url("https://fonts.dndbeyond.com/HarbourMedium-6668989.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
 h1 {
-  font-family: "Wolpe Pegasus", serif !important;
+  font-family: "Scala Sans SC Offc", serif !important;
   font-size: 3rem !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
   line-height: normal;
   background: linear-gradient(0, #ff7a18, #4A0E0B 70%, #319197);
+  letter-spacing: 0.06em;
   -webkit-background-clip: text; /* needed for Safari/Chrome */
   background-clip: text;
-  color: transparent !important; /* most browsers */
+  color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   -webkit-text-stroke: 0.65px #C9D3CA;
   text-align: center;
   --h1-underline: transparent;
+  --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
 }
 @supports (-webkit-text-stroke: 1px black) {
   h1 .title {
@@ -201,7 +279,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Mrs Eaves All Small Caps OT", sans-serif;
+  font-family: "Scall Sans Offc", sans-serif;
   font-weight: 400;
   font-style: bold;
   color: #4A0E0B !important;
@@ -212,7 +290,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Mrs Eaves All Small Caps OT", sans-serif;
+  font-family: "Scall Sans Offc", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.5rem !important;
@@ -223,13 +301,18 @@ h3 {
 }
 
 h4 {
-  font-family: "Mrs Eaves Small Caps OT", sans-serif;
+  font-family: "Scall Sans Offc", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 0.85rem;
   line-height: 0.8rem;
   color: #4A0E0B !important;
   text-align: left;
+}
+
+p {
+  font-family: "Scala Sans Offc" !important;
+  font-size: 1.1rem;
 }
 
 .frhof-aside-location-box__header {
@@ -278,6 +361,10 @@ h4 {
   border-bottom-right-radius: var(--location-box-border-radius);
   opacity: 1;
   margin-bottom: 12px;
+  --uf-image: url("./frhof-location-header-block-footer-filigree.png");
+  --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-height: 2.25rem;
 }
 
 .frhof-aside-location-box::before {
@@ -305,4 +392,182 @@ h4 {
 
 .frhof-aside-location-box p:last-child {
   margin-bottom: 0 !important;
+}
+
+.underline-filigree {
+  /* Defaults (override globally, per-theme, or per-element) */
+  --uf-image-default: url("./frhof-chapter-title-block-footer-filigree.png");
+  --uf-image: var(--uf-image-default);
+  --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-height: 2.25rem; /* visual height of the ornament (scales with font-size) */
+  --uf-aspect-ratio: calc(var(--uf-max-width) / var(--uf-max-height)) ; /* aspect ratio (width / height). e.g., 4 ⇒ 4:1 */
+  --uf-gap: 0.35em; /* space between text baseline and ornament */
+}
+
+/* The ornament lives in ::after so it won’t interfere with element styling */
+.underline-filigree::after {
+  content: "";
+  display: block;
+  /* Size: height + aspect-ratio computes width without distortion */
+  height: var(--uf-height) !important;
+  aspect-ratio: var(--uf-aspect-ratio);
+  /* Center under the text (can be changed with helpers below) */
+  margin: var(--uf-gap) auto 0;
+  max-width: 100%;
+  /* Draw the filigree */
+  background-image: var(--uf-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  /* purely decorative */
+  pointer-events: none;
+}
+
+.inline-filigree {
+  --fg-left-default: url("./frhof-chapter-title-block-header-filigree-l.png");
+  --fg-right-default: url("./frhof-chapter-title-block-header-filigree-r.png");
+  --fg-left: var(--fg-left-default);
+  --fg-right: var(--fg-right-default);
+  --fg-height: 2em;
+  --fg-gap: 0.5rem;
+  --fg-left-aspect-ratio: 3.38;
+  --fg-right-aspect-ratio: 3.38;
+  --fg-y: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: var(--fg-gap);
+}
+
+.inline-filigree::before,
+.inline-filigree::after {
+  content: "";
+  display: inline-block;
+  height: var(--fg-height);
+  translate: 0 var(--fg-y);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.inline-filigree::before {
+  background-image: var(--fg-left);
+  width: calc(var(--fg-height) * var(--fg-left-aspect-ratio));
+}
+
+.inline-filigree::after {
+  background-image: var(--fg-right);
+  width: calc(var(--fg-height) * var(--fg-right-aspect-ratio));
+}
+
+.fraif-chapter-number-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.fraif-chapter-number {
+  font-family: "Wolpe Pegasus", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: normal;
+  color: #484849;
+  -webkit-text-stroke: 0.45pt #cccec3;
+  text-shadow: none;
+  text-align: end;
+  width: unset !important;
+  --fg-left-default: url("./frhof-chapter-title-block-header-filigree-l.png");
+  --fg-right-default: url("./frhof-chapter-title-block-header-filigree-r.png");
+  --fg-height: 2rem;
+  --fg-gap: 0.5rem;
+  --fg-left-aspect-ratio: 3.38;
+  --fg-right-aspect-ratio: 3.38;
+  --fg-y: 0;
+  position: relative;
+  margin: 0 auto !important;
+}
+
+.gazeteer-quote {
+  width: 100%;
+  padding: 1rem 2rem;
+  --gazeteer-quote-image: url("./fraif-mag-quote-attribution-brown.png");
+  --attribition-font-size: 0.9rem;
+  --attribition-font-size-mobile: 0.7rem;
+}
+
+/* base quote text */
+.gazeteer-quote p {
+  font-family: Harbour !important;
+  font-size: 1.5rem !important;
+  line-height: 2.2rem;
+  color: #4F5663 !important;
+  text-align: center;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.gazeteer-quote p + p {
+  margin-top: 0.5rem;
+}
+
+/* attribution badge (last <p>) */
+.gazeteer-quote .gazeteer-cite {
+  /* size + placement controls */
+  --h: 1.5rem; /* badge width */
+  --x-left: 56;
+  --x-right: 28;
+  --x-left-tablet: 54;
+  --x-right-tablet: 34; /* % from left for text anchor */
+  --y: 20;
+  --y-mobile: 40; /* % from top for text anchor */
+  --aspect-ratio: 30.1;
+  height: var(--h);
+  aspect-ratio: var(--aspect-ratio);
+  position: relative;
+  /* keep real text in DOM but hide visually */
+  font-size: 0.9rem !important;
+  line-height: 0.9rem;
+  color: transparent !important;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+          user-select: text;
+}
+@media (min-width: 750px) and (max-width: 1024px) {
+  .gazeteer-quote .gazeteer-cite {
+    --x-left: var(--x-left-tablet);
+    --x-right: var(--x-right-tablet);
+  }
+}
+
+/* filigree art layer */
+.gazeteer-quote .gazeteer-cite::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gazeteer-quote-image) center/contain no-repeat;
+  pointer-events: none;
+}
+
+/* positioned citation text layer */
+.gazeteer-quote .gazeteer-cite::after {
+  content: "— " attr(data-by);
+  text-transform: uppercase;
+  position: absolute;
+  top: calc(var(--y) * 1%);
+  left: calc(var(--x-left) * 1%);
+  right: calc(var(--x-right) * 1%);
+  text-align: center;
+  font: 500 var(--attribition-font-size)/1 Harbour, serif;
+  color: #4F5663;
+  white-space: nowrap;
+  pointer-events: none;
+  /* optional legibility helpers */
+}
+@media (max-width: 600px) {
+  .gazeteer-quote .gazeteer-cite::after {
+    font-size: var(--attribition-font-size-mobile);
+    top: calc(var(--y-mobile) * 1%);
+  }
 }/*# sourceMappingURL=TestCss.css.map */
