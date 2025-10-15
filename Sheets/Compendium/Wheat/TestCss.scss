@@ -174,6 +174,13 @@ li::marker {
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Dai Vernon Misdirect";
+  src: url("https://fonts.dndbeyond.com/DaiVernonMisdirect-fc7096cb-80db-4a29-a122-f49877400f5b.otf_v.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /* Scala Sans Offc */
 @font-face {
@@ -487,7 +494,7 @@ p {
   font-family: Harbour !important;
   font-size: 1.5rem !important;
   line-height: 2.2rem;
-  color: #4F5663 !important;
+  color: #545869 !important;
   text-align: center;
   text-wrap: balance;
   margin: 0;
@@ -547,4 +554,96 @@ p {
     font-size: var(--attribition-font-size-mobile);
      top:  calc(var(--y-mobile) * 1%);
   }
+}
+
+.aside--nine-slice {
+  --ns-default: url("./bestiary-quote-box.png");
+  --ns-image: url("./bestiary-quote-box.png");
+    /* slice insets from the image’s edges (px) */
+    --ns-slice-top: 32;
+    --ns-slice-right: 32;
+    --ns-slice-bottom: 32;
+    --ns-slice-left: 32;
+
+    /* final border widths on the element (px) */
+    --ns-b-top: 32;
+    --ns-b-right: 32;
+    --ns-b-bottom: 32;
+    --ns-b-left: 32;
+
+    --ns-edge-repeat: stretch; 
+    --ns-center-fill: fill;
+    
+    min-width: 240px;
+    min-height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
+    position: relative;
+z-index: 0;
+
+    border-style: solid;
+    border-width: var(--ns-b-top) var(--ns-b-right) var(--ns-b-bottom) var(--ns-b-left);
+    -webkit-border-image: var(--ns-image)
+      var(--ns-slice-top) var(--ns-slice-right) var(--ns-slice-bottom) var(--ns-slice-left)
+      var(--ns-edge-repeat) var(--ns-edge-repeat) var(--ns-edge-repeat) var(--ns-edge-repeat);
+    border-image-source: var(--ns-image);
+    border-image-slice: var(--ns-slice-top) var(--ns-slice-right) var(--ns-slice-bottom) var(--ns-slice-left) var(--ns-center-fill);
+    border-image-width: var(--ns-b-top) var(--ns-b-right) var(--ns-b-bottom) var(--ns-b-left);
+    border-image-outset: 0;
+    border-image-repeat: var(--ns-edge-repeat);
+    background: transparent;
+    
+}
+
+.aside--bestiary-quote {
+    --ns-image: url("./bestiary-quote-box.png");
+    --ns-slice-top: 200;
+    --ns-slice-right: 210;
+    --ns-slice-bottom: 200;
+    --ns-slice-left: 210;
+
+    /* final border widths on the element (px) */
+    --ns-b-top: 26;
+    --ns-b-right: 32;
+    --ns-b-bottom: 26;
+    --ns-b-left: 32;
+
+    padding: 22px; 
+
+      max-width: 480px;
+    max-height: 180px;
+       position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+}
+.aside--bestiary-quote::after {
+content: "";
+
+  position: absolute;
+  inset: 4.5px 6px;
+  background: radial-gradient(
+  ellipse at 50% 50%,
+  rgba(238,240,243,0.85) 0%,
+   rgba(238,240,243,0.5) 68%,
+  rgba(153, 162, 173, 0.3) 85.5%,
+   rgba(153, 162, 173, 0.25) 100%,
+);
+z-index: -2;
+  border-radius: 12%;
+}
+
+.aside--bestiary-quote p {
+  z-index: 2;
+  position: relative;
+      font-family: "Dai Vernon Misdirect" !important;
+      margin: 0;
+      line-height: 1.3rem;
+      font-size: 1.1rem;
+      margin: 0 !important;
+      color: #49505B !important;
+}
+
+.aside--bestiary-quote p:last-of-type {
+  margin-top: 0.75rem !important;
+  text-align: right;
 }
