@@ -1,0 +1,652 @@
+@charset "UTF-8";
+:root {
+  --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
+  --theme-page-bg-image-1024: url();
+  --theme-page-bg-image-1921: url();
+  --theme-page-bg-image-2561: url();
+  --theme-table-row-bg-hover: rgb(179.2105263158, 211.4210526316, 222.7894736842);
+  --theme-table-row-bg-dark: #d7e8ee;
+  --theme-table-row-bg-light: rgb(240.0526315789, 246.4052631579, 248.6473684211);
+  --compendium-rules-sidebar-color: rgb(232.8947368421, 242.2894736842, 245.6052631579);
+  --compendium-quote-box-color: rgb(234.98, 125.78, 120.32);
+  --compendium-quote-box-border: rgb(59.0526315789, 118.1052631579, 138.9473684211);
+  --compendium-quote-box-corner: rgb(59.0526315789, 118.1052631579, 138.9473684211);
+  --header-underline: #4A0E0B;
+  --sidebar-active-border: #4A0E0B;
+  --sidebar-hover-border: rgb(29.6, 5.6, 4.4);
+  --sidebar-active-bg: #d7e8ee;
+  --sidebar-hover-bg: rgb(186.3684210526, 215.5368421053, 225.8315789474);
+  --nav-active-text: #3c3c3c;
+  --nav-hover-text: #1d1d1d;
+  --nav-comp-icon: url("https://media.dndbeyond.com/compendium-images/components/red-comp-icon.svg");
+  --nav-prev-icon: url("https://media.dndbeyond.com/compendium-images/components/red-chevron-left.svg");
+  --nav-next-icon: url("https://media.dndbeyond.com/compendium-images/components/red-chevron-right.svg");
+  --nav-to-top-bg: #4A0E0B;
+  --nav-to-top-hover-bg: rgb(29.6, 5.6, 4.4);
+  --theme-image-caption-link-bg-color: #4A0E0B;
+  --theme-image-caption-link-hover-color: rgb(29.6, 5.6, 4.4);
+  --compendium-button-bg: #4A0E0B;
+  --compendium-button-hover-bg: rgb(29.6, 5.6, 4.4);
+  --compendium-link-contrast: #024687;
+  --compendium-default-tooltip: #11884C;
+  --compendium-rule-tooltip: #9B740B;
+  --compendium-item-tooltip: #774521;
+  --compendium-condition-tooltip: #5a8100;
+  --compendium-sense-tooltip: #A41B96;
+  --compendium-link-color: #006ABE;
+}
+
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-action {
+  background-color: var(--compendium-action-tooltip, var(--compendium-default-tooltip, #11884C));
+  border-color: rgb(28.3333333333, 226.6666666667, 126.6666666667);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-condition {
+  background-color: var(--compendium-condition-tooltip, var(--compendium-default-tooltip, #5a8100));
+  border-color: rgb(161.1627906977, 231, 0);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-sense {
+  background-color: var(--compendium-sense-tooltip, var(--compendium-default-tooltip, #A41B96));
+  border-color: rgb(224.3246073298, 68.6753926702, 208.4188481675);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-skill {
+  background-color: var(--compendium-skill-tooltip, var(--compendium-default-tooltip, #11884C));
+  border-color: rgb(28.3333333333, 226.6666666667, 126.6666666667);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-wprop {
+  background-color: var(--compendium-wprop-tooltip, var(--compendium-default-tooltip, #11884C));
+  border-color: rgb(28.3333333333, 226.6666666667, 126.6666666667);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-gear, .waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-armor, .waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-weapon {
+  background-color: var(--compendium-item-tooltip, var(--compendium-default-tooltip, #774521));
+  border-color: rgb(198.8552631579, 115.3026315789, 55.1447368421);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-rule {
+  background-color: var(--compendium-rule-tooltip, var(--compendium-default-tooltip, #9B740B));
+  border-color: rgb(238.9638554217, 182.1084337349, 29.0361445783);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-monster {
+  background-color: var(--compendium-monster-tooltip, #bc0f0f);
+  border-color: rgb(239.8522167488, 65.1477832512, 65.1477832512);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-magic-item {
+  background-color: var(--compendium-magic-item-tooltip, #0f5cbc);
+  border-color: rgb(65.1477832512, 142.9064039409, 239.8522167488);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-spell {
+  background-color: var(--compendium-spell-tooltip, #704cd9);
+  border-color: rgb(179.2165898618, 160.1382488479, 234.8617511521);
+}
+.waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-vehicle {
+  background-color: var(--compendium-vehicle-tooltip, #1b9af0);
+  border-color: rgb(122.7037037037, 196.3950617284, 246.2962962963);
+}
+
+:is(.text--rules-sidebar, .table-compendium) {
+  --compendium-default-tooltip: #056736;
+  --compendium-rule-tooltip: #836000;
+  --compendium-spell-tooltip: #5a35c5;
+  --compendium-magicitem-tooltip: #054ea9;
+  --compendium-monster-tooltip: #A70000;
+  --compendium-condition-tooltip: #466501;
+}
+
+strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
+li::marker {
+  color: #4A0E0B;
+}
+
+.monster--stat-block {
+  --stat-block-divider: #4A0E0B;
+  --stat-block-bg-override: rgb(240.0526315789, 246.4052631579, 248.6473684211);
+  font-family: "Open Sans";
+  /*&::after {
+      transform: scaleY(-1);
+  }*/
+  /*.flexible-double-column & {
+      --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
+  }
+  @media (max-width: 760px) {
+      --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
+  }*/
+}
+.monster--stat-block .monster--stats p:nth-child(odd) {
+  color: #4A0E0B;
+}
+.monster--stat-block .monster--action-header {
+  font-family: "Open Sans";
+  color: #4A0E0B;
+}
+.monster--stat-block::before, .monster--stat-block::after {
+  --stat-block-scrollbar: none;
+  background-color: #4A0E0B;
+  left: -4px;
+  right: -4px;
+  border-radius: 8px;
+  height: 8px;
+}
+
+/*.text--rules-sidebar {
+    border-color: #204d4c;
+    border-width: 5px;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 18px 20px;
+    filter: drop-shadow(0 3px 5px #ccc);
+    p:first-of-type {
+        color: #204d4c;
+        font-size: 20px;
+        + p {
+            margin-top: 8px !important;
+        }
+    }
+    &::after {
+        all: unset;
+    }
+    &::before {
+        content: "";
+        background-image: url("https://media-stg.dndbeyond.com/compendium-images/fm/ui/sidebar-border.svg");
+        background-position: 0, 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 15px;
+        top: -6px;
+        left: -7px;
+        right: -7px;
+    }
+}*/
+/*.text--quote-box{
+    //add custom quote box style here
+}*/
+/* TTJenevers */
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversRegular-5632637.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversItalic-5632639.otf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversMedium-5632641.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversBold-5632645.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Jenevers";
+  src: url("https://fonts.dndbeyond.com/TTJeneversBoldItalic-5632647.otf");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Mrs Eaves All Small Caps OT";
+  src: url("https://fonts.dndbeyond.com/MrsEavesAllSmallCapsOT-a6a50f89-41ae-4f40-bfda-b0fc6f8744b0.otf_v.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Mrs Eaves OT";
+  src: url("https://fonts.dndbeyond.com/MrsEavesOT-Bold-4d0707e4-2a3b-4e57-a6fa-a74c7c4eb352.otf_v.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wolpe Pegasus";
+  src: url("https://fonts.dndbeyond.com/WolpePegasusRegular-5521351.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Wolpe Pegasus";
+  src: url("https://fonts.dndbeyond.com/WolpePegasusBold-5521342.otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Dai Vernon Misdirect";
+  src: url("https://fonts.dndbeyond.com/DaiVernonMisdirect-fc7096cb-80db-4a29-a122-f49877400f5b.otf_v.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Scala Sans Offc */
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffc-f34f269d-8464-48b4-b0e6-c0c2937ddb84.ttf_v.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffcItalic-528aad9e-fdbf-4cca-8c7e-094ca41d88dc.ttf_v.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffcBold-077eb635-4f4b-49cd-b62e-545088246eee.ttf_v.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Scala Sans Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansOffcBoldItalic-4ffee848-75be-4b5f-9c02-7d644be2e718.ttf_v.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Scala Sans SC Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansSCOffcBold-25813ff8-4562-40b4-a92a-32fce25e8eb5.TTF_v.TTF");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Scala Sans SC Offc";
+  src: url("https://fonts.dndbeyond.com/ScalaSansSCOffc-f6a98972-664f-45f8-a117-04a500ae5f10.TTF_v.TTF");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Harbour";
+  src: url("https://fonts.dndbeyond.com/HarbourMedium-6668989.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+h1 {
+  font-family: "Scala Sans SC Offc", serif !important;
+  font-size: 3rem !important;
+  font-weight: 400 !important;
+  line-height: normal;
+  background: linear-gradient(0, #ff7a18, #4A0E0B 70%, #319197);
+  letter-spacing: 0.06em;
+  -webkit-background-clip: text; /* needed for Safari/Chrome */
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 0.65px #C9D3CA;
+  text-align: center;
+  --h1-underline: transparent;
+  --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+}
+@supports (-webkit-text-stroke: 1px black) {
+  h1 .title {
+    -webkit-text-stroke: 2px #C9D3CA;
+  }
+}
+
+h2 {
+  font-family: "Scall Sans Offc", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  color: #4A0E0B !important;
+  font-size: 2rem !important;
+  line-height: 2.1rem;
+  text-align: left;
+  --h2-underline: #C3B272;
+}
+
+h3 {
+  font-family: "Scall Sans Offc", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem !important;
+  color: #4A0E0B !important;
+  line-height: 1.45rem;
+  text-align: left;
+  --h3-underline: #C3B272;
+}
+
+h4 {
+  font-family: "Scall Sans Offc", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.85rem;
+  line-height: 0.8rem;
+  color: #4A0E0B !important;
+  text-align: left;
+}
+
+p {
+  font-family: "Scala Sans Offc" !important;
+  font-size: 1.1rem;
+}
+
+.frhof-aside-location-box__header {
+  margin: 0 !important;
+  background-color: #724E4B;
+  font-variant: small-caps;
+  color: white !important;
+  --location-box-border-radius: 0.1rem;
+  border-top-left-radius: var(--location-box-border-radius);
+  border-top-right-radius: var(--location-box-border-radius);
+  padding: 1.25rem 0.5rem 0.75rem 0.5rem !important;
+  position: relative;
+  font-size: 3rem !important;
+  font-weight: 500 !important;
+}
+
+.frhof-aside-location-box__header span {
+  position: relative;
+  z-index: 1;
+}
+
+.frhof-aside-location-box__header::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 12px 8px 16px 0 #292929;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  border-top-left-radius: var(--location-box-border-radius);
+  border-top-right-radius: var(--location-box-border-radius);
+  z-index: 0;
+}
+
+.frhof-aside-location-box__header::after {
+  display: none !important;
+  margin: 0 !important;
+}
+
+.frhof-aside-location-box {
+  background-color: #E6ECD4;
+  position: relative;
+  mix-blend-mode: multiply;
+  padding: 0.5rem 1rem 0.15rem 1rem;
+  border-bottom-left-radius: var(--location-box-border-radius);
+  border-bottom-right-radius: var(--location-box-border-radius);
+  opacity: 1;
+  margin-bottom: 12px;
+  --uf-image: url("./frhof-location-header-block-footer-filigree.png");
+  --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-height: 2.25rem;
+}
+
+.frhof-aside-location-box::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 8px 4px 48px 8px #99b153;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  border-bottom-left-radius: var(--location-box-border-radius);
+  border-bottom-right-radius: var(--location-box-border-radius);
+  z-index: 0;
+}
+
+.frhof-aside-location-box p {
+  z-index: 1;
+  position: relative;
+}
+
+.frhof-aside-location-box p:first-child {
+  font-size: 1.4rem;
+  font-variant: small-caps;
+}
+
+.frhof-aside-location-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.underline-filigree {
+  /* Defaults (override globally, per-theme, or per-element) */
+  --uf-image-default: url("./frhof-chapter-title-block-footer-filigree.png");
+  --uf-image: var(--uf-image-default);
+  --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
+  --uf-height: 2.25rem; /* visual height of the ornament (scales with font-size) */
+  --uf-aspect-ratio: calc(var(--uf-max-width) / var(--uf-max-height)) ; /* aspect ratio (width / height). e.g., 4 ⇒ 4:1 */
+  --uf-gap: 0.35em; /* space between text baseline and ornament */
+}
+
+/* The ornament lives in ::after so it won’t interfere with element styling */
+.underline-filigree::after {
+  content: "";
+  display: block;
+  /* Size: height + aspect-ratio computes width without distortion */
+  height: var(--uf-height) !important;
+  aspect-ratio: var(--uf-aspect-ratio);
+  /* Center under the text (can be changed with helpers below) */
+  margin: var(--uf-gap) auto 0;
+  max-width: 100%;
+  /* Draw the filigree */
+  background-image: var(--uf-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  /* purely decorative */
+  pointer-events: none;
+}
+
+.inline-filigree {
+  --fg-left-default: url("./frhof-chapter-title-block-header-filigree-l.png");
+  --fg-right-default: url("./frhof-chapter-title-block-header-filigree-r.png");
+  --fg-left: var(--fg-left-default);
+  --fg-right: var(--fg-right-default);
+  --fg-height: 2em;
+  --fg-gap: 0.5rem;
+  --fg-left-aspect-ratio: 3.38;
+  --fg-right-aspect-ratio: 3.38;
+  --fg-y: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: var(--fg-gap);
+}
+
+.inline-filigree::before,
+.inline-filigree::after {
+  content: "";
+  display: inline-block;
+  height: var(--fg-height);
+  translate: 0 var(--fg-y);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.inline-filigree::before {
+  background-image: var(--fg-left);
+  width: calc(var(--fg-height) * var(--fg-left-aspect-ratio));
+}
+
+.inline-filigree::after {
+  background-image: var(--fg-right);
+  width: calc(var(--fg-height) * var(--fg-right-aspect-ratio));
+}
+
+.fraif-chapter-number-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.fraif-chapter-number {
+  font-family: "Wolpe Pegasus", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: normal;
+  color: #484849;
+  -webkit-text-stroke: 0.45pt #cccec3;
+  text-shadow: none;
+  text-align: end;
+  width: unset !important;
+  --fg-left-default: url("./frhof-chapter-title-block-header-filigree-l.png");
+  --fg-right-default: url("./frhof-chapter-title-block-header-filigree-r.png");
+  --fg-height: 2rem;
+  --fg-gap: 0.5rem;
+  --fg-left-aspect-ratio: 3.38;
+  --fg-right-aspect-ratio: 3.38;
+  --fg-y: 0;
+  position: relative;
+  margin: 0 auto !important;
+}
+
+.gazetteer-quote {
+  width: 100%;
+  padding: 1rem 2rem;
+  --gazetteer-quote-image: url("./fraif-mag-quote-attribution-brown.png");
+  --attribition-font-size: 0.9rem;
+  --attribition-font-size-mobile: 0.7rem;
+}
+
+/* base quote text */
+.gazetteer-quote p {
+  font-family: Harbour !important;
+  font-size: 1.5rem !important;
+  line-height: 2.2rem;
+  color: #545869 !important;
+  text-align: center;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.gazetteer-quote p + p {
+  margin-top: 0.5rem;
+}
+
+.gazetteer-quote .gazetteer-cite {
+  --h: 1.5rem;
+  --x-left: 56;
+  --x-right: 28;
+  --x-left-tablet: 54;
+  --x-right-tablet: 34;
+  --y: 20;
+  --y-mobile: 40;
+  --aspect-ratio: 30.1;
+  height: var(--h);
+  aspect-ratio: var(--aspect-ratio);
+  position: relative;
+  /* keep real text in DOM but hide visually */
+  font-size: 0.9rem !important;
+  line-height: 0.9rem;
+  color: transparent !important;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+          user-select: text;
+}
+@media (min-width: 750px) and (max-width: 1024px) {
+  .gazetteer-quote .gazetteer-cite {
+    --x-left: var(--x-left-tablet);
+    --x-right: var(--x-right-tablet);
+  }
+}
+
+/* filigree art layer */
+.gazetteer-quote .gazetteer-cite::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gazetteer-quote-image) center/contain no-repeat;
+  pointer-events: none;
+}
+
+/* positioned citation text layer */
+.gazetteer-quote .gazetteer-cite::after {
+  content: "— " attr(data-by);
+  text-transform: uppercase;
+  position: absolute;
+  top: calc(var(--y) * 1%);
+  left: calc(var(--x-left) * 1%);
+  right: calc(var(--x-right) * 1%);
+  text-align: center;
+  font: 500 var(--attribition-font-size)/1 Harbour, serif;
+  color: #4F5663;
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .gazetteer-quote .gazetteer-cite::after {
+    font-size: var(--attribition-font-size-mobile);
+    top: calc(var(--y-mobile) * 1%);
+  }
+}
+
+.aside--nine-slice {
+  --ns-default: url("./bestiary-quote-box.png");
+  --ns-image: url("./bestiary-quote-box.png");
+  /* slice insets from the image’s edges (px) */
+  --ns-slice-top: 32;
+  --ns-slice-right: 32;
+  --ns-slice-bottom: 32;
+  --ns-slice-left: 32;
+  /* final border widths on the element (px) */
+  --ns-b-top: 32;
+  --ns-b-right: 32;
+  --ns-b-bottom: 32;
+  --ns-b-left: 32;
+  --ns-edge-repeat: stretch;
+  --ns-center-fill: fill;
+  min-width: 240px;
+  min-height: 90px;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  border-style: solid;
+  border-width: var(--ns-b-top) var(--ns-b-right) var(--ns-b-bottom) var(--ns-b-left);
+  -webkit-border-image: var(--ns-image) var(--ns-slice-top) var(--ns-slice-right) var(--ns-slice-bottom) var(--ns-slice-left) var(--ns-edge-repeat) var(--ns-edge-repeat) var(--ns-edge-repeat) var(--ns-edge-repeat);
+  border-image-source: var(--ns-image);
+  border-image-slice: var(--ns-slice-top) var(--ns-slice-right) var(--ns-slice-bottom) var(--ns-slice-left) var(--ns-center-fill);
+  border-image-width: var(--ns-b-top) var(--ns-b-right) var(--ns-b-bottom) var(--ns-b-left);
+  border-image-outset: 0;
+  border-image-repeat: var(--ns-edge-repeat);
+  background: transparent;
+}
+
+.aside--bestiary-quote {
+  --ns-image: url("./bestiary-quote-box.png");
+  --ns-slice-top: 200;
+  --ns-slice-right: 210;
+  --ns-slice-bottom: 200;
+  --ns-slice-left: 210;
+  /* final border widths on the element (px) */
+  --ns-b-top: 26;
+  --ns-b-right: 32;
+  --ns-b-bottom: 26;
+  --ns-b-left: 32;
+  padding: 26px;
+  max-width: 480px;
+  max-height: 180px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+}
+
+.aside--bestiary-quote::after {
+  content: "";
+  position: absolute;
+  inset: 4.5px 6px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(238, 240, 243, 0.85) 0%, rgba(238, 240, 243, 0.5) 68%, rgba(153, 162, 173, 0.3) 85.5%, rgba(153, 162, 173, 0.25) 100%);
+  z-index: -2;
+  border-radius: 12%;
+}
+
+.aside--bestiary-quote p {
+  z-index: 2;
+  position: relative;
+  font-family: "Dai Vernon Misdirect" !important;
+  margin: 0;
+  line-height: 1.3rem;
+  font-size: 1.1rem;
+  margin: 0 !important;
+  color: #49505B !important;
+}
+
+.aside--bestiary-quote p:last-of-type {
+  margin-top: 0.75rem !important;
+  text-align: right;
+}/*# sourceMappingURL=fraif.css.map */
