@@ -647,3 +647,104 @@ z-index: -2;
   margin-top: 0.75rem !important;
   text-align: right;
 }
+
+.location-banner {
+  --shape-color: #638e5b;  /* base fill color */
+  --secondary-color: #99b153; /* bacakground gradient */ 
+
+  --location-filigree-left-green: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 54.42 13.05' fill='none'>\
+  <g stroke='%2399b153' stroke-width='.5'>\
+    <path d='M54.42 .25c-3.47 0-6.27 2.81-6.27 6.27s2.81 6.27 6.27 6.27'/>\
+    <path d='M20.43 6.51c7.67 0 11.92-.72 21.69-5.13 3.9 4.62 7.36 5.13 10.44 5.15 -3.08 .02 -6.54 .52 -10.44 5.15 -9.77 -4.41 -14.02 -5.13 -21.69 -5.13'/>\
+    <path d='M0 6.53 H54.42'/>\
+  </g>\
+</svg>");
+
+--location-filigree-right-green: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 104.4 4.2' fill='none'>\
+  <path vector-effect='non-scaling-stroke' stroke='%2399b153' stroke-width='.5' d='\
+    M0 .25 H104.4 \
+    M37.8 3.95 H15.34 \
+    M43.05 .25 c-1.15 0 -3.98 .37 -5.44 3.85'/>\
+</svg>");
+
+--location-filigree-left: var(--location-filigree-left-green);
+--location-filigree-right: var(--location-filigree-right-green);
+
+  position: relative;
+  display: inline-block;
+
+  /* Add some padding for the header text area if needed */
+  padding: 0.6rem 0.6rem 0.1rem 8.5%;
+  z-index: 0;
+  width: 100%;
+}
+
+h3.location-banner {
+    color: white !important; /* text color */
+  font-weight: 800;
+  line-height: 1.85rem; 
+  font-size: 1.75rem;
+  font-family: "Wolpe Pegasus";
+  font-weight: 400 !important;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.25px var(--secondary-color); 
+  text-shadow: 0 2px 6px rgba(0,0,0,.35); 
+
+    background-image: var(--location-filigree-right-green);
+  background-repeat: no-repeat;
+  background-position: 36% 71%;
+  background-size: 20% 40%;
+  
+}
+
+h3.location-banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  
+  background-color: var(--shape-color);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1)  55%, rgba(0,0,0,0.45)  100%);
+  mask-image:         linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%,  rgba(0,0,0,0.45)  100%);
+  /* your SVG polygon */
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    97% 60.08%,
+    98.2% 100%,
+    0% 100%
+  );
+
+   color: var(--secondary-color) !important;
+
+   background-image: var(--location-filigree-left-green), var(--location-filigree-right-green);
+  background-repeat: no-repeat;
+  background-position: 0 67%, 110% 67%;
+  background-size: 17% 35%, 20% 40%;
+
+  /* this feeds the SVG's currentColor */
+ 
+  width: 45%;
+
+  z-index: -1; 
+}
+
+
+.body-page .p-article-a .p-article-content h3.location-banner::after {
+      position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+      background: linear-gradient(
+    to right,
+    var(--secondary-color) 0%,
+    rgb(from var(--secondary-color) r g b / 0%) 85%
+  );
+  width: 80%;
+    height: 100%;
+     
+      z-index: -2;
+    margin: 0 !important;
+}
