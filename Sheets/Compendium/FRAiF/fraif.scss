@@ -30,6 +30,7 @@ $slug-secondarycolor: #d7e8ee;
   --wheat-core-ch-title-outline:  #C9D3CA;
   --wheat-core-beige:             #C3B272;
   --wheat-title-gradient: linear-gradient(0, #945c48, var(--wheat-core-h-red));
+  --wheat-title-dalelands: linear-gradient(0, var(--wheat-7-light-green-dalelands-secondary), var(--wheat-6-dark-green-dalelands));
   --wheat-drop-cap-gradient:   linear-gradient(0, var(--wheat-core-ch-title-outline), var(--wheat-9-light-brown) 35%, var(--wheat-9-light-brown));
 
     --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
@@ -259,11 +260,14 @@ li::marker {
 }
 
 h1 {
+  
+  --fraif-h1-text-color: var(--wheat-title-gradient);
   font-family: "Scala Sans SC Offc", serif !important;
   font-size: 3rem !important;
   font-weight: 400 !important;
   line-height: normal;
-    background: var(--wheat-title-gradient);
+
+    background: var(--fraif-h1-text-color);
   letter-spacing: 0.06em;
   -webkit-background-clip: text; /* needed for Safari/Chrome */
   background-clip: text;
@@ -276,6 +280,24 @@ h1 {
   --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
   
 }
+
+
+// chapter header block treatments
+#Chapter2TheDalelands {
+  --uf-image: url("./assets/frhof-chapter-title-block-footer-filigree-green.png");
+  --fraif-h1-text-color: var(--wheat-title-dalelands);
+}
+
+#AboutTheDalelands .fraif-dropcap {
+--fraif-dropcap-art: url("./assets/fraif-dropcap-art-green.png");  
+
+}
+ 
+#DalelandsChapterNumber {
+  --fg-left: url('./assets/frhof-chapter-title-block-header-filigree-l-green.png');
+  --fg-right: url('./assets/frhof-chapter-title-block-header-filigree-r-green.png');
+}
+
 
 h2 {
   font-family: "Scall Sans Offc", sans-serif;
@@ -373,6 +395,7 @@ p {
   --uf-height: 2.25rem; 
 }
 
+
 .frhof-aside-location-box::before {
   content: "";
   pointer-events: none;
@@ -426,7 +449,7 @@ p {
   /* Center under the text (can be changed with helpers below) */
   margin: var(--uf-gap) auto 0;
   max-width: 100%;
-
+  min-width: 300px;
   /* Draw the filigree */
   background-image: var(--uf-image);
   background-repeat: no-repeat;
@@ -890,27 +913,29 @@ color: white !important;
 .fraif-dropcap {
   position: relative;
   --dropcap-letter-size: 3.5rem;
+   --fraif-dropcap-art: url("./assets/fraif-dropcap-art.png");
 }
 
 .fraif-dropcap::first-line {
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.015em;
   max-width: 400px;
   font-style: italic;
 }
 
 .fraif-dropcap::first-letter {
-  
+  --fraif-dropcap-fill: var(var(--wheat-drop-cap-gradient));
+  --fraif-dropcap-font: "Wolpe Pegasus", serif; 
   font-style: normal;
   text-shadow: 0 2px 5px rgba(0,0,0,.35);
-    background: var(--wheat-drop-cap-gradient);
+    background: var(--fraif-dropcap-fill);
   margin-right: 0.25rem;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent !important;              
   -webkit-text-fill-color: transparent !important;
   -webkit-text-stroke: 0.75pt var(--wheat-9-light-brown); 
-  font-family: "Wolpe Pegasus", serif;
+  font-family: var(--fraif-dropcap-font);
 
   font-size: var(--dropcap-letter-size) !important;
   font-weight: 700 !important;
@@ -923,19 +948,59 @@ color: white !important;
 }
 
 .fraif-dropcap::before {
-  background-image: url("./assets/fraif-dropcap-art.png");
+  background-image: var(--fraif-dropcap-art);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 100% 100%;
 position: absolute;
   content: "";
   // width: 3.5rem;
-  height: var(--dropcap-letter-size);
-  aspect-ratio: 73 / 61;
+  height: calc(var(--dropcap-letter-size) * 1.5);
+  aspect-ratio: 308 / 425;
   top: 0;
+  transform: translateY(-25%);
   left: calc(-1 * (var(--dropcap-letter-size) * 0.6));
   z-index: -1;
 }
 
 
+//gazetteer sidebar
+.gazetteer-sidebar {
+  // tuck up the sidebar to overlap with the header filigree
+  --gazetteer-sidebar-top-margin: -72px;
+  --gazetteer-sidebar-gradient-base: var(--wheat-7-light-green-dalelands-secondary);
+  --gazetteer-sidebar-gradient: linear-gradient(360deg, rgb(from var(--gazetteer-sidebar-gradient-base) r g b / 0.225), transparent 95%, transparent 100%);
+  
+  margin: var(--gazetteer-sidebar-top-margin) auto 0 !important;  
+// fix padding to match border image
+  padding: 64px 24px 48px 24px !important;
 
+border-color: transparent;
+  
+  
+--fraif-dropcap-fill: var(--wheat-7-light-green-dalelands-secondary);
+  z-index: -1;
+
+  position: relative;
+
+@media (max-width: 1280px) {
+  width: 90% !important;
+}
+}
+
+
+.gazetteer-sidebar.aside--nine-slice {
+  box-sizing: content-box;
+    --ns-image:  url("./assets/fraif-gazetteer-border-green.png");
+    --ns-slice-top: 8;
+    --ns-slice-right: 12;
+    --ns-slice-bottom: 36;
+    --ns-slice-left: 12;
+
+    --ns-b-top: 0;
+    --ns-b-right: 4;
+    --ns-b-bottom: 12;
+    --ns-b-left: 4;
+
+    padding: 24px; 
+}
