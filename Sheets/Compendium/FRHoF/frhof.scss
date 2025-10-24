@@ -399,6 +399,7 @@ h4 {
     border-top-left-radius: var(--location-box-border-radius);
   border-top-right-radius: var(--location-box-border-radius);
   z-index: 0;
+  pointer-events: none;
 
 }
 
@@ -435,6 +436,7 @@ h4 {
     border-bottom-left-radius: var(--location-box-border-radius);
   border-bottom-right-radius: var(--location-box-border-radius);
   z-index: 0;
+  pointer-events: none;
 }   
 
 .frhof-aside-location-box p {
