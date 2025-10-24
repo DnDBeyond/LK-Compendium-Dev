@@ -343,7 +343,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Wolpe Pegasus", sans-serif !important;
+  font-family: "Wolpe Pegasus", serif !important;
   font-weight: 400;
   font-style: bold;
   color: #4A0E0B !important;
@@ -355,7 +355,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Wolpe Pegasus", sans-serif !important;
+  font-family: "Wolpe Pegasus", serif !important;
   font-weight: 400;
   font-style: normal;
   font-size: 1.5rem !important;
@@ -367,7 +367,7 @@ h3 {
 }
 
 h4 {
-  font-family: "Wolpe Pegasus", sans-serif !important;
+  font-family: "Wolpe Pegasus", serif !important;
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
@@ -407,6 +407,7 @@ h4 {
   border-top-left-radius: var(--location-box-border-radius);
   border-top-right-radius: var(--location-box-border-radius);
   z-index: 0;
+  pointer-events: none;
 }
 
 .frhof-aside-location-box__header::after {
@@ -439,6 +440,7 @@ h4 {
   border-bottom-left-radius: var(--location-box-border-radius);
   border-bottom-right-radius: var(--location-box-border-radius);
   z-index: 0;
+  pointer-events: none;
 }
 
 .frhof-aside-location-box p {
@@ -797,4 +799,63 @@ h4 {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   color: #FFF;
   text-align: center;
+}
+
+.fraif-dropcap {
+  position: relative;
+  --dropcap-letter-size: 3.5rem;
+  --fraif-dropcap-art: url("https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-dropcap-art.png");
+}
+
+.fraif-dropcap::first-line {
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  max-width: 400px;
+  font-style: italic;
+}
+
+.fraif-dropcap::first-letter {
+  --fraif-dropcap-fill: var(--wheat-drop-cap-gradient);
+  --fraif-dropcap-font: "Wolpe Pegasus", serif;
+  font-style: normal;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+  background: var(--fraif-dropcap-fill);
+  margin-right: 0.25rem;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 0.75pt var(--wheat-9-light-brown);
+  font-family: var(--fraif-dropcap-font);
+  font-size: var(--dropcap-letter-size) !important;
+  font-weight: 700 !important;
+}
+@supports (initial-letter: 2 2) {
+  .fraif-dropcap::first-letter {
+    initial-letter: 2 2;
+    margin-right: 0.35rem;
+  }
+}
+
+.fraif-dropcap::before {
+  background-image: var(--fraif-dropcap-art);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% 100%;
+  position: absolute;
+  content: "";
+  height: calc(var(--dropcap-letter-size) * 1.5);
+  aspect-ratio: 308/425;
+  top: 0;
+  transform: translateY(-25%);
+  left: calc(-1 * var(--dropcap-letter-size) * 0.6);
+  z-index: -1;
+}
+
+figure.compendium-art .artist-credit {
+  right: 50%;
+  transform: translate(50%, 26px) !important;
+  bottom: 0;
+  top: auto !important;
+  left: auto !important;
 }/*# sourceMappingURL=frhof.css.map */

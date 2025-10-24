@@ -1,0 +1,29 @@
+﻿:root {
+  --theme-page-bg-image-1024: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/AIF_BG_Chp4_Compendium 1k.png');
+  --theme-page-bg-image-1921: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/AIF_BG_Chp4_Compendium 2k.png');
+  --theme-page-bg-image-2561: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/AIF_BG_Chp4_Compendium 4k.png');
+}
+
+.underline-filigree::after {
+  background-color: transparent !important;
+}
+
+.gazetteer-quote {
+  --gazetteer-quote-image: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-mag-quote-attribution-gold.png');
+  --gazetteer-quote-color: var(--wheat-9-light-brown);
+}
+
+.fraif-level-flag {
+  --fraif-deity-banner-image: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-level-banner-gold.png');
+}
+
+.gazetteer-sidebar.aside--nine-slice {
+  --ns-image: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-gazetteer-border-gold.png');
+}
+
+.location-banner {
+  --location-banner-shape-color: var(--calimshan-primary);
+  --location-banner-secondary-color: var(--calimshan-secondary);
+  --location-filigree-left: var(--location-filigree-left-gold);
+  --location-filigree-right: var(--location-filigree-right-gold);
+}

@@ -1,0 +1,23 @@
+﻿:root {
+  --theme-page-bg-image-1024: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/AIF_BG_Chp2_Compendium 1k.png');
+  --theme-page-bg-image-1921: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/AIF_BG_Chp2_Compendium 2k.png');
+  --theme-page-bg-image-2561: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/AIF_BG_Chp2_Compendium 4k.png');
+}
+
+.underline-filigree::after {
+  background-color: transparent !important;
+}
+
+.gazetteer-quote {
+  --gazetteer-quote-image: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-mag-quote-attribution-green.png');
+  --gazetteer-quote-color: var(--wheat-9-light-brown);
+}
+
+.fraif-level-flag {
+  --fraif-deity-banner-image: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-level-banner-green.png');
+}
+
+#ScardaleTown,
+#ShadowdaleTown {
+  --location-banner-text-width: 60%;
+}

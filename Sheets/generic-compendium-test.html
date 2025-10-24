@@ -1092,6 +1092,43 @@
                   <div id="main-content-injection"></div>
                   <script>
                     const HTMLPath = './Compendium/FRHoF/Chapter4-Auroras/Chapter4-Auroras.html';
+                    const CHAPTER_CSS_PATH =
+                      './Compendium/FRHoF/Chapter4-Auroras/Chapter4-Auroras.css';
+                    const OVERRIDE_CSS_PATH = ''; // Set to a file (or leave empty) for extra specificity.
+
+                    async function injectCss(path, { optional = false, tag } = {}) {
+                      try {
+                        const res = await fetch(path);
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+                        const css = await res.text();
+                        const style = document.createElement('style');
+                        style.dataset.source = path;
+                        if (tag) style.dataset.layer = tag;
+                        style.textContent = css;
+                        document.head.appendChild(style);
+
+                        console.log(`[injectCss] Loaded ${path}`);
+                      } catch (error) {
+                        const message = `[injectCss] ${optional ? 'Skipped' : 'Failed to load'} ${path}`;
+                        if (optional) {
+                          console.info(message);
+                        } else {
+                          console.warn(message, error);
+                        }
+                      }
+                    }
+
+                    async function loadChapterStyles({ chapterCss, overrideCss }) {
+                      if (chapterCss) {
+                        await injectCss(chapterCss, { tag: 'chapter' });
+                      }
+
+                      if (overrideCss) {
+                        await injectCss(overrideCss, { optional: true, tag: 'override' });
+                      }
+                    }
+
                     async function loadFragment(id, path) {
                       const container = document.getElementById(id);
                       if (!container) throw new Error(`No element found with ID: ${id}`);
@@ -1107,6 +1144,10 @@
 
                     (async () => {
                       try {
+                        await loadChapterStyles({
+                          chapterCss: CHAPTER_CSS_PATH,
+                          overrideCss: OVERRIDE_CSS_PATH,
+                        });
                         await loadFragment('main-content-injection', HTMLPath);
                       } catch (err) {
                         console.error('[init] Failed:', err);
