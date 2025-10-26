@@ -325,7 +325,8 @@ background-color: transparent !important;
   background-clip: text;
   color: transparent !important;              
   -webkit-text-fill-color: transparent !important;
- -webkit-text-stroke: 0.65px #C9D3CA; 
+  -webkit-text-stroke: 0.25px #C9D3CA;
+  paint-order: stroke fill;
   text-align: center;
    --h1-underline: transparent; 
   --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
@@ -537,7 +538,7 @@ h4 {
   font-size: 1.5rem;
   line-height: normal;
   color: #484849;
-  -webkit-text-stroke: 0.45px #cccec3;
+  -webkit-text-stroke: 0.3px #cccec3;
   text-shadow: none;
   text-align: end;
   width: unset !important;
@@ -851,7 +852,7 @@ flex-direction: column;
   background-clip: text;
   color: transparent !important;              
   -webkit-text-fill-color: transparent !important;
-  -webkit-text-stroke: 0.75pt var(--wheat-9-light-brown); 
+  -webkit-text-stroke: 0.35pt var(--wheat-9-light-brown); 
   font-family: var(--fraif-dropcap-font);
 
   font-size: var(--dropcap-letter-size) !important;
@@ -880,10 +881,27 @@ position: absolute;
   z-index: -1;
 }
 
-figure.compendium-art .artist-credit {
-  right: 50%;
-  transform: translate(50%, 26px) !important;
-  bottom: 0;
-  top: auto !important;
-  left: auto !important;
+.artist-credit {
+  position: relative !important;
+  justify-self: center;
+@media (max-width: 600px) {
+    transform: translateY(0) !important;
+  }
+}
+
+// if the art does not have a caption, move the credit down
+figure:not(:has(figcaption)) span.artist-credit {
+  transform: translateY(36px) !important;
+
+}
+
+  @media (max-width: 600px) {
+  .artist-credit {
+      transform: translateY(0) !important;
+      line-height: 1.2rem !important;
+      top: auto !important;
+  }
+  figure:not(:has(figcaption)) span.artist-credit {
+    transform: translateY(0) !important;
+  }
 }

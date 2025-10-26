@@ -260,7 +260,7 @@ background-color: transparent !important;
   background-clip: text;
   color: transparent !important;              
   -webkit-text-fill-color: transparent !important;
- -webkit-text-stroke: 0.65px #C9D3CA; 
+ -webkit-text-stroke: 0.3px #C9D3CA; 
   text-align: center;
    --h1-underline: transparent; 
   --uf-max-height: 193; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
@@ -483,7 +483,7 @@ h4 {
   font-size: 1.5rem;
   line-height: normal;
   color: #484849;
-  -webkit-text-stroke: 0.45px #cccec3;
+  -webkit-text-stroke: 0.3px #cccec3;
   text-shadow: none;
   text-align: end;
   width: unset !important;
@@ -631,10 +631,10 @@ h4 {
 
 .aside--bestiary-quote.aside--nine-slice {
     --ns-image: url("https://media-stg.dndbeyond.com/compendium-images/fraif/ui/bestiary-quote-box.png");
-    --ns-slice-top: 200;
-    --ns-slice-right: 210;
-    --ns-slice-bottom: 200;
-    --ns-slice-left: 210;
+  --ns-slice-top: 300;
+  --ns-slice-right: 375;
+  --ns-slice-bottom: 300;
+  --ns-slice-left: 375;
 
     /* final border widths on the element (px) */
     --ns-b-top: 26;
@@ -774,7 +774,7 @@ h3.location-banner::before{
   font-family: "Wolpe Pegasus", serif !important;
   font-weight: 700 !important;
   letter-spacing: 0.030em;
-  line-height: 2rem; 
+  line-height: 2.25rem; 
   font-size: 2.5rem !important;
   color: var(--wheat-10-fraif-red, #4A0E0B) !important;    
  -webkit-text-stroke: 0.3px #C9D3CA; 
@@ -782,6 +782,7 @@ h3.location-banner::before{
  margin: 0 !important;
  padding-bottom: var(--fraif-deity-banner-header-padding-bottom, 0,5rem);
  background-color: transparent !important;
+ max-width: 50%;
 }
 
 .fraif-deity-adventure-banner h2::after,
@@ -804,7 +805,7 @@ h3.location-banner::before{
 
 .fraif-deity-adventure-banner .fraif-level-flag {
   position: relative;
-  transform: translateY(calc((var(--fraif-deity-banner-border-thickness) + var(--fraif-deity-banner-header-padding-bottom) + 2.5px)));
+  transform: translateY(calc((var(--fraif-deity-banner-border-thickness) + var(--fraif-deity-banner-header-padding-bottom) + 5px)));
   width: clamp(200px, 20vw, 400px);
   aspect-ratio: 1460 / 414;
   background-image: var(--fraif-deity-banner-image);
@@ -870,6 +871,34 @@ font-weight: 700;
   width: 56% !important;
   letter-spacing: 0.08em;
   margin: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .fraif-deity-adventure-banner {
+    flex-direction: column;
+    height: auto;
+    gap: 0;
+
+  }
+
+  .fraif-deity-adventure-banner h2,
+  .fraif-deity-adventure-banner h3 {
+    font-size: 2rem !important;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .fraif-deity-adventure-banner > p:first-of-type {
+    position: static;
+    margin-top: -1rem !important;
+    text-align: center;
+  }
+
+  .fraif-deity-adventure-banner .fraif-level-flag {
+    transform: translateY(0);
+    width: 100%;
+    max-width: none;
+  }
 }
 
 .fraif-dropcap {
@@ -1079,10 +1108,17 @@ border-color: transparent;
   --fg-right: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/frhof-chapter-title-block-header-filigree-r-red.png');
 }
 
-figure.compendium-art-center .artist-credit {
-  right: 50%;
-  transform: translate(50%, 26px);
-  bottom: 0;
-  top: auto;
+.artist-credit {
+  position: relative !important;
+  justify-self: center;
+}
 
+figure:not(:has(figcaption)) span.artist-credit {
+  transform: translateY(36px) !important;
+}
+
+h3 .monster-tooltip,
+h4 .monster-tooltip  {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
 }
