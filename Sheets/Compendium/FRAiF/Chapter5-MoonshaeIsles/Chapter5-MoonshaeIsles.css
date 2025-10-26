@@ -24,6 +24,20 @@
 .location-banner {
   --location-banner-shape-color: var(--moonshae-primary);
   --location-banner-secondary-color: var(--moonshae-secondary);
+}
+
+.location-banner::before {
   --location-filigree-left: var(--location-filigree-left-purple);
   --location-filigree-right: var(--location-filigree-right-purple);
+}
+
+.gazetteer-sidebar.aside--nine-slice {
+  --ns-slice-top: 12;
+  --ns-slice-right: 12;
+  --ns-slice-bottom: 36;
+  --ns-slice-left: 12;
+  --ns-b-top: 12px;
+  --ns-b-right: 12px;
+  --ns-b-bottom: 36px;
+  --ns-b-left: 12px;
 }

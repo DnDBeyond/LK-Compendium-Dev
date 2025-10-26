@@ -19,11 +19,22 @@
 
 .gazetteer-sidebar.aside--nine-slice {
   --ns-image: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-gazetteer-border-blue.png');
+  --ns-slice-top: 12;
+  --ns-slice-right: 12;
+  --ns-slice-bottom: 36;
+  --ns-slice-left: 12;
+  --ns-b-top: 12px;
+  --ns-b-right: 12px;
+  --ns-b-bottom: 36px;
+  --ns-b-left: 12px;
 }
 
 .location-banner {
   --location-banner-shape-color: var(--icewind-primary);
   --location-banner-secondary-color: var(--icewind-secondary);
+  --location-filigree-left: var(--location-filigree-left-blue);
+}
+.location-banner::before {
   --location-filigree-left: var(--location-filigree-left-blue);
   --location-filigree-right: var(--location-filigree-right-blue);
 }
