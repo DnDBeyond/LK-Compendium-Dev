@@ -35,8 +35,8 @@
   --calimshan-primary: var(--wheat-5-gold);
   --calimshan-secondary: var(--wheat-4-light-gold);
   --calimshan-gradient: linear-gradient(0, var(--calimshan-secondary), var(--calimshan-primary));
-  --moonshae-primary: #7b66b5;
-  --moonshae-secondary: #cbb8eb;
+  --moonshae-primary: var(--wheat-11-lavendar);
+  --moonshae-secondary: var(--wheat-11-lavendar-light);
   --moonshae-gradient: linear-gradient(0, var(--moonshae-secondary), var(--moonshae-primary));
   --baldurs-primary: var(--wheat-8-dark-brown);
   --baldurs-secondary: var(--wheat-8-dark-brown-light);
@@ -242,6 +242,11 @@ h1 {
   --uf-max-width: 4310; /*UNITLESS height of the actual background image file, NOT the resulting height, in px*/
 }
 
+@media (max-width: 600px) {
+  h1 {
+    -webkit-text-stroke: unset;
+  }
+}
 h2 {
   font-family: "Wolpe Pegasus", serif !important;
   font-weight: 400;
@@ -574,15 +579,14 @@ h4 {
 
 .aside--bestiary-quote.aside--nine-slice {
   --ns-image: url("https://media-stg.dndbeyond.com/compendium-images/fraif/ui/bestiary-quote-box.png");
-  --ns-slice-top: 300;
-  --ns-slice-right: 375;
-  --ns-slice-bottom: 300;
-  --ns-slice-left: 375;
-  /* final border widths on the element (px) */
-  --ns-b-top: 26;
-  --ns-b-right: 32;
-  --ns-b-bottom: 26;
-  --ns-b-left: 32;
+  --ns-slice-top: 16;
+  --ns-slice-right: 16;
+  --ns-slice-bottom: 16;
+  --ns-slice-left: 16;
+  --ns-b-top: 4px;
+  --ns-b-right: 4px;
+  --ns-b-bottom: 4px;
+  --ns-b-left: 4px;
 }
 
 .aside--bestiary-quote::after {
@@ -591,7 +595,7 @@ h4 {
   inset: 4.5px 6px;
   background: radial-gradient(ellipse at 50% 50%, rgba(238, 240, 243, 0.85) 0%, rgba(238, 240, 243, 0.5) 68%, rgba(153, 162, 173, 0.3) 85.5%, rgba(153, 162, 173, 0.25) 100%);
   z-index: -2;
-  border-radius: 12%;
+  border-radius: 14%;
 }
 
 .aside--bestiary-quote p {
@@ -608,6 +612,8 @@ h4 {
 .aside--bestiary-quote p:last-of-type {
   margin-top: 0.75rem !important;
   text-align: right;
+  padding-right: 18px;
+  transform: translateY(-6px);
 }
 
 .location-banner {
@@ -619,14 +625,13 @@ h4 {
   position: relative;
   display: inline-block;
   /* Add some padding for the header text area if needed */
-  padding: 8px 2px 8px 8.5%;
+  padding: 8px 4% 8px 8.5%;
   z-index: 0;
-  width: 100%;
-  height: 42px;
 }
 
 h3.location-banner {
   color: white !important; /* text color */
+  line-height: 36px;
   font-size: 36px !important;
   font-family: "Wolpe Pegasus";
   font-weight: 400 !important;
@@ -634,10 +639,6 @@ h3.location-banner {
   letter-spacing: 0.1em;
   -webkit-text-stroke: 0.25px var(--location-banner-secondary-color);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-  background-image: var(--location-filigree-right-green);
-  background-repeat: no-repeat;
-  background-position: 36% 71%;
-  background-size: 20% 40%;
 }
 
 h3.location-banner::before {
@@ -655,7 +656,6 @@ h3.location-banner::before {
   background-position: 0 53%, 110% 53%;
   background-size: 17% 35%, 20% 40%;
   /* this feeds the SVG's currentColor */
-  width: var(--location-banner-text-width, 70%);
   z-index: -1;
 }
 
@@ -666,12 +666,18 @@ h3.location-banner::before {
   content: "";
   background-color: transparent !important;
   background: linear-gradient(to right, var(--location-banner-secondary-color) 0%, rgb(from var(--location-banner-secondary-color) r g b/0%) 85%);
-  width: 80%;
+  width: 100vw;
   height: 100%;
   z-index: -2;
   margin: 0 !important;
+  max-width: min(900px, 65vw);
 }
 
+@media (max-width: 1024px) {
+  .body-page .p-article-a .p-article-content h3.location-banner::after {
+    max-width: min(900px, 95vw);
+  }
+}
 .fraif-deity-adventure-banner {
   position: relative;
   width: 100%;
@@ -701,6 +707,7 @@ h3.location-banner::before {
   padding-bottom: var(--fraif-deity-banner-header-padding-bottom, 0, 5rem);
   background-color: transparent !important;
   max-width: 50%;
+  text-wrap: pretty;
 }
 
 .fraif-deity-adventure-banner h2::after,
@@ -708,17 +715,6 @@ h3.location-banner::before {
   display: none !important;
   --h3-underline: transparent;
   margin: 0 !important;
-}
-
-.fraif-deity-adventure-banner > p:first-of-type {
-  --fraif-deity-banner-subheader-size: 1.25rem;
-  --fraif-deity-banner-subheader-gap: 1.5rem;
-  position: absolute;
-  bottom: calc((var(--fraif-deity-banner-subheader-size) + var(--fraif-deity-banner-subheader-gap)) * -1);
-  left: 0.25rem;
-  color: var(--wheat-core-shadow) !important;
-  font-size: var(--fraif-deity-banner-subheader-size);
-  font-style: italic;
 }
 
 .fraif-deity-adventure-banner .fraif-level-flag {
@@ -794,17 +790,15 @@ h3.location-banner::before {
     flex-direction: column;
     height: auto;
     gap: 0;
+    border-bottom: none;
+    margin-bottom: 1rem !important;
   }
   .fraif-deity-adventure-banner h2,
   .fraif-deity-adventure-banner h3 {
     font-size: 2rem !important;
     max-width: 100%;
     text-align: center;
-  }
-  .fraif-deity-adventure-banner > p:first-of-type {
-    position: static;
-    margin-top: -1rem !important;
-    text-align: center;
+    -webkit-text-stroke: unset;
   }
   .fraif-deity-adventure-banner .fraif-level-flag {
     transform: translateY(0);
@@ -874,11 +868,6 @@ h3.location-banner::before {
   z-index: -1;
   position: relative;
 }
-@media (max-width: 1280px) {
-  .gazetteer-sidebar {
-    width: 90% !important;
-  }
-}
 
 .gazetteer-sidebar.aside--nine-slice {
   box-sizing: content-box;
@@ -888,9 +877,9 @@ h3.location-banner::before {
   --ns-slice-bottom: 36;
   --ns-slice-left: 12;
   --ns-b-top: 0;
-  --ns-b-right: 4;
-  --ns-b-bottom: 12;
-  --ns-b-left: 4;
+  --ns-b-right: 4px;
+  --ns-b-bottom: 12px;
+  --ns-b-left: 4px;
   padding: 24px;
 }
 

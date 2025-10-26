@@ -17,6 +17,91 @@
   }
 }
 
+.compendium-fraif {
+  display: grid;
+  grid-template-columns: 1fr, 200px;
+}
+
+.neutral-width {
+  width: unset !important;
+  white-space: nowrap;
+}
+
+.fraif--text--location-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  p:first-of-type {
+    color: #9b1b1d;
+    font-size: 18px;
+    line-height: 24px;
+    font-variant: small-caps;
+  }
+}
+
+.fraif--text--location-building {
+  text-align: right;
+}
+
+.fraif--text--location > hr {
+  margin: 0.5em 0;
+}
+
+.fraif--text--location {
+  float: right;
+  background-color: #ded8b8;
+  font-family: GoodOT, sans-serif;
+  /* border-color: #204d4c; */
+  border-width: 5px;
+  /* max-width: 450px; */
+  margin: 30px auto;
+  padding: 18px 20px;
+  filter: drop-shadow(0 3px 5px #ccc);
+  p:first-of-type {
+    color: unmount;
+    font-size: unmount;
+    + p {
+      margin-top: 8px !important;
+    }
+  }
+  &::after {
+    all: unset;
+  }
+  &::before {
+    content: '';
+    background-image: url('https://media-stg.dndbeyond.com/compendium-images/fm/ui/sidebar-border.svg');
+    background-position: 0, 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 15px;
+    top: -6px;
+    left: -7px;
+    right: -7px;
+  }
+}
+.text--rules-sidebar.fraif--trap::after,
+.text--rules-sidebar.fraif--trap::before {
+  content: unset;
+}
+.text--rules-sidebar.fraif--trap {
+  background-color: none !important;
+  font-family: GoodOT, sans-serif;
+}
+
+.text--rules-sidebar.fraif--trap p:first-of-type::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin-top: 4px;
+}
+
+.text--rules-sidebar.fraif--trap p:nth-of-type(2) {
+  margin-top: 4px;
+}
+
 .fraif--columns {
   width: 100%;
   display: grid;
@@ -50,15 +135,15 @@
   background-color: white;
   border: 0.25px solid black;
   border-radius: 50%;
-  font-size: 10px;
-  line-height: 10px;
+  font-size: 17px;
+  line-height: 18px;
   text-decoration: none;
   color: black !important;
   font-family: 'ITC Benguiat Bold', serif;
   font-weight: bold;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
 .map-button-lower {
@@ -70,15 +155,15 @@
   background-color: white;
   border: 0.25px solid black;
   border-radius: 50%;
-  font-size: 10px;
-  line-height: 10px;
+  font-size: 14px;
+  line-height: 14px;
   text-decoration: none;
   color: black !important;
   font-family: 'ITC Benguiat Bold', serif;
   font-weight: bold;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .fraif--map-img-container {

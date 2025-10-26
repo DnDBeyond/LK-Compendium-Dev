@@ -16,8 +16,3 @@
 .fraif-level-flag {
   --fraif-deity-banner-image: url('https://media-stg.dndbeyond.com/compendium-images/fraif/ui/fraif-level-banner-green.png');
 }
-
-#ScardaleTown,
-#ShadowdaleTown {
-  --location-banner-text-width: 60%;
-}
