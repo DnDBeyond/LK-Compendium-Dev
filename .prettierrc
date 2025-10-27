@@ -1,7 +1,9 @@
 {
-  "printWidth": 100,
+  "printWidth": 140,
   "singleQuote": true,
+  "proseWrap": "never",
   "overrides": [
-    { "files": "**/*.html", "options": { "htmlWhitespaceSensitivity": "css" } }
+    { "files": ["**/*.html", "**/*.css", "**/*.scss"], "options": { "htmlWhitespaceSensitivity": "css" } }
+
   ]
 }
