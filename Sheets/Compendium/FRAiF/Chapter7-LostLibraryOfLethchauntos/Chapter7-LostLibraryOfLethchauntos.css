@@ -1,8 +1,8 @@
 ﻿.fraif--columns {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 325px;
-  gap: 16px;
+  grid-template-columns: 1fr clamp(325px, 32.5vw, 425px);
+  gap: 20px;
   align-items: start;
 }
 
@@ -33,9 +33,13 @@ body.responsive-enabled #site #site-main .container {
   max-width: 1400px !important;
 }
 
+.flexible-double-column div:has(figure) {
+  margin-right: 0;
+  flex-grow: 41;
+}
+
 .fraif--map-figure {
   position: sticky !important;
-  max-width: 325px !important;
   top: 20px;
   border: 1px solid #cbc6c3;
   background-color: #fff;
