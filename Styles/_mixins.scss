@@ -111,6 +111,12 @@
     --nav-next-icon: #{$white-next};
 }
 
+@mixin nav-orange {
+    --nav-comp-icon: #{$orange-comp};
+    --nav-prev-icon: #{$orange-prev};
+    --nav-next-icon: #{$orange-next};
+}
+
 @mixin new-header-sizes {
     #{$body} :is(h2, .h2-override) {
         font-size: var(--h2-font-size, var(--header-font-override, 28px));
