@@ -1,41 +1,41 @@
 @use "../../../Styles/mixins.scss";
 @import '../../../Styles/vars.scss';
 
-$slug-primarycolor: #d68e4c;
-$slug-secondarycolor: #d68e4c;
+$efota-primarycolor: #d68e4c;
+$efota-secondarycolor: #d9dadb;
 
 :root {
     --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
     --theme-page-bg-image-1024: url();
     --theme-page-bg-image-1921: url();
     --theme-page-bg-image-2561: url();
-    --theme-table-row-bg-hover: #{lighten($slug-primarycolor, 20%)};
-    --theme-table-row-bg-dark: #{lighten($slug-primarycolor, 30%)};
-    --theme-table-row-bg-light: #{lighten($slug-primarycolor, 40%)};
-    --compendium-rules-sidebar-color: #{lighten($slug-secondarycolor, 5%)};
-    --compendium-quote-box-color: #{lighten($slug-primarycolor, 53%)};
-    --compendium-quote-box-border: #{darken($slug-secondarycolor, 50%)};
-    --compendium-quote-box-corner: #{darken($slug-secondarycolor, 50%)};
+    --theme-table-row-bg-hover: #{lighten($efota-primarycolor, 20%)};
+    --theme-table-row-bg-dark: #{lighten($efota-primarycolor, 30%)};
+    --theme-table-row-bg-light: #{lighten($efota-primarycolor, 40%)};
+    --compendium-rules-sidebar-color: #{lighten($efota-secondarycolor, 5%)};
+    --compendium-quote-box-color: #{lighten($efota-primarycolor, 53%)};
+    --compendium-quote-box-border: #{darken($efota-secondarycolor, 50%)};
+    --compendium-quote-box-corner: #{darken($efota-secondarycolor, 50%)};
     --header-underline: #{lighten(black, 50%)};
-    --sidebar-active-border: #{$slug-primarycolor};
-    --sidebar-hover-border: #{darken($slug-primarycolor, 10%)};
-    --sidebar-active-bg: #{$slug-secondarycolor};
-    --sidebar-hover-bg: #{darken($slug-secondarycolor, 8%)};
+    --sidebar-active-border: #{$efota-primarycolor};
+    --sidebar-hover-border: #{darken($efota-primarycolor, 10%)};
+    --sidebar-active-bg: #{$efota-secondarycolor};
+    --sidebar-hover-bg: #{darken($efota-secondarycolor, 8%)};
     --nav-active-text: #3c3c3c;
     --nav-hover-text: #1d1d1d;
-    @include mixins.nav-red;
-    --nav-to-top-bg: #{$slug-primarycolor};
-    --nav-to-top-hover-bg: #{darken($slug-primarycolor, 10%)};
-    --theme-image-caption-link-bg-color: #{$slug-primarycolor};
-    --theme-image-caption-link-hover-color: #{darken($slug-primarycolor, 10%)};
-    --compendium-button-bg: #{$slug-primarycolor};
-    --compendium-button-hover-bg: #{darken($slug-primarycolor, 10%)};
+    @include mixins.nav-orange;
+    --nav-to-top-bg: #{$efota-primarycolor};
+    --nav-to-top-hover-bg: #{darken($efota-primarycolor, 10%)};
+    --theme-image-caption-link-bg-color: #{$efota-primarycolor};
+    --theme-image-caption-link-hover-color: #{darken($efota-primarycolor, 10%)};
+    --compendium-button-bg: #{$efota-primarycolor};
+    --compendium-button-hover-bg: #{darken($efota-primarycolor, 10%)};
     --compendium-link-contrast: #024687;
     @include mixins.new-tooltips;
-    --theme-page-h2-color: #{$slug-primarycolor};
-    --theme-page-h3-color: #{$slug-primarycolor};
-    --theme-page-h4-color: #{$slug-primarycolor};
-    --theme-page-h5-color: #{$slug-primarycolor};
+    --theme-page-h2-color: #{$efota-primarycolor};
+    --theme-page-h3-color: #{$efota-primarycolor};
+    --theme-page-h4-color: #{$efota-primarycolor};
+    --theme-page-h5-color: #{$efota-primarycolor};
 }
 
 @include mixins.hover-tooltips;
@@ -51,29 +51,29 @@ $slug-secondarycolor: #d68e4c;
 
 strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
 li::marker {
-    color: #242527;
+    color: #{$efota-primarycolor};
 }
 
 .monster--stat-block {
-    --stat-block-divider: #{$slug-primarycolor};
-    --stat-block-bg-override: #{lighten($slug-secondarycolor, 7%)};
+    --stat-block-divider: #{$efota-primarycolor};
+    --stat-block-bg-override: #{lighten($efota-secondarycolor, 12%)};
     //--stat-block-header-size: 18px;
     font-family: "Open Sans";
 
     .monster--stats p:nth-child(odd) {
-        color: #{$slug-primarycolor};
+        color: #{$efota-primarycolor};
     }
 
     .monster--action-header {
         font-family: "Open Sans";
-        color: #{$slug-primarycolor};
+        color: #{$efota-primarycolor};
     }
 
     &::before,
     &::after {
         //--stat-block-scrollbar: url("#{$media-stg}/slug/ui/file-name.png");
         --stat-block-scrollbar: none;
-        background-color: #{$slug-primarycolor};
+        background-color: #{$efota-primarycolor};
         left: -4px;
         right: -4px;
         border-radius: 8px;
@@ -514,5 +514,64 @@ aside.newspaper-box p:last-of-type {
         line-height: 0.9;
         padding-right: 0.25rem;
         font-weight: 700;
+    }
+}
+
+.text--rules-sidebar.efota--rules-sidebar {
+    mask-border: url(https://www.dndbeyond.com/attachments/12/547/sidebar-mask-5.png);
+    mask-border-slice: 50 fill;
+    mask-border-repeat: round;
+    background-image: url(https://www.dndbeyond.com/attachments/12/211/rules-text-sidebar-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 60px 30px;
+    position: relative;
+    --compendium-default-tooltip: #{lighten(#056736, 50%)};
+    --compendium-rule-tooltip: #{lighten(#836000, 50%)};
+    --compendium-spell-tooltip: #{lighten(#5a35c5, 50%)};
+    --compendium-magicitem-tooltip: #{lighten(#054ea9, 50%)};
+    --compendium-monster-tooltip: #{lighten(#A70000, 50%)};
+    --compendium-condition-tooltip: #{lighten(#466501, 50%)};
+    --compendium-link-contrast: #{lighten(#024687, 55%)};
+    filter: drop-shadow(0 3px 5px #ccc);
+    p:first-of-type {
+        font-size: 20px;
+        + p {
+            margin-top: 8px !important;
+        }
+    }
+    &::after {
+        all: unset;
+
+    }
+    &::before {
+        all: unset;
+
+    }
+}
+
+.epigraph--with-author.draconic-prophecy {
+    border: transparent;
+    background-color: transparent;
+    background-image: url(https://www.dndbeyond.com/attachments/12/551/draconic-prophecy-bg-3.png);
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 850px;
+    min-height: 400px;
+    margin: 30px auto;
+    padding: 50px 300px 30px;
+    text-align: center;
+    font-weight: bold;
+    P:last-of-type {
+        margin-top: 10px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        text-align: center;
+        font-style: normal;
     }
 }
