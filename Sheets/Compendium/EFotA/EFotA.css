@@ -6,20 +6,20 @@
   --theme-table-row-bg-hover: rgb(233.0090909091, 194.3909090909, 158.9909090909);
   --theme-table-row-bg-dark: rgb(242.5136363636, 220.5863636364, 200.4863636364);
   --theme-table-row-bg-light: rgb(252.0181818182, 246.7818181818, 241.9818181818);
-  --compendium-rules-sidebar-color: rgb(218.7522727273, 155.0977272727, 96.7477272727);
+  --compendium-rules-sidebar-color: rgb(230.0945945946, 230.75, 231.4054054054);
   --compendium-quote-box-color: white;
-  --compendium-quote-box-border: rgb(28.4772727273, 17.0227272727, 6.5227272727);
-  --compendium-quote-box-corner: rgb(28.4772727273, 17.0227272727, 6.5227272727);
+  --compendium-quote-box-border: rgb(88.0540540541, 90.5, 92.9459459459);
+  --compendium-quote-box-corner: rgb(88.0540540541, 90.5, 92.9459459459);
   --header-underline: rgb(127.5, 127.5, 127.5);
   --sidebar-active-border: #d68e4c;
   --sidebar-hover-border: rgb(194.4590909091, 116.2409090909, 44.5409090909);
-  --sidebar-active-bg: #d68e4c;
-  --sidebar-hover-bg: rgb(202.7581818182, 121.2018181818, 46.4418181818);
+  --sidebar-active-bg: #d9dadb;
+  --sidebar-hover-bg: rgb(196.0486486486, 197.6, 199.1513513514);
   --nav-active-text: #3c3c3c;
   --nav-hover-text: #1d1d1d;
-  --nav-comp-icon: url("https://media.dndbeyond.com/compendium-images/components/red-comp-icon.svg");
-  --nav-prev-icon: url("https://media.dndbeyond.com/compendium-images/components/red-chevron-left.svg");
-  --nav-next-icon: url("https://media.dndbeyond.com/compendium-images/components/red-chevron-right.svg");
+  --nav-comp-icon: url("https://media.dndbeyond.com/compendium-images/components/orange-comp-icon.svg");
+  --nav-prev-icon: url("https://media.dndbeyond.com/compendium-images/components/orange-chevron-left.svg");
+  --nav-next-icon: url("https://media.dndbeyond.com/compendium-images/components/orange-chevron-right.svg");
   --nav-to-top-bg: #d68e4c;
   --nav-to-top-hover-bg: rgb(194.4590909091, 116.2409090909, 44.5409090909);
   --theme-image-caption-link-bg-color: #d68e4c;
@@ -95,12 +95,12 @@
 
 strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
 li::marker {
-  color: #242527;
+  color: #d68e4c;
 }
 
 .monster--stat-block {
   --stat-block-divider: #d68e4c;
-  --stat-block-bg-override: rgb(220.6531818182, 160.3368181818, 105.0468181818);
+  --stat-block-bg-override: rgb(248.427027027, 248.6, 248.772972973);
   font-family: "Open Sans";
 }
 .monster--stat-block .monster--stats p:nth-child(odd) {
@@ -535,4 +535,63 @@ aside.newspaper-box p:last-of-type {
     padding-right: 0.25rem;
     font-weight: 700;
   }
+}
+.text--rules-sidebar.efota--rules-sidebar {
+  -webkit-mask-box-image: url(https://www.dndbeyond.com/attachments/12/547/sidebar-mask-5.png);
+          mask-border: url(https://www.dndbeyond.com/attachments/12/547/sidebar-mask-5.png);
+  -webkit-mask-box-image-slice: 50 fill;
+          mask-border-slice: 50 fill;
+  -webkit-mask-box-image-repeat: round;
+          mask-border-repeat: round;
+  background-image: url(https://www.dndbeyond.com/attachments/12/211/rules-text-sidebar-2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: whitesmoke;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 60px 30px;
+  position: relative;
+  --compendium-default-tooltip: rgb(114.8055555556, 248.1944444444, 181.5);
+  --compendium-rule-tooltip: rgb(255, 221.8702290076, 131);
+  --compendium-spell-tooltip: rgb(251.8, 251.06, 253.94);
+  --compendium-magicitem-tooltip: rgb(176.3275862069, 210.3103448276, 252.6724137931);
+  --compendium-monster-tooltip: #ffa7a7;
+  --compendium-condition-tooltip: rgb(207, 253.5, 103.5);
+  --compendium-link-contrast: rgb(163.8503649635, 209.7627737226, 253.6496350365);
+  filter: drop-shadow(0 3px 5px #ccc);
+}
+.text--rules-sidebar.efota--rules-sidebar p:first-of-type {
+  font-size: 20px;
+}
+.text--rules-sidebar.efota--rules-sidebar p:first-of-type + p {
+  margin-top: 8px !important;
+}
+.text--rules-sidebar.efota--rules-sidebar::after {
+  all: unset;
+}
+.text--rules-sidebar.efota--rules-sidebar::before {
+  all: unset;
+}
+
+.epigraph--with-author.draconic-prophecy {
+  border: transparent;
+  background-color: transparent;
+  background-image: url(https://www.dndbeyond.com/attachments/12/551/draconic-prophecy-bg-3.png);
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-width: 850px;
+  min-height: 400px;
+  margin: 30px auto;
+  padding: 50px 300px 30px;
+  text-align: center;
+  font-weight: bold;
+}
+.epigraph--with-author.draconic-prophecy P:last-of-type {
+  margin-top: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  font-style: normal;
 }/*# sourceMappingURL=EFotA.css.map */
