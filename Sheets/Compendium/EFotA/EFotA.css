@@ -1,32 +1,31 @@
-@charset "UTF-8";
 :root {
   --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
   --theme-page-bg-image-1024: url();
   --theme-page-bg-image-1921: url();
   --theme-page-bg-image-2561: url();
-  --theme-table-row-bg-hover: rgb(179.2105263158, 211.4210526316, 222.7894736842);
-  --theme-table-row-bg-dark: #d7e8ee;
-  --theme-table-row-bg-light: rgb(240.0526315789, 246.4052631579, 248.6473684211);
-  --compendium-rules-sidebar-color: rgb(232.8947368421, 242.2894736842, 245.6052631579);
-  --compendium-quote-box-color: rgb(248.7514423077, 230.3105769231, 229.5485576923);
-  --compendium-quote-box-border: rgb(59.0526315789, 118.1052631579, 138.9473684211);
-  --compendium-quote-box-corner: rgb(59.0526315789, 118.1052631579, 138.9473684211);
-  --header-underline: #a72e29;
-  --sidebar-active-border: #a72e29;
-  --sidebar-hover-border: rgb(126.0528846154, 34.7211538462, 30.9471153846);
-  --sidebar-active-bg: #d7e8ee;
-  --sidebar-hover-bg: rgb(186.3684210526, 215.5368421053, 225.8315789474);
+  --theme-table-row-bg-hover: rgb(233.0090909091, 194.3909090909, 158.9909090909);
+  --theme-table-row-bg-dark: rgb(242.5136363636, 220.5863636364, 200.4863636364);
+  --theme-table-row-bg-light: rgb(252.0181818182, 246.7818181818, 241.9818181818);
+  --compendium-rules-sidebar-color: rgb(218.7522727273, 155.0977272727, 96.7477272727);
+  --compendium-quote-box-color: white;
+  --compendium-quote-box-border: rgb(28.4772727273, 17.0227272727, 6.5227272727);
+  --compendium-quote-box-corner: rgb(28.4772727273, 17.0227272727, 6.5227272727);
+  --header-underline: rgb(127.5, 127.5, 127.5);
+  --sidebar-active-border: #d68e4c;
+  --sidebar-hover-border: rgb(194.4590909091, 116.2409090909, 44.5409090909);
+  --sidebar-active-bg: #d68e4c;
+  --sidebar-hover-bg: rgb(202.7581818182, 121.2018181818, 46.4418181818);
   --nav-active-text: #3c3c3c;
   --nav-hover-text: #1d1d1d;
   --nav-comp-icon: url("https://media.dndbeyond.com/compendium-images/components/red-comp-icon.svg");
   --nav-prev-icon: url("https://media.dndbeyond.com/compendium-images/components/red-chevron-left.svg");
   --nav-next-icon: url("https://media.dndbeyond.com/compendium-images/components/red-chevron-right.svg");
-  --nav-to-top-bg: #a72e29;
-  --nav-to-top-hover-bg: rgb(126.0528846154, 34.7211538462, 30.9471153846);
-  --theme-image-caption-link-bg-color: #a72e29;
-  --theme-image-caption-link-hover-color: rgb(126.0528846154, 34.7211538462, 30.9471153846);
-  --compendium-button-bg: #a72e29;
-  --compendium-button-hover-bg: rgb(126.0528846154, 34.7211538462, 30.9471153846);
+  --nav-to-top-bg: #d68e4c;
+  --nav-to-top-hover-bg: rgb(194.4590909091, 116.2409090909, 44.5409090909);
+  --theme-image-caption-link-bg-color: #d68e4c;
+  --theme-image-caption-link-hover-color: rgb(194.4590909091, 116.2409090909, 44.5409090909);
+  --compendium-button-bg: #d68e4c;
+  --compendium-button-hover-bg: rgb(194.4590909091, 116.2409090909, 44.5409090909);
   --compendium-link-contrast: #024687;
   --compendium-default-tooltip: #11884C;
   --compendium-rule-tooltip: #9B740B;
@@ -34,6 +33,10 @@
   --compendium-condition-tooltip: #5a8100;
   --compendium-sense-tooltip: #A41B96;
   --compendium-link-color: #006ABE;
+  --theme-page-h2-color: #d68e4c;
+  --theme-page-h3-color: #d68e4c;
+  --theme-page-h4-color: #d68e4c;
+  --theme-page-h5-color: #d68e4c;
 }
 
 .waterdeep-tooltip .tooltip-header-identifier.tooltip-header-identifier-action {
@@ -92,72 +95,30 @@
 
 strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
 li::marker {
-  color: #a72e29;
+  color: #242527;
 }
 
 .monster--stat-block {
-  --stat-block-divider: #a72e29;
-  --stat-block-bg-override: rgb(240.0526315789, 246.4052631579, 248.6473684211);
+  --stat-block-divider: #d68e4c;
+  --stat-block-bg-override: rgb(220.6531818182, 160.3368181818, 105.0468181818);
   font-family: "Open Sans";
-  /*&::after {
-      transform: scaleY(-1);
-  }*/
-  /*.flexible-double-column & {
-      --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
-  }
-  @media (max-width: 760px) {
-      --stat-block-scrollbar: url("https://media-stg.dndbeyond.com/compendium-images/slug/ui/file-name.png");
-  }*/
 }
 .monster--stat-block .monster--stats p:nth-child(odd) {
-  color: #a72e29;
+  color: #d68e4c;
 }
 .monster--stat-block .monster--action-header {
   font-family: "Open Sans";
-  color: #a72e29;
+  color: #d68e4c;
 }
 .monster--stat-block::before, .monster--stat-block::after {
   --stat-block-scrollbar: none;
-  background-color: #a72e29;
+  background-color: #d68e4c;
   left: -4px;
   right: -4px;
   border-radius: 8px;
   height: 8px;
 }
 
-/*.text--rules-sidebar {
-    border-color: #204d4c;
-    border-width: 5px;
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 18px 20px;
-    filter: drop-shadow(0 3px 5px #ccc);
-    p:first-of-type {
-        color: #204d4c;
-        font-size: 20px;
-        + p {
-            margin-top: 8px !important;
-        }
-    }
-    &::after {
-        all: unset;
-    }
-    &::before {
-        content: "";
-        background-image: url("https://media-stg.dndbeyond.com/compendium-images/fm/ui/sidebar-border.svg");
-        background-position: 0, 100%;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        height: 15px;
-        top: -6px;
-        left: -7px;
-        right: -7px;
-    }
-}*/
-/*.text--quote-box{
-    //add custom quote box style here
-}*/
-/* Hyperspace Race — Compressed (Regular) */
 @font-face {
   font-family: "Hyperspace Race Compressed";
   src: url("https://fonts.dndbeyond.com/HyperspaceRaceCompressed.otf");
@@ -165,7 +126,6 @@ li::marker {
   font-style: normal;
   font-display: swap;
 }
-/* Hyperspace Race — Compressed Bold */
 @font-face {
   font-family: "Hyperspace Race Compressed";
   src: url("https://fonts.dndbeyond.com/HyperspaceRaceCompressedBold.otf");
@@ -173,7 +133,6 @@ li::marker {
   font-style: normal;
   font-display: swap;
 }
-/* Hyperspace Race — Compressed Heavy */
 @font-face {
   font-family: "Hyperspace Race Compressed";
   src: url("https://fonts.dndbeyond.com/HyperspaceRaceCompressedHeavy.otf") format("opentype");
@@ -181,7 +140,6 @@ li::marker {
   font-style: normal;
   font-display: swap;
 }
-/* Hyperspace Race — Condensed Heavy */
 @font-face {
   font-family: "Hyperspace Race Condensed";
   src: url("https://fonts.dndbeyond.com/HyperspaceRaceCondensedHeavy.otf");
@@ -189,6 +147,85 @@ li::marker {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Probeta SC";
+  src: url("https://fonts.dndbeyond.com/ProbetaSCMedium.otf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Probeta SC";
+  src: url("https://fonts.dndbeyond.com/ProbetaSCSemiBold.otf");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Probeta SC";
+  src: url("https://fonts.dndbeyond.com/ProbetaSCRegular.otf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+h2.compendium-hr,
+.h2-override,
+.body-page .p-article-a .p-article-content caption h2.compendium-hr {
+  font-family: "Probeta SC", sans-serif !important;
+  font-weight: 700 !important;
+  font-variant: small-caps;
+  font-size: 2.5rem !important;
+  line-height: 1 !important;
+}
+
+h3.compendium-hr,
+.h3-override,
+.body-page .p-article-a .p-article-content caption h3.compendium-hr {
+  font-family: "Probeta SC", sans-serif !important;
+  font-weight: 700 !important;
+  font-variant: small-caps;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+}
+
+h4.compendium-hr,
+.h4-override,
+.body-page .p-article-a .p-article-content caption h4.compendium-hr {
+  font-family: "Probeta SC", sans-serif !important;
+  font-weight: 700 !important;
+  font-variant: small-caps;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+}
+
+h5.compendium-hr,
+.h5-override,
+.body-page .p-article-a .p-article-content caption h5.compendium-hr {
+  font-family: "Probeta SC", sans-serif !important;
+  font-weight: 700 !important;
+  font-variant: small-caps;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+}
+
+.body-page .p-article-a .p-article-content h2::after,
+.body-page .p-article-a .p-article-content h3::after,
+.section-posts .p-article-a .p-article-content h2::after,
+.section-posts .p-article-a .p-article-content h3::after,
+.p-article-a .section-changelog .p-article-content h2::after,
+.p-article-a .section-changelog .p-article-content h3::after {
+  height: 2px;
+  margin-top: 3px;
+}
+
+h2::after {
+  margin-bottom: 12px !important;
+}
+
+h3::after {
+  margin-bottom: 0 !important;
+}
+
 .efota-title {
   position: relative;
   width: 100%;
@@ -201,7 +238,7 @@ li::marker {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("./assets/ui/0_DnD_EFA_Chapter_Header_CH1.png");
+  background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/0_DnD_EFA_Chapter_Header_CH1.png");
   background-repeat: no-repeat;
   background-size: 100% 90%;
   margin: 0 !important;
@@ -214,7 +251,21 @@ li::marker {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("./assets/ui/DnD_ClassSymbol-Artificer.svg"), url("./assets/ui/bg-polygon.svg");
+  background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-polygon.svg");
+  background-repeat: no-repeat;
+  background-size: 106% auto;
+  background-position: 100% 230%;
+  margin: 0 !important;
+  background-color: transparent !important;
+  height: auto !important;
+  z-index: 0;
+}
+
+.efota-title .efota-title-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/DnD_ClassSymbol-Artificer.svg"), url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-polygon.svg");
   background-repeat: no-repeat, no-repeat;
   background-size: 15% 15%, 106% auto;
   background-position: 98% 67%, 100% 230%;
@@ -228,8 +279,8 @@ li::marker {
   position: absolute;
   bottom: 34%;
   left: 21.5%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: max-content 1fr;
   gap: 12px;
   width: 72%;
   white-space: nowrap;
@@ -239,9 +290,9 @@ li::marker {
   transform-origin: left bottom;
 }
 
-.efota-title-text > h1 {
+.efota-title-text h1 {
   color: lightgrey !important;
-  filter: url("./assets/ui/title-filter.svg#indd-effects");
+  filter: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/title-filter.svg#indd-effects");
   font-size: 6rem !important;
   text-transform: uppercase;
   font-family: "Hyperspace Race Compressed", sans-serif !important;
@@ -256,11 +307,15 @@ li::marker {
   margin: 0 !important;
 }
 
-.efota-title-text > h1::after {
+.efota-title-text h1::after {
   content: none !important;
 }
 
-.efota-title-text > p {
+.efota-title-text p:first-of-type {
+  display: none;
+}
+
+.efota-title-text p:nth-of-type(2) {
   font-size: 2.25rem;
   line-height: 1;
   letter-spacing: 0.03em;
@@ -269,14 +324,14 @@ li::marker {
   padding-bottom: 4px;
 }
 
-.efota-title p:first-of-type {
+.efota-title p:nth-of-type(2) {
   color: white !important;
   font-family: "Hyperspace Race Compressed", sans-serif !important;
   font-weight: 400;
   position: unset !important;
 }
 
-.efota-title p:first-of-type > span:first-of-type {
+.efota-title p:first-of-type span:first-of-type {
   font-family: "Hyperspace Race Compressed", sans-serif !important;
   font-weight: 400;
   position: absolute;
@@ -290,7 +345,7 @@ li::marker {
   font-weight: 700;
 }
 
-.efota-title p:first-of-type > span + span {
+.efota-title p:first-of-type span + span {
   font-family: "Hyperspace Race Compressed", sans-serif !important;
   font-weight: 400;
   position: absolute;
@@ -302,4 +357,182 @@ li::marker {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .efota-title {
+    aspect-ratio: auto;
+    color: black !important;
+  }
+  .efota-title::before,
+  .efota-title::after {
+    content: none;
+  }
+  .efota-title p:nth-of-type(2) {
+    color: black !important;
+  }
+  .efota-title-text {
+    display: flex;
+    position: static;
+    transform: none;
+    transform-origin: unset;
+    width: 100%;
+    white-space: normal;
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .efota-title-text p:first-of-type {
+    display: flex;
+    gap: 4px;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    margin-bottom: -20px !important;
+  }
+  .efota-title p:first-of-type span:first-of-type,
+  .efota-title p:first-of-type span + span {
+    position: static;
+    transform: none;
+    font-size: 1.4rem;
+  }
+  .efota-title p:first-of-type:not(.efota-title-text p) {
+    display: none;
+  }
+}
+aside.newspaper-box {
+  --rule-color: currentColor;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  justify-items: center;
+  align-items: start;
+  inline-size: -moz-max-content;
+  inline-size: max-content;
+  max-inline-size: min(700px, 100%);
+  min-inline-size: 250px;
+  margin: 40px auto;
+  background: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/Newspaper-Backing.png") no-repeat center/100% 100%;
+  padding: 60px;
+}
+
+aside.newspaper-box p:first-of-type {
+  font-family: "Hyperspace Race Condensed", sans-serif;
+  width: -moz-max-content !important;
+  width: max-content !important;
+  max-width: 50%;
+  text-align: center;
+  gap: 0;
+  margin: 0 auto 8px !important;
+}
+
+aside.newspaper-box p:first-of-type span:first-child {
+  text-transform: uppercase;
+  /* all caps */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin-bottom: 8px !important;
+  margin: 0 !important;
+  line-height: 0.95;
+  font-size: 16px;
+  width: 100%;
+}
+
+aside.newspaper-box p:first-of-type span:first-child::before,
+aside.newspaper-box p:first-of-type span:first-child::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  /* tweak length as needed */
+  background: var(--rule-color);
+  display: block;
+  opacity: 0.8;
+}
+
+aside.newspaper-box p:first-of-type span:last-child {
+  letter-spacing: 0.08em;
+  font-size: 30px !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0 !important;
+  line-height: 0.95;
+  max-inline-size: min(700px, 100%);
+}
+
+aside.newspaper-box p:nth-of-type(2) {
+  grid-row: 2;
+  text-transform: uppercase;
+  font-family: "Hyperspace Race Compressed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1rem, 10vw, 4rem);
+  line-height: 0.95;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0.25rem 0;
+  position: relative;
+  letter-spacing: 0.06em;
+  border-top: 2px double var(--rule-color);
+  border-bottom: 2px double var(--rule-color);
+  width: -moz-max-content !important;
+  width: max-content !important;
+  overflow: visible;
+  text-overflow: clip;
+  justify-self: center;
+}
+
+aside.newspaper-box p:nth-of-type(2)::before,
+aside.newspaper-box p:nth-of-type(2)::after {
+  content: "";
+  display: block;
+  border-top: 1px double var(--rule-color);
+  margin: 1px auto;
+  width: 100%;
+  opacity: 0.8;
+}
+
+aside.newspaper-box p:nth-of-type(2)::before {
+  margin-top: -8px;
+}
+
+aside.newspaper-box p:nth-of-type(3) {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0.25rem 0 0.75rem;
+  text-align: justify;
+  line-height: 1.2 !important;
+}
+
+aside.newspaper-box p:last-of-type {
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0em;
+  margin: 0.5rem 0 0;
+  line-height: 1.6 !important;
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  text-align: justify;
+  width: 100% !important;
+}
+
+@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+  aside.newspaper-box p:last-of-type::first-letter {
+    initial-letter: 3;
+    -webkit-initial-letter: 3;
+    font-weight: 700;
+    margin-right: 0.25rem;
+  }
+}
+/* Fallback for browsers without initial-letter */
+@supports (not (initial-letter: 3)) and (not (-webkit-initial-letter: 3)) {
+  aside.newspaper-box p:last-of-type::first-letter {
+    float: left;
+    font-size: 3.2em;
+    line-height: 0.9;
+    padding-right: 0.25rem;
+    font-weight: 700;
+  }
 }/*# sourceMappingURL=EFotA.css.map */
