@@ -1,6 +1,32 @@
-.comic-bg {
-    background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/Newspaper-Backing.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    margin: 0 auto 40px;
+.comic-page {
+  background-color: grey;
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.comic-two-panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* two across */
+  grid-template-rows: 600px 1fr;   /* top row fixed, bottom auto */
+  gap: 8px;
+}
+
+/* Top row images (same visible size; cropped if needed) */
+.comic-two-panes img:not(.comic-anchor) {
+  width: 100% !important;
+  height: 100% !important;         /* fill the 600px-tall row */
+  object-fit: cover;    /* crop to keep aspect, no distortion */
+  display: block;
+}
+
+/* Anchor image (bottom full width) */
+.comic-anchor {
+  grid-column: 1 / -1;  /* span both columns */
+  grid-row: 2;          /* be explicit about the bottom row */
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
 }

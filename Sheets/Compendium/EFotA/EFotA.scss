@@ -388,9 +388,9 @@ aside.newspaper-box {
     grid-template-rows: auto auto 1fr;
     justify-items: center;
     align-items: start;
-      inline-size: max-content;
-  max-inline-size: min(700px, 100%);
-  min-inline-size: 250px;
+    inline-size: max-content;
+    max-inline-size: min(700px, 100%);
+    min-inline-size: 250px;
     margin: 40px auto;
     background: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/Newspaper-Backing.png") no-repeat center / 100% 100%;
     padding: 60px;
@@ -494,7 +494,7 @@ aside.newspaper-box p:last-of-type {
     line-height: 1.6 !important;
     hyphens: auto;
     text-align: justify;
-  width: 100% !important;
+    width: 100% !important;
 }
 
 @supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
