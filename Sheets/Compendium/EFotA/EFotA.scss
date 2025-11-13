@@ -49,7 +49,7 @@ $efota-secondarycolor: #d9dadb;
     --compendium-condition-tooltip: #466501;
 }
 
-strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
+strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong, table strong, .newspaper-box strong, .efota--genre-box strong),
 li::marker {
     color: #{$efota-primarycolor};
 }
@@ -142,7 +142,7 @@ h2.compendium-hr,
 .body-page .p-article-a .p-article-content caption h2.compendium-hr {
     font-family: "Probeta SC", sans-serif !important;
     font-weight: 700 !important;
-    font-variant: small-caps;
+    text-transform: uppercase !important;
     font-size: 2.5rem !important;
     line-height: 1 !important;
 }
@@ -153,7 +153,7 @@ h3.compendium-hr,
     font-family: "Probeta SC", sans-serif !important;
     font-weight: 700 !important;
     font-variant: small-caps;
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     line-height: 1 !important;
 }
 
@@ -163,7 +163,7 @@ h4.compendium-hr,
     font-family: "Probeta SC", sans-serif !important;
     font-weight: 700 !important;
     font-variant: small-caps;
-    font-size: 1.25rem !important;
+    font-size: 1.6rem !important;
     line-height: 1 !important;
 }
 
@@ -220,7 +220,7 @@ h3::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-polygon.svg");
+    background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-base-polygon.svg");
     background-repeat: no-repeat;
     background-size: 106% auto;
     background-position: 100% 230%;
@@ -230,7 +230,7 @@ h3::after {
     z-index: 0;
 }
 
-.efota-title .efota-title-icon::after {
+.efota-title.efota-title-icon::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -242,7 +242,6 @@ h3::after {
     background-color: transparent !important;
     height: auto !important;
     z-index: 0;
-
 }
 
 .efota-title-text {
@@ -269,13 +268,16 @@ h3::after {
     text-transform: uppercase;
     font-family: 'Hyperspace Race Compressed', sans-serif !important;
     font-weight: 700 !important;
-    text-shadow: #1d1d1d 4px 2px 2px;
+    -webkit-text-stroke: 1.2px white;
+    text-shadow: 3px 2px 1px lightgrey, 5px 5px 3px #000, 0 0px 5px #fff, 0 0 10px #f5f5f5;
+    //text-shadow: #1d1d1d 4px 2px 2px;
     letter-spacing: 0.035em;
     font-variant: condensed;
     width: max-content;
     line-height: 1;
-    padding: 0 !important;
+    padding: 0 0 0 5px !important;
     margin: 0 !important;
+    transform: skew(-5deg);
 
 }
 
@@ -296,6 +298,8 @@ h3::after {
     margin: 0 !important;
     text-wrap: balance;
     padding-bottom: 4px;
+    transform: skew(-5deg);
+    text-shadow: 2px 2px 1px lightslategray, 3px 4px 2px #000;
 }
 
 .efota-title p:nth-of-type(2) {
@@ -318,6 +322,11 @@ h3::after {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     font-weight: 700;
+    &.efota-intro-title {
+        left: 19.5% !important;
+        bottom: 77.75% !important;
+        transform: rotate(-5deg) skew(-5deg) !important;
+    }
 }
 
 .efota-title p:first-of-type span+span {
@@ -360,11 +369,24 @@ h3::after {
         gap: 0;
         align-items: flex-start;
     }
+    .efota-title-text h1 {
+        padding: 0 !important;
+        color: darkgrey !important;
+        transform: none;
+        -webkit-text-stroke: unset;
+        text-shadow: 3px 3px 2px #000, 0 0px 5px #fff, 0 0 8px #f5f5f5;
+    }
+
+    .efota-title-text p:nth-of-type(2) {
+        font-size: 2.5rem !important;
+        transform: none;
+        text-shadow: unset;
+    }
 
     .efota-title-text p:first-of-type {
         display: flex;
         gap: 4px;
-        font-size: 24px;
+        font-size: 2rem;
         letter-spacing: 0.05em;
         margin-bottom: -20px !important;
     }
@@ -373,13 +395,17 @@ h3::after {
     .efota-title p:first-of-type span+span {
         position: static;
         transform: none;
-        font-size: 1.4rem;
+        font-size: 1.9rem;
 
     }
 
     .efota-title p:first-of-type:not(.efota-title-text p) {
         display: none;
     }
+    .efota-title.efota-title-icon::after {
+        content: none;
+    }
+
 }
 
 aside.newspaper-box {
@@ -388,9 +414,9 @@ aside.newspaper-box {
     grid-template-rows: auto auto 1fr;
     justify-items: center;
     align-items: start;
-      inline-size: max-content;
-  max-inline-size: min(700px, 100%);
-  min-inline-size: 250px;
+    inline-size: max-content;
+    max-inline-size: min(700px, 100%);
+    min-inline-size: 250px;
     margin: 40px auto;
     background: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/Newspaper-Backing.png") no-repeat center / 100% 100%;
     padding: 60px;
@@ -518,6 +544,7 @@ aside.newspaper-box p:last-of-type {
 }
 
 .text--rules-sidebar.efota--rules-sidebar {
+
     mask-border: url(https://www.dndbeyond.com/attachments/12/547/sidebar-mask-5.png);
     mask-border-slice: 50 fill;
     mask-border-repeat: round;
@@ -539,7 +566,8 @@ aside.newspaper-box p:last-of-type {
     --compendium-link-contrast: #{lighten(#024687, 55%)};
     filter: drop-shadow(0 3px 5px #ccc);
     p:first-of-type {
-        font-size: 20px;
+        font-family: "Probeta SC", sans-serif !important;
+        font-size: 25px;
         + p {
             margin-top: 8px !important;
         }
@@ -557,21 +585,88 @@ aside.newspaper-box p:last-of-type {
 .epigraph--with-author.draconic-prophecy {
     border: transparent;
     background-color: transparent;
-    background-image: url(https://www.dndbeyond.com/attachments/12/551/draconic-prophecy-bg-3.png);
+    background-image: url(https://www.dndbeyond.com/attachments/12/561/draconic-prophecy-v2.png);
     background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
-    min-width: 850px;
+    max-width: 850px;
     min-height: 400px;
-    margin: 30px auto;
-    padding: 50px 300px 30px;
+    margin: -40px auto;
+    padding: 50px 50px 30px;
     text-align: center;
     font-weight: bold;
-    P:last-of-type {
+    p:last-of-type {
         margin-top: 10px;
         font-weight: bolder;
         text-transform: uppercase;
         text-align: center;
         font-style: normal;
     }
+}
+
+@media (max-width: 600px) {
+        .epigraph--with-author.draconic-prophecy {
+        background-image: unset;
+        min-height: unset;
+        margin: 10px auto !important;
+        padding: 5px 50px 5px !important;
+    }
+
+}
+
+/* Features Table styling */
+table.table--features :is(th, td) {
+    &:nth-child(3) {
+        padding-left: 10px !important;
+        text-align: left !important;
+    }
+
+    &:is(:first-child, :nth-child(2), :nth-child(n+4)) {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        min-width: 0 !important;
+    }
+}
+
+tbody th {
+    padding-left: 20px;
+}
+
+.efota--genre-box {
+    background-color: #{lighten($efota-secondarycolor, 5%)};
+    position: relative;
+    width: auto;
+    margin: -140px 50px 20px 50px;
+    padding: 100px 30px 10px 30px;
+    border: 3px;
+    border-style: none solid none solid;
+    border-image: linear-gradient(to bottom, #000 0%, #0000 100%) 1;
+    background-clip: padding-box;
+    line-height: 0.75rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -15px;
+        height: 100%;
+        width: 7px;
+        background-image: linear-gradient(to bottom, #000 0%, #0000 100%);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -15px;
+        height: 100%;
+        width: 7px;
+        background-image: linear-gradient(to bottom, #000 0%, #0000 100%);
+    }
+}
+
+.efota--genre-box.genre-triangle {
+    border-color: transparent red transparent transparent;
+    border-style: solid;
+    border-width: 0px 200px 200px 200px;
+    height: 0px;
+    width: 0px;
 }
