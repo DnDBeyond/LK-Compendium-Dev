@@ -1,7 +1,7 @@
 @use "../../../Styles/mixins.scss";
 @import '../../../Styles/vars.scss';
 
-$efota-primarycolor: #d68e4c;
+$efota-primarycolor: #bd5b00;
 $efota-secondarycolor: #d9dadb;
 
 :root {
@@ -9,9 +9,9 @@ $efota-secondarycolor: #d9dadb;
     --theme-page-bg-image-1024: url();
     --theme-page-bg-image-1921: url();
     --theme-page-bg-image-2561: url();
-    --theme-table-row-bg-hover: #{lighten($efota-primarycolor, 20%)};
-    --theme-table-row-bg-dark: #{lighten($efota-primarycolor, 30%)};
-    --theme-table-row-bg-light: #{lighten($efota-primarycolor, 40%)};
+    --theme-table-row-bg-hover: #{darken(#fce2cd, 20%)};
+    --theme-table-row-bg-dark: #fce2cd;
+    --theme-table-row-bg-light: #fdf4ec;
     --compendium-rules-sidebar-color: #{lighten($efota-secondarycolor, 5%)};
     --compendium-quote-box-color: #{lighten($efota-primarycolor, 53%)};
     --compendium-quote-box-border: #{darken($efota-secondarycolor, 50%)};
@@ -173,7 +173,7 @@ h5.compendium-hr,
     font-family: "Probeta SC", sans-serif !important;
     font-weight: 700 !important;
     font-variant: small-caps;
-    font-size: 1.25rem !important;
+    font-size: 1.4rem !important;
     line-height: 1 !important;
 }
 
@@ -220,10 +220,10 @@ h3::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-base-polygon.svg");
+    background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-base-polygon-v2.svg");
     background-repeat: no-repeat;
     background-size: 106% auto;
-    background-position: 100% 230%;
+    background-position: 92% 359%;
     margin: 0 !important;
     background-color: transparent !important;
     height: auto !important;
@@ -669,4 +669,8 @@ tbody th {
     border-width: 0px 200px 200px 200px;
     height: 0px;
     width: 0px;
+}
+
+.house-banner {
+    margin-top: 10px;
 }
