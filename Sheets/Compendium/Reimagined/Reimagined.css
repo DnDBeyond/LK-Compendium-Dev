@@ -426,6 +426,19 @@ div.container {
   grid-column: 1;
 }
 
+.lk-page__split-title#strahd-page .lk-split-title-overlay__splotch-container_bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 6;
+  width: auto;
+  height: auto;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title-splotch-bottom {
+  margin-bottom: -495px;
+}
+
 .lk-page__split-title#barovia-page {
   --split-content-pane: clamp(320px, 40vw, 900px);
   --split-text-content-left: clamp(48px, 12vw, 25%);
@@ -471,6 +484,26 @@ div.container {
   grid-column: 1/-1;
 }
 
+.lk-page__split-title#barovia-page .lk-split-title-overlay__splotch-container_top {
+  position: sticky;
+  margin-top: -422px;
+  top: 0;
+  right: 0;
+  z-index: 6;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.lk-page__split-title#barovia-page .lk-split-title-splotch-top {
+  position: sticky;
+  margin-right: 0;
+  margin-top: -492px;
+  top: 0;
+  z-index: 6;
+  width: 100% !important;
+}
+
 .lk-page__split-title#barovia-page .lk-split-title-overlay__splotch-container_bottom {
   position: sticky;
   bottom: 0;
@@ -481,7 +514,8 @@ div.container {
 }
 
 .lk-page__split-title#barovia-page .lk-split-title-splotch-bottom {
-  width: 100%;
+  width: 100% !important;
+  margin-top: -300px;
 }
 
 .lk-page__title {
