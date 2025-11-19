@@ -1,0 +1,714 @@
+:root {
+    --theme-page-bg-image-base: url("https://www.dndbeyond.com/attachments/0/84/background_texture.png");
+    --content-max: 2200px;
+    --overlap-left: 400px;
+    --overlap-right: 200px;
+    --half-gutter: calc((100vw - var(--content-max))/2);
+    --right-bg-width-narrow: clamp(200px, 20vw, 600px);
+    --left-bg-width-narrow: clamp(200px, 20vw, 600px);
+    --right-bg-width-wide: clamp(200px, 25vw, 900px);
+    --left-bg-width-wide: clamp(200px, 25vw, 900px);
+
+    --theme-table-row-bg-hover: rgba(204, 153, 102, 0.3);
+    --theme-table-row-bg-dark: #d9e1ce;
+    --theme-table-row-bg-light: #f1f4ee;
+    --compendium-rules-sidebar-color: #d8e3e3;
+    --compendium-quote-box-color: #d5dbd4;
+    --compendium-quote-box-border: #425e47;
+    --compendium-quote-box-corner: #425e47;
+    --header-underline: #dc9d4e;
+    --sidebar-active-border: #549d60;
+    --sidebar-hover-border: #305b37;
+    --sidebar-active-bg: #99ce85;
+    --sidebar-hover-bg: #96c592;
+    --nav-to-top-bg: #549d60;
+    --nav-to-top-hover-bg: #427c4c;
+    --theme-image-caption-link-bg-color: #549d60;
+    --theme-image-caption-link-hover-color: #427c4c;
+    --compendium-default-tooltip: #11884C;
+    --compendium-rule-tooltip: #9B740B;
+    --compendium-item-tooltip: #774521;
+    --compendium-condition-tooltip: #5a8100;
+    --compendium-sense-tooltip: #A41B96;
+    --compendium-link-color: #006ABE;
+    --compendium-link-contrast: #0053A3;
+    --nav-comp-icon: url("https://media.dndbeyond.com/compendium-images/components/gold-comp-icon.svg");
+    --nav-prev-icon: url("https://media.dndbeyond.com/compendium-images/components/gold-chevron-left.svg");
+    --nav-next-icon: url("https://media.dndbeyond.com/compendium-images/components/gold-chevron-right.svg");
+    --nav-active-text: #3c3c3c;
+    --nav-hover-text: #1d1d1d;
+
+    --unique-book-font-alt: 'ITC Benguiat Book';
+    --unique-book-font-label: Handwriting Font;
+    --translate-button-on: #dc9d4e;
+    --wheat-core-h-red: #4A0E0B;
+    --wheat-core-ch-title-outline: #C9D3CA;
+    --wheat-core-beige: #C3B272;
+
+    --wheat-title-gradient: linear-gradient(0, #945c48, var(--wheat-core-h-red));
+}
+
+.secondary-content {
+    display: none;
+}
+
+.primary-content {
+    max-width: 100% !important;
+    /* overflow: hidden; */
+}
+
+html body #site-main .container {
+    max-width: var(--content-max) !important;
+}
+
+/* Layout keep sections in normal document flow */
+.lk-book {
+    /* optional: page snapping feel */
+    scroll-snap-type: y proximity;
+}
+
+
+.b-breadcrumb {
+    display: none;
+}
+
+.p-article-header {
+    display: none;
+}
+
+/* optional: smooth anchor jumps */
+html {
+    scroll-behavior: smooth;
+}
+
+
+header.page-header {
+    display: none !important;
+}
+
+div.container {
+    padding: 0 !important;
+}
+
+.body-page-details #site.two-column.section-compendium-content #content {
+    padding: 0 !important;
+}
+
+.lk-page__title {
+    position: relative;
+    isolation: isolate;
+    scroll-snap-align: start;
+    --header-height: 110px;
+    --text-window-height: 600px;
+    --text-window-width: 600px;
+    --text-window-y: 30%;
+    --text-window-x: 20%;
+    --overlay-height: calc(100vh + var(--header-height));
+    // background-image: url("./assets/images/00-001.welcome-to-faerun.jpg");
+    // background-position: top left;
+    // // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+}
+
+/* Sticky overlay image that covers the viewport while this section is in view */
+.lk-page__overlay {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: var(--overlay-height) !important;
+    max-height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 5;
+    margin-top: calc(-1 * 100vh);
+
+}
+
+
+.lk-page__title .lk-page__overlay h2 {
+    position: absolute;
+    top: 2%;
+    left: calc(var(--text-window-x) / 2);
+    z-index: 10;
+    color: white !important;
+    top: 25px;
+}
+
+
+.lk-page-overlay__img_fg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--overlay-height) !important;
+    max-height: 100vh;
+    object-fit: cover;
+    /* ensure it covers the viewport */
+    pointer-events: none;
+
+    /* Layer 1: full-rect white (base) — shows everything
+     Layer 2: WHITE square — subtract this to make the hole */
+    -webkit-mask-image:
+        linear-gradient(#fff, #fff),
+        url("./assets/ui/Square-White.svg");
+    /* must be WHITE in the square area */
+    mask-image:
+        linear-gradient(#fff, #fff),
+        url("./assets/ui/Square-White.svg");
+
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+
+    -webkit-mask-position: center, left var(--text-window-x) top var(--text-window-y);
+    mask-position: center, left var(--text-window-x) top var(--text-window-y);
+
+    -webkit-mask-size: 100% 100%, var(--text-window-width) var(--text-window-height);
+    /* hole size = 150×150 */
+    mask-size: 100% 100%, var(--text-window-width) var(--text-window-height);
+
+    /* KEY: subtract the 2nd mask from the 1st */
+    -webkit-mask-composite: xor;
+    /* Chrome/Safari */
+    mask-composite: exclude;
+    /* Firefox */
+
+    mask-mode: luminance;
+    /* interpret white as visible, black as transparent */
+}
+
+.lk-page-overlay__img_bg {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: var(--overlay-height) !important;
+    max-height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.lk-page__content {
+    position: relative;
+    z-index: 3;
+    margin-left: calc(var(--text-window-x) - 122px);
+    margin-top: calc(-2 * (var(--overlay-height) - var(--text-window-y)));
+    width: var(--text-window-width);
+    min-height: var(--text-window-height);
+    background: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+    padding-bottom: calc(var(--overlay-height) - (var(--text-window-height)));
+
+}
+
+/* Keyframes: clip away the overlay from top→bottom */
+@keyframes lk-hide-overlay {
+    from {
+        clip-path: inset(0% 0 0 0);
+    }
+
+    /* fully covering the text */
+    to {
+        clip-path: inset(100% 0 0 0);
+    }
+
+    /* fully revealed text */
+}
+
+
+.page-header {
+    max-width: 1800px !important;
+
+}
+
+.p-article-header {
+    width: calc(100% - var(--right-bg-width-narrow)) !important;
+}
+
+.flexible-double-column {
+    display: contents;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: clamp(300px, 40vw, 1200px) 1fr var(--right-bg-width-narrow);
+    grid-auto-rows: min-content;
+    column-gap: 0;
+    row-gap: 0;
+    align-items: start;
+    /* max-width: var(--content-max) !important; */
+    max-width: 100%;
+    grid-auto-flow: row dense;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 2200px) {
+        grid-template-columns: clamp(300px, 40vw, 1200px) 1fr var(--right-bg-width-wide);
+    }
+}
+
+.content-grid>* {
+    grid-column: span 2;
+}
+
+.float-scope {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    /* keeps column widths/gutters aligned */
+    position: relative;
+    --map-portrait: 3 / 4;
+    --map-landscape: 4 / 3;
+    --map-aspect: var(--map-landscape);
+    overflow: clip;
+}
+
+.float-scope * {
+    grid-column: 1;
+}
+
+.float-rail {
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    position: sticky;
+    top: 80px;
+    z-index: 20;
+    height: 0;
+
+    padding: 0 16px;
+    overflow: visible;
+    pointer-events: none;
+
+    align-self: start;
+
+}
+
+.float-rail .float {
+    width: 100%;
+    aspect-ratio: var(--map-aspect);
+    grid-column: span 2;
+    margin: 0;
+    pointer-events: auto;
+}
+
+.float-rail .float>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.with-aside-content .aside-content {
+    position: relative;
+    z-index: 1;
+}
+
+.with-aside {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    align-items: stretch;
+}
+
+.with-aside .with-aside-body {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-auto-rows: min-content;
+}
+
+.float-scope .with-aside .with-aside-body {
+    grid-column: 1;
+}
+
+.with-aside .with-aside-sidebar {
+    grid-column: 3;
+    align-self: stretch;
+    /* display: grid;   */
+    min-height: 0;
+    /* disable automatic min-size */
+    contain: size;
+}
+
+.with-aside .with-aside-sidebar>img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    justify-self: center;
+    align-self: start;
+}
+
+.aside-sticker {
+    max-height: 31vh;
+    min-width: 120px;
+
+    @media (max-width: 1024px) and (min-width: 600px) {
+        float: right;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .with-aside {
+        display: grid;
+        grid-template-columns: 1fr var(--right-bg-width-narrow);
+    }
+
+    .with-aside .with-aside-body {
+        grid-column: 1;
+    }
+
+    .with-aside .with-aside-sidebar {
+        contain: unset;
+        grid-column: 2;
+    }
+
+    .aside-sticker {
+        justify-self: center;
+        max-height: 26vh;
+    }
+
+}
+
+@media (max-width: 475px) {
+    .with-aside {
+        display: block;
+    }
+}
+
+.narrow-column {
+    grid-column: 1;
+}
+
+.sidebar-column {
+    grid-column: 2;
+    position: relative;
+}
+
+.sidebar-container {
+    width: clamp(320px, 28vw, 420px);
+    position: absolute;
+    inset: 0 auto auto 0;
+    right: 0;
+}
+
+@media (min-width: 2200px) {
+
+    .p-article-header {
+        width: calc(100% - var(--right-bg-width-wide)) !important;
+    }
+
+    .content-grid {
+        grid-template-columns: clamp(300px, 40vw, 1200px) 1fr var(--right-bg-width-wide);
+
+    }
+}
+
+
+.text--quote-box {
+    border-radius: none;
+    /* tweak these to taste */
+    --paper: #efeadd;
+    --hash: #c7c1b4;
+    --strip-w: 8px;
+    /* width of the hashed strip on each side */
+    --dash: 1.5px;
+    /* dash thickness */
+    --gap: 1.5px;
+    /* space between dashes */
+
+    position: relative;
+    padding: 1rem;
+    padding-left: calc(1rem + var(--strip-w));
+    padding-right: calc(1rem + var(--strip-w));
+    background-color: var(--paper);
+    border-radius: 10px;
+
+    /* two repeating gradients, pinned left and right */
+    background-image: repeating-linear-gradient(to bottom,
+            var(--hash) 0 var(--dash),
+            transparent var(--dash) calc(var(--dash) + var(--gap))),
+        repeating-linear-gradient(to bottom,
+            var(--hash) 0 var(--dash),
+            transparent var(--dash) calc(var(--dash) + var(--gap)));
+
+    background-repeat: no-repeat, no-repeat;
+    background-size: var(--strip-w) 100%, var(--strip-w) 100%;
+    background-position: left top, right top;
+
+    /* optional subtle depth */
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 8px 20px rgba(0, 0, 0, .08) inset;
+
+    border-left-style: none;
+    border-right-style: none;
+
+    max-width: 600px;
+
+    margin: 12px auto;
+}
+
+.text--quote-box::after {
+    background-color: transparent;
+}
+
+.text--quote-box::before {
+    background-color: transparent;
+}
+
+.text--quote-box p:first-of-type:before {
+    background-color: transparent;
+}
+
+.text--quote-box p:last-of-type:after {
+    background-color: transparent;
+}
+
+.sidebar-menu {
+    background-color: transparent;
+    background-image: url("https://media-stg.dndbeyond.com/compendium-images/wthc/ui/wthc-nav-bottom.png"),
+        url("https://media-stg.dndbeyond.com/compendium-images/wthc/ui/wthc-nav-repeat.png");
+    background-position: center bottom,
+        center bottom;
+    background-repeat: no-repeat,
+        repeat-y;
+    background-size: 100% auto, 100% auto;
+    border: none;
+}
+
+.sidebar-menu .sidebar-scroll-menu {
+    border: none;
+    background-color: transparent;
+
+}
+
+.sidebar-menu-top.show-top,
+.sidenav-next-nav,
+.sidebar-menu,
+.sidebar-menu .quick-menu,
+ul.quick-menu.quick-menu-tier-2,
+.sidebar-menu .quick-menu * {
+    border: none;
+    background-color: transparent;
+}
+
+.sidebar-menu-top.show-top {
+    border-bottom: 1px solid lightgrey;
+
+}
+
+.map-nav-container {
+
+    position: relative;
+}
+
+.map-button {
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    ;
+    position: absolute;
+    padding: 6px;
+    background-color: white;
+    border: 0.25px solid black;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: none;
+    color: black !important;
+    font-family: "ITC Benguiat Bold", serif;
+    font-weight: bold;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.map-button:hover {
+    background-color: var(--nav-active-text);
+    color: white !important;
+    text-decoration: none;
+}
+
+.wthc-title {
+    margin-top: 16px !important;
+    font-family: "ITC Benguiat Bold", serif;
+    font-weight: bold;
+    font-size: 48px !important;
+    color: var(--header-underline) !important;
+    line-height: 64px;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0 !important;
+}
+
+.wthc-title-desc {
+    margin-top: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.wthc-title::after {
+    background-color: var(--header-underline) !important;
+}
+
+.wthc-subtitle {
+    font-family: "ITC Benguiat Book", serif;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+    .wthc-title {
+        font-size: 32px !important;
+        line-height: 40px;
+        margin-top: 8px !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+
+.container {
+    position: relative;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    height: 100%;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+.container::before {
+    left: 0;
+    background-position: top left;
+    width: var(--left-bg-width-narrow);
+}
+
+.container::after {
+    right: 0;
+    background-position: top right;
+    width: var(--right-bg-width-narrow);
+}
+
+
+
+@media (min-width: 2200px) {
+
+    .container::before {
+        width: var(--left-bg-width-wide);
+        left: calc(-1 * var(--half-gutter));
+    }
+
+    .container::after {
+        width: var(--right-bg-width-wide);
+        right: calc(-1 * var(--half-gutter));
+    }
+}
+
+/* center main content by adjusting the margins on the secondary content area (aka. the TOC sidebar) */
+
+#site.two-column .secondary-content {
+    margin-right: 36px;
+    margin-left: 36px;
+}
+
+.wthc-mobile {
+    display: none;
+}
+
+@media (min-width: 1850px) {
+    #site.two-column .secondary-content {
+        margin-left: clamp(36px, calc(19.484vw - 324.454px), 104px);
+    }
+}
+
+@media (min-width: 2200px) {
+    #site.two-column .secondary-content {
+        margin-left: calc(210px - 210 * ((100vw - 2200px) / 830));
+    }
+}
+
+@media (max-width: 1240px) {
+    .float-scope * {
+        grid-column: 1 / span 2;
+    }
+
+    .float-rail {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wthc-vertical {
+        display: block;
+    }
+
+    .wthc-desktop {
+        display: none;
+    }
+
+    .wthc-mobile {
+        display: block;
+    }
+
+    .content-grid {
+        display: block;
+
+    }
+
+    .text--handwriting-cursive {
+        opacity: 0;
+    }
+
+    .text--handwriting-print {
+        opacity: 1;
+    }
+}
+
+
+
+.artist-credit-left {
+    transform: translateY(24px) !important;
+    top: unset !important;
+    bottom: 0;
+}
+
+.artist-credit-alt {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #565a62;
+    text-align: center;
+}
+
+.wthc-appendix-artist-credit {
+    font-size: 12px;
+    color: #565a62;
+}
+
+.artist-credit-alt:before {
+    content: "Artist: ";
+}
+
+
+.nav-back-to-top {
+    z-index: 500;
+}

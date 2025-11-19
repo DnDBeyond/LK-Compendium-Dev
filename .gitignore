@@ -1,6 +1,22 @@
+# images & binaries
 *.png
 *.jpg
-*.tif
 *.jpeg
+*.tif
 *.svg
 *.indd
+
+# compiled book-level CSS (generated from SCSS)
+Sheets/Compendium/**/css/
+!Sheets/Compendium/**/css/.gitkeep
+
+# sourcemaps (local-only)
+*.css.map
+
+# local-only assets (kept empty with .gitkeep)
+Sheets/Compendium/**/assets/
+!Sheets/Compendium/**/assets/.gitkeep
+Sheets/Compendium/**/assets/ui/
+!Sheets/Compendium/**/assets/ui/.gitkeep
+Sheets/Compendium/**/assets/images/
+!Sheets/Compendium/**/assets/images/.gitkeep
