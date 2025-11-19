@@ -88,7 +88,7 @@ h1 {
 
 .dark-lords {
     font-family: "darka", sans-serif;
-    --h2-font-size: 4rem;
+    --h2-font-size: 8rem;
     --header-underline: transparent;
     --theme-page-h2-color: white !important;
 }
@@ -407,6 +407,15 @@ div.container {
     }
 }
 
+.lk-split-title__page-header {
+    position: relative;
+    z-index: 10;
+    grid-column: 2;
+    margin: clamp(3rem, 8vh, 8%) auto 0;
+    text-align: center;
+    color: white !important;
+}
+
 //STRAHD PAGE CUSTOMIZATIONS
 
 .lk-page__split-title#strahd-page {
@@ -419,7 +428,17 @@ div.container {
 
 .lk-page__split-title#strahd-page .lk-split-title__page-header {
     grid-column: 1;
-    margin-top: clamp(4rem, 12vh, 20%) !important;
+    position: absolute;
+    z-index: 15;
+    top: clamp(4rem, 11.5vh, 20%);
+    left: calc(var(--split-text-content-left) + var(--split-text-window-width) / 2);
+    transform: translateX(-50%);
+    // width: var(--split-text-window-width);
+    line-height: 0.8;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title__content {
+    padding: calc(var(--split-text-content-padding-top)* 0.8) 2rem var(--split-text-content-padding-bottom) 2rem !important;
 }
 
 .lk-page__split-title#strahd-page {
@@ -436,6 +455,15 @@ div.container {
 
 .lk-page__split-title#strahd-page .lk-split-title-overlay__splotch-container_top {
     overflow: visible;
+
+}
+
+.lk-page__split-title#strahd-page .lk-split-title-splot-top {
+    overflow: visible;
+    width: 100%;
+    margin-top: -28.9%;
+    margin-right: unset;
+
 }
 
 .lk-page__split-title#strahd-page .lk-split-title-overlay__img_side {
