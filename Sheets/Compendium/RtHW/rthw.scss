@@ -1,6 +1,5 @@
 @use "../../../Styles/mixins.scss";
 @import '../../../Styles/vars.scss';
-@import url("https://use.typekit.net/uva6amx.css");
 
 $slug-primarycolor: #a72e29;
 $slug-secondarycolor: #d7e8ee;
@@ -72,8 +71,8 @@ li::marker {
 }
 
 @font-face {
-    font-family: 'darka';
-    src: url('https://use.typekit.net/uva6amx.css');
+    font-family: 'Lordish';
+    src: url('https://fonts.dndbeyond.com/LordishRegular-9322990.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -86,13 +85,13 @@ li::marker {
 }
 
 h1 {
-    font-family: "darka", sans-serif;
+    font-family: "Lordish", sans-serif;
     --h1-font-size: 8rem;
     --h1-underline: transparent;
 }
 
 h2.dark-lords {
-    font-family: "darka", sans-serif;
+    font-family: "Lordish", sans-serif;
     --h2-font-size: 6rem;
     --header-underline: transparent;
     --theme-page-h2-color: white !important;

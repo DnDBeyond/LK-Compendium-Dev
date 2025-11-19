@@ -1,4 +1,3 @@
-@import url("https://use.typekit.net/uva6amx.css");
 :root {
   --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
   --theme-page-bg-image-1024: url();
@@ -117,8 +116,8 @@ li::marker {
 }
 
 @font-face {
-  font-family: "darka";
-  src: url("https://use.typekit.net/uva6amx.css");
+  font-family: "Lordish";
+  src: url("https://fonts.dndbeyond.com/LordishRegular-9322990.otf");
   font-weight: normal;
   font-style: normal;
 }
@@ -129,13 +128,13 @@ li::marker {
   font-style: normal;
 }
 h1 {
-  font-family: "darka", sans-serif;
+  font-family: "Lordish", sans-serif;
   --h1-font-size: 8rem;
   --h1-underline: transparent;
 }
 
 h2.dark-lords {
-  font-family: "darka", sans-serif;
+  font-family: "Lordish", sans-serif;
   --h2-font-size: 6rem;
   --header-underline: transparent;
   --theme-page-h2-color: white !important;
