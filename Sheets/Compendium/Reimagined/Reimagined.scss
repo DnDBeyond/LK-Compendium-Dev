@@ -57,6 +57,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Raven Hell';
+    src: url('https://fonts.dndbeyond.com/RavenHellRegularGothic-8795091.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1 {
     font-family: "darka", sans-serif;
     --h1-font-size: 6rem;
@@ -70,6 +77,43 @@ h1 {
 h1 span:first-of-type {
     font-size: 3rem;
     line-height: 0.8;
+}
+
+
+h1 {
+    font-family: "darka", sans-serif;
+    --h1-font-size: 8rem;
+    --h1-underline: transparent;
+}
+
+.dark-lords {
+    font-family: "darka", sans-serif;
+    --h2-font-size: 4rem;
+    --header-underline: transparent;
+    --theme-page-h2-color: white !important;
+}
+
+h2 {
+    font-family: "Raven Hell", sans-serif;
+    --h2-font-size: 2rem;
+    --header-underline: transparent;
+    --theme-page-h2-color: #618E39 !important;
+}
+
+h3 {
+    font-family: "Raven Hell", sans-serif;
+    --h3-underline: #618E39 !important;
+    --theme-page-h3-color: #618E39 !important;
+}
+
+h4 {
+    font-family: "Raven Hell", sans-serif;
+    --theme-page-h4-color: #618E39 !important;
+}
+
+h5 {
+    font-family: "Raven Hell", sans-serif;
+    --theme-page-h5-color: #618E39 !important;
 }
 
 .secondary-content {
@@ -124,6 +168,8 @@ div.container {
     --split-text-window-y: 70%;
     --split-text-window-x: 50%;
     --split-overlay-height: calc(100vh + var(--header-height));
+    --split-text-content-padding-top: 20rem;
+    --split-text-content-padding-bottom: 8rem;
     min-height: 100vh;
 
     --split-text-content-left: calc(var(--split-text-window-x) + 50px);
@@ -215,14 +261,18 @@ div.container {
     grid-template-columns: 2fr 3fr;
 }
 
-.lk-page__split-title .lk-split-title__overlay h1 {
-    margin-top: 8% !important;
-    z-index: 10;
-    color: white !important;
+.lk-split-title__page-header {
+    grid-column: 2;
+    margin: clamp(3rem, 8vh, 8%) auto 0;
     text-align: center;
+    color: white !important;
+    z-index: 10;
+    pointer-events: none;
 }
 
-
+.lk-split-title__page-header+.lk-split-title__page-header {
+    margin-top: 1.25rem;
+}
 
 .lk-split-title-overlay__img_side {
     grid-column: 1;
@@ -327,9 +377,9 @@ div.container {
     min-height: var(--split-text-window-height);
     backdrop-filter: blur(4px);
     border-radius: 12px;
-    padding: 5rem 2rem 2rem 2rem;
+    padding: var(--split-text-content-padding-top) 2rem var(--split-text-content-padding-bottom) 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
-    padding-bottom: clamp(2rem, 5vw, 4rem);
+    padding-bottom: var(--split-text-content-padding-bottom);
     -webkit-mask-image: linear-gradient(to top,
             rgba(0, 0, 0, 1) 0%,
             /* fully visible at bottom */
@@ -362,10 +412,14 @@ div.container {
     --split-content-pane: clamp(320px, 60vw, 1800px);
     --split-text-content-left: calc((var(--split-content-pane) - var(--split-text-window-width)) / 2);
     --split-text-window-x: calc(var(--split-text-content-left) + (var(--split-text-window-width) / 2));
+    --split-text-frame-left: var(--split-text-content-left);
+    --split-text-content-padding-top: 20rem;
+    --split-text-content-padding-bottom: 8rem;
 }
 
-.lk-page__split-title#strahd-page h1 {
-    margin-top: 20% !important;
+.lk-page__split-title#strahd-page .lk-split-title__page-header {
+    grid-column: 1;
+    margin-top: clamp(4rem, 12vh, 20%) !important;
 }
 
 .lk-page__split-title#strahd-page .lk-split-title__underlay {
