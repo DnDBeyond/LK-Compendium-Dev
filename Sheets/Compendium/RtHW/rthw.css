@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/uva6amx.css");
 :root {
   --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
   --theme-page-bg-image-1024: url();
@@ -116,40 +117,19 @@ li::marker {
 }
 
 @font-face {
-  font-family: "Coyote Blackletter";
-  src: url("https://fonts.dndbeyond.com/CoyoteBlackletterRegular-930861146.otf");
+  font-family: "darka";
+  src: url("https://use.typekit.net/uva6amx.css");
   font-weight: normal;
   font-style: normal;
 }
 h1 {
-  font-family: "Coyote Blackletter", serif;
+  font-family: "darka", sans-serif;
+  --h1-font-size: 8rem;
+  --h1-underline: transparent;
 }
 
 h2 {
-  font-family: "Coyote Blackletter", serif;
-}
-
-.strahd-s {
-  font-feature-settings: "0053" 1;
-}
-
-.strahd-tr {
-  font-variant-ligatures: none;
-}
-
-.strahd-a {
-  font-variant-ligatures: no-contextual;
-}
-
-.strahd-d {
-  font-variant-ligatures: no-contextual;
-}
-
-.strahd-n {
-  font-feature-settings: "006E" 1;
-  font-variant-ligatures: normal;
-}
-
-.strahd-z {
-  font-variant-ligatures: no-contextual;
+  font-family: "darka", sans-serif;
+  --h2-font-size: 6rem;
+  --header-underline: transparent;
 }/*# sourceMappingURL=rthw.css.map */
