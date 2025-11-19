@@ -34,7 +34,9 @@ $slug-secondarycolor: #d7e8ee;
     --compendium-link-contrast: #024687;
     @include mixins.new-tooltips;
 }
+
 @include mixins.hover-tooltips;
+
 #{$for-contrast} {
     --compendium-default-tooltip: #056736;
     --compendium-rule-tooltip: #836000;
@@ -43,6 +45,7 @@ $slug-secondarycolor: #d7e8ee;
     --compendium-monster-tooltip: #A70000;
     --compendium-condition-tooltip: #466501;
 }
+
 strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
 li::marker {
     color: #{$slug-primarycolor};
@@ -53,14 +56,18 @@ li::marker {
     --stat-block-bg-override: #{lighten($slug-secondarycolor, 7%)};
     //--stat-block-header-size: 18px;
     font-family: "Open Sans";
+
     .monster--stats p:nth-child(odd) {
         color: #{$slug-primarycolor};
     }
+
     .monster--action-header {
         font-family: "Open Sans";
         color: #{$slug-primarycolor};
     }
-    &::before, &::after {
+
+    &::before,
+    &::after {
         //--stat-block-scrollbar: url("#{$media-stg}/slug/ui/file-name.png");
         --stat-block-scrollbar: none;
         background-color: #{$slug-primarycolor};

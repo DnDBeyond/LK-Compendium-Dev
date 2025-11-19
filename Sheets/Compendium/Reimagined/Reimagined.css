@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://use.typekit.net/uva6amx.css");
 :root {
   --theme-page-bg-image-base: url("https://www.dndbeyond.com/attachments/0/84/background_texture.png");
   --content-max: 2200px;
@@ -44,6 +45,27 @@
   --wheat-core-ch-title-outline: #C9D3CA;
   --wheat-core-beige: #C3B272;
   --wheat-title-gradient: linear-gradient(0, #945c48, var(--wheat-core-h-red));
+}
+
+@font-face {
+  font-family: "darka";
+  src: url("https://use.typekit.net/uva6amx.css");
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+  font-family: "darka", sans-serif;
+  --h1-font-size: 6rem;
+  --h1-underline: transparent;
+  color: white !important;
+  z-index: 18;
+  line-height: 0.9;
+  text-align: center;
+}
+
+h1 span:first-of-type {
+  font-size: 3rem;
+  line-height: 0.8;
 }
 
 .secondary-content {
@@ -99,6 +121,14 @@ div.container {
   --split-text-window-x: 50%;
   --split-overlay-height: calc(100vh + var(--header-height));
   min-height: 100vh;
+  --split-text-content-left: calc(var(--split-text-window-x) + 50px);
+  --split-text-content-top: calc(-1 * (var(--split-overlay-height) - (var(--split-text-window-y)*.25)));
+  --split-text-window-bottom-padding: calc(var(--split-overlay-height) - (var(--split-text-window-height)) - 285px);
+  --frame-height-offset: 29px;
+  --split-text-frame-top: calc((var(--split-text-window-y) / 2) - (3 * var(--frame-height-offset)));
+  --split-text-frame-left: calc(var(--split-text-window-x) - 325px);
+  --split-text-frame-width: var(--split-text-window-width);
+  --split-text-frame-height: calc(var(--split-text-window-height) + var(--frame-height-offset)) !important;
 }
 
 .lk-split-title__underlay {
@@ -107,6 +137,22 @@ div.container {
   display: grid;
   grid-template-columns: 2fr 3fr;
   z-index: 2;
+  height: var(--split-overlay-height) !important;
+  max-height: 100vh;
+  z-index: 1;
+}
+
+.lk-split-title__gradient {
+  content: "";
+  grid-column: 2;
+  position: absolute;
+  width: var(--split-text-window-width);
+  height: calc(var(--split-text-window-height) + 20px) !important;
+  top: calc(var(--split-text-frame-top) - 20px);
+  left: var(--split-text-frame-left);
+  /* Top layer = pink pulse (confined to the text window)
+   Bottom layer = gray bottom fade (covers entire underlay) */
+  background-image: linear-gradient(to top, rgba(232, 0, 128, 0) 0%, rgba(232, 0, 128, 0) 86%, rgba(232, 0, 128, 0.225) 90%, rgba(232, 0, 128, 0) 95.5%, rgba(232, 0, 128, 0) 100%), linear-gradient(to top, rgb(230, 227, 227) 0%, rgb(230, 227, 227) 80.5%, rgb(230, 227, 227) 88.5%, rgba(230, 227, 227, 0) 98%, rgba(230, 227, 227, 0) 100%);
 }
 
 .lk-split-title-underlay__img_bg {
@@ -128,20 +174,20 @@ div.container {
      object-fit: cover;
   pointer-events: none;
   z-index: 5;
+  margin-top: -100vh;
   display: grid;
   grid-template-columns: 2fr 3fr;
 }
 
-.lk-page__split-title .lk-split-title__overlay h2 {
-  position: absolute;
-  top: 11% !important;
-  left: calc(var(--split-text-window-x) * 1 + 1px);
+.lk-page__split-title .lk-split-title__overlay h1 {
+  margin-top: 8% !important;
   z-index: 10;
   color: white !important;
-  top: 25px;
+  text-align: center;
 }
 
 .lk-split-title-overlay__img_side {
+  grid-column: 1;
   width: 100%;
   height: var(--split-overlay-height) !important;
   max-height: 100vh;
@@ -184,11 +230,15 @@ div.container {
 .lk-split-title-overlay__img_frame {
   grid-column: 2;
   position: absolute;
-  top: calc(var(--split-text-window-height) / 2);
-  left: calc(var(--split-text-window-x) - 325px);
-  width: var(--split-text-window-width);
-  height: calc(var(--split-text-window-height) - 44px) !important;
+  top: var(--split-text-frame-top);
+  left: var(--split-text-frame-left);
+  width: var(--split-text-frame-width);
+  height: var(--split-text-frame-height) !important;
   z-index: 12;
+  -webkit-mask-image: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 89%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 89%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-mode: alpha;
+  mask-mode: alpha;
 }
 
 .lk-page-overlay__img_bg {
@@ -206,17 +256,54 @@ div.container {
 .lk-split-title__content {
   position: relative;
   z-index: 3;
-  margin-left: calc(var(--split-text-window-x) + 50px);
-  margin-top: calc(-1 * (var(--split-overlay-height) - var(--split-text-window-y) * 0.24));
+  margin-top: var(--split-text-content-top);
+  margin-left: var(--split-text-content-left);
   width: var(--split-text-window-width);
   min-height: var(--split-text-window-height);
-  background: rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 5rem 2rem 2rem 2rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  padding-bottom: calc(var(--split-overlay-height) - (var(--split-text-window-height)) - 285px);
+  padding-bottom: var(--split-text-window-bottom-padding);
+  -webkit-mask-image: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 95%, rgba(0, 0, 0, 0) 98%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 95%, rgba(0, 0, 0, 0) 98%, rgba(0, 0, 0, 0) 100%);
+}
+
+.lk-page__split-title#strahd-page h1 {
+  margin-top: 20% !important;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title__underlay {
+  grid-template-columns: 3fr 2fr;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title__overlay {
+  grid-template-columns: 3fr 2fr;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title-overlay__splotch-container_top {
+  overflow: visible;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title-overlay__img_side {
+  grid-column: 2;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title__gradient {
+  grid-column: 1;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title-overlay__img_fg {
+  grid-column: 1;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title-overlay__img_frame {
+  grid-column: 1;
+}
+
+.lk-page__split-title#strahd-page .lk-split-title-underlay__img_bg {
+  grid-column: 1;
 }
 
 .lk-page__title {
@@ -252,6 +339,27 @@ div.container {
   z-index: 10;
   color: white !important;
   top: 25px;
+}
+
+.lk-split-title-overlay__splotch-container_top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: 6;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lk-split-title-splot-top {
+  margin-top: -3%;
+  margin-right: -12%;
+  width: 60%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .lk-page-overlay__img_fg {
