@@ -85,14 +85,45 @@ li::marker {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Raven Hell';
+    src: url('https://fonts.dndbeyond.com/RavenHellRegularGothic-8795091.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1 {
     font-family: "darka", sans-serif;
     --h1-font-size: 8rem;
     --h1-underline: transparent;
 }
 
-h2 {
+h2.dark-lords {
     font-family: "darka", sans-serif;
     --h2-font-size: 6rem;
     --header-underline: transparent;
+    --theme-page-h2-color: white !important;
+}
+
+h2 {
+    font-family: "Raven Hell", sans-serif;
+    --h2-font-size: 4rem;
+    --header-underline: transparent;
+    --theme-page-h2-color: #618E39 !important;
+}
+
+h3 {
+    font-family: "Raven Hell", sans-serif;
+    --h3-underline: #618E39 !important;
+        --theme-page-h3-color: #618E39 !important;
+}
+
+h4 {
+    font-family: "Raven Hell", sans-serif;
+    --theme-page-h4-color: #618E39 !important;
+}
+
+h5 {
+    font-family: "Raven Hell", sans-serif;
+    --theme-page-h5-color: #618E39 !important;
 }
