@@ -159,6 +159,7 @@ div.container {
   --header-height: 110px;
   --split-text-window-height: 600px;
   --split-text-window-width: 650px;
+  --split-text-window-mask-width: var(--split-text-window-width);
   --split-text-window-y: 70%;
   --split-text-window-x: 50%;
   --split-overlay-height: calc(100vh + var(--header-height));
@@ -274,8 +275,8 @@ div.container {
      object-fit: cover;
   /* ensure it covers the viewport */
   pointer-events: none;
-  /* Layer 1: full-rect white (base) — shows everything
-   Layer 2: WHITE square — subtract this to make the hole */
+  /* Layer 1: full-rect white (base) - shows everything
+   Layer 2: WHITE square - subtract this to make the hole */
   -webkit-mask-image: linear-gradient(#fff, #fff), url("./assets/ui/Square-White.svg");
   /* must be WHITE in the square area */
   mask-image: linear-gradient(#fff, #fff), url("./assets/ui/Square-White.svg");
@@ -283,9 +284,9 @@ div.container {
   mask-repeat: no-repeat, no-repeat;
   -webkit-mask-position: center, left var(--split-text-window-x) top var(--split-text-window-y);
   mask-position: center, left var(--split-text-window-x) top var(--split-text-window-y);
-  -webkit-mask-size: 100% 100%, var(--split-text-window-width) var(--split-text-window-height);
+  -webkit-mask-size: 100% 100%, var(--split-text-window-mask-width) var(--split-text-window-height);
   /* hole size = 150×150 */
-  mask-size: 100% 100%, var(--split-text-window-width) var(--split-text-window-height);
+  mask-size: 100% 100%, var(--split-text-window-mask-width) var(--split-text-window-height);
   /* KEY: subtract the 2nd mask from the 1st */
   -webkit-mask-composite: xor;
   /* Chrome/Safari */
@@ -349,9 +350,9 @@ div.container {
   }
 }
 .lk-page__split-title#strahd-page {
-  --split-content-pane: 650px;
-  --split-text-window-width: var(--split-content-pane);
-  --split-text-content-left: 25%;
+  --split-content-pane: clamp(320px, 40vw, 900px);
+  --split-text-content-left: clamp(48px, 12vw, 25%);
+  --split-text-window-width: min(var(--split-content-pane), calc(100% - var(--split-text-content-left) - 32px));
   --split-text-window-x: calc(var(--split-text-content-left) + (var(--split-text-window-width) / 2));
   --split-text-frame-left: var(--split-text-content-left);
 }
@@ -389,7 +390,7 @@ div.container {
   grid-column: 1;
   left: 0;
   right: auto;
-  width: min(65vw, var(--split-text-window-width) + var(--split-text-content-left) + 48px);
+  width: calc(var(--split-text-content-left) + var(--split-text-window-width) + 124px);
 }
 
 .lk-page__split-title#strahd-page .lk-split-title-overlay__img_frame {
