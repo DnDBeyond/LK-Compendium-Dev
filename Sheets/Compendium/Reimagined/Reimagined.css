@@ -90,6 +90,135 @@ div.container {
   padding: 0 !important;
 }
 
+.lk-page__split-title {
+  scroll-snap-align: start;
+  --header-height: 110px;
+  --split-text-window-height: 600px;
+  --split-text-window-width: 650px;
+  --split-text-window-y: 70%;
+  --split-text-window-x: 50%;
+  --split-overlay-height: calc(100vh + var(--header-height));
+  min-height: 100vh;
+}
+
+.lk-split-title__underlay {
+  position: sticky;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  z-index: 2;
+}
+
+.lk-split-title-underlay__img_bg {
+  grid-column: 2;
+  width: 100%;
+  height: var(--split-overlay-height) !important;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.lk-split-title__overlay {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--split-overlay-height) !important;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.lk-page__split-title .lk-split-title__overlay h2 {
+  position: absolute;
+  top: 11% !important;
+  left: calc(var(--split-text-window-x) * 1 + 1px);
+  z-index: 10;
+  color: white !important;
+  top: 25px;
+}
+
+.lk-split-title-overlay__img_side {
+  width: 100%;
+  height: var(--split-overlay-height) !important;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.lk-split-title-overlay__img_fg {
+  grid-column: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: var(--split-overlay-height) !important;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* ensure it covers the viewport */
+  pointer-events: none;
+  /* Layer 1: full-rect white (base) — shows everything
+   Layer 2: WHITE square — subtract this to make the hole */
+  -webkit-mask-image: linear-gradient(#fff, #fff), url("./assets/ui/Square-White.svg");
+  /* must be WHITE in the square area */
+  mask-image: linear-gradient(#fff, #fff), url("./assets/ui/Square-White.svg");
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-position: center, left var(--split-text-window-x) top var(--split-text-window-y);
+  mask-position: center, left var(--split-text-window-x) top var(--split-text-window-y);
+  -webkit-mask-size: 100% 100%, var(--split-text-window-width) var(--split-text-window-height);
+  /* hole size = 150×150 */
+  mask-size: 100% 100%, var(--split-text-window-width) var(--split-text-window-height);
+  /* KEY: subtract the 2nd mask from the 1st */
+  -webkit-mask-composite: xor;
+  /* Chrome/Safari */
+  mask-composite: exclude;
+  /* Firefox */
+  mask-mode: luminance;
+  /* interpret white as visible, black as transparent */
+}
+
+.lk-split-title-overlay__img_frame {
+  grid-column: 2;
+  position: absolute;
+  top: calc(var(--split-text-window-height) / 2);
+  left: calc(var(--split-text-window-x) - 325px);
+  width: var(--split-text-window-width);
+  height: calc(var(--split-text-window-height) - 44px) !important;
+  z-index: 12;
+}
+
+.lk-page-overlay__img_bg {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--split-overlay-height) !important;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lk-split-title__content {
+  position: relative;
+  z-index: 3;
+  margin-left: calc(var(--split-text-window-x) + 50px);
+  margin-top: calc(-1 * (var(--split-overlay-height) - var(--split-text-window-y) * 0.24));
+  width: var(--split-text-window-width);
+  min-height: var(--split-text-window-height);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding-bottom: calc(var(--split-overlay-height) - (var(--split-text-window-height)) - 285px);
+}
+
 .lk-page__title {
   position: relative;
   isolation: isolate;
@@ -168,11 +297,11 @@ div.container {
   z-index: 1;
 }
 
-.lk-page__content {
+.lk-page-title__content {
   position: relative;
   z-index: 3;
-  margin-left: calc(var(--text-window-x) - 122px);
-  margin-top: calc(-2 * (var(--overlay-height) - var(--text-window-y)));
+  margin-left: calc(var(--text-window-x) + 495px);
+  margin-top: calc(-1 * (var(--split-overlay-height) - var(--split-text-window-y) / 2));
   width: var(--text-window-width);
   min-height: var(--text-window-height);
   background: rgba(255, 255, 255, 0.8);
