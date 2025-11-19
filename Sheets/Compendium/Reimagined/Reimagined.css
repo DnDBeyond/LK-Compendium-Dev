@@ -426,6 +426,39 @@ div.container {
   grid-column: 1;
 }
 
+.lk-page__split-title#barovia-page {
+  --split-content-pane: clamp(320px, 40vw, 900px);
+  --split-text-content-left: clamp(48px, 10vw, 24%);
+  --split-text-window-width: min(var(--split-content-pane), calc(100% - var(--split-text-content-left) - 32px));
+  --split-text-window-mask-width: calc(var(--split-text-window-width) + 96px);
+  --split-text-window-x: calc(var(--split-text-content-left) + (var(--split-text-window-width) / 2));
+  --split-text-frame-left: var(--split-text-content-left);
+}
+
+.lk-page__split-title#barovia-page .lk-split-title__underlay,
+.lk-page__split-title#barovia-page .lk-split-title__overlay {
+  grid-template-columns: 1fr;
+}
+
+.lk-page__split-title#barovia-page .lk-split-title__page-header {
+  grid-column: 1;
+  position: absolute;
+  z-index: 15;
+  top: clamp(4rem, 11vh, 20%);
+  left: calc(var(--split-text-content-left) + var(--split-text-window-width) / 2);
+  transform: translateX(-50%);
+}
+
+.lk-page__split-title#barovia-page .lk-split-title__content {
+  padding: calc(var(--split-text-content-padding-top) * 0.8) 2rem var(--split-text-content-padding-bottom) 2rem !important;
+}
+
+.lk-page__split-title#barovia-page .lk-split-title-overlay__img_fg {
+  left: 0;
+  right: auto;
+  width: calc(var(--split-text-content-left) + var(--split-text-window-width) + 124px);
+}
+
 .lk-page__title {
   position: relative;
   isolation: isolate;
