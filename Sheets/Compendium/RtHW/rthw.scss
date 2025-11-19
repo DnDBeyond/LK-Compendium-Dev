@@ -1,0 +1,111 @@
+@use "../../../Styles/mixins.scss";
+@import '../../../Styles/vars.scss';
+
+$slug-primarycolor: #a72e29;
+$slug-secondarycolor: #d7e8ee;
+
+:root {
+    --theme-page-bg-image-base: url(https://www.dndbeyond.com/attachments/0/84/background_texture.png);
+    --theme-page-bg-image-1024: url();
+    --theme-page-bg-image-1921: url();
+    --theme-page-bg-image-2561: url();
+    --theme-table-row-bg-hover: #{darken($slug-secondarycolor, 10%)};
+    --theme-table-row-bg-dark: #{$slug-secondarycolor};
+    --theme-table-row-bg-light: #{lighten($slug-secondarycolor, 7%)};
+    --compendium-rules-sidebar-color: #{lighten($slug-secondarycolor, 5%)};
+    --compendium-quote-box-color: #{lighten($slug-primarycolor, 53%)};
+    --compendium-quote-box-border: #{darken($slug-secondarycolor, 50%)};
+    --compendium-quote-box-corner: #{darken($slug-secondarycolor, 50%)};
+    --header-underline: #{$slug-primarycolor};
+    --sidebar-active-border: #{$slug-primarycolor};
+    --sidebar-hover-border: #{darken($slug-primarycolor, 10%)};
+    --sidebar-active-bg: #{$slug-secondarycolor};
+    --sidebar-hover-bg: #{darken($slug-secondarycolor, 8%)};
+    --nav-active-text: #3c3c3c;
+    --nav-hover-text: #1d1d1d;
+    @include mixins.nav-red;
+    --nav-to-top-bg: #{$slug-primarycolor};
+    --nav-to-top-hover-bg: #{darken($slug-primarycolor, 10%)};
+    --theme-image-caption-link-bg-color: #{$slug-primarycolor};
+    --theme-image-caption-link-hover-color: #{darken($slug-primarycolor, 10%)};
+    --compendium-button-bg: #{$slug-primarycolor};
+    --compendium-button-hover-bg: #{darken($slug-primarycolor, 10%)};
+    --compendium-link-contrast: #024687;
+    @include mixins.new-tooltips;
+}
+@include mixins.hover-tooltips;
+#{$for-contrast} {
+    --compendium-default-tooltip: #056736;
+    --compendium-rule-tooltip: #836000;
+    --compendium-spell-tooltip: #5a35c5;
+    --compendium-magicitem-tooltip: #054ea9;
+    --compendium-monster-tooltip: #A70000;
+    --compendium-condition-tooltip: #466501;
+}
+strong:not(ul strong, .flexible-double-column.hangingIndent strong, .epigraph strong),
+li::marker {
+    color: #{$slug-primarycolor};
+}
+
+.monster--stat-block {
+    --stat-block-divider: #{$slug-primarycolor};
+    --stat-block-bg-override: #{lighten($slug-secondarycolor, 7%)};
+    //--stat-block-header-size: 18px;
+    font-family: "Open Sans";
+    .monster--stats p:nth-child(odd) {
+        color: #{$slug-primarycolor};
+    }
+    .monster--action-header {
+        font-family: "Open Sans";
+        color: #{$slug-primarycolor};
+    }
+    &::before, &::after {
+        //--stat-block-scrollbar: url("#{$media-stg}/slug/ui/file-name.png");
+        --stat-block-scrollbar: none;
+        background-color: #{$slug-primarycolor};
+        left: -4px;
+        right: -4px;
+        border-radius: 8px;
+        height: 8px;
+    }
+}
+
+@font-face {
+    font-family: 'Coyote Blackletter';
+    src: url('https://fonts.dndbeyond.com/CoyoteBlackletterRegular-930861146.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Coyote Blackletter', serif;
+}
+
+h2 {
+    font-family: 'Coyote Blackletter', serif;
+}
+
+.strahd-s {
+    font-feature-settings: "0053" 1;
+}
+
+.strahd-tr {
+    font-variant-ligatures: none;
+}
+
+.strahd-a {
+    font-variant-ligatures: no-contextual;
+}
+
+.strahd-d {
+    font-variant-ligatures: no-contextual;
+}
+
+.strahd-n {
+    font-feature-settings: "006E" 1;
+    font-variant-ligatures: normal;
+}
+
+.strahd-z {
+    font-variant-ligatures: no-contextual;
+}
