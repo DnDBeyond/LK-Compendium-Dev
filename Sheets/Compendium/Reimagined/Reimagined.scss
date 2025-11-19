@@ -126,11 +126,7 @@ div.container {
     --split-overlay-height: calc(100vh + var(--header-height));
     min-height: 100vh;
 
-    //Below are location variables to place the text box beneath the window.
-    //note that height and width work fine. 
     --split-text-content-left: calc(var(--split-text-window-x) + 50px);
-    --split-text-content-top: calc(-1 * (var(--split-overlay-height) - (var(--split-text-window-y)*.25)));
-    --split-text-window-bottom-padding: calc(var(--split-overlay-height) - (var(--split-text-window-height)) - 285px);
 
     //frame locators
     --frame-height-offset: 29px;
@@ -140,16 +136,32 @@ div.container {
     --split-text-frame-height: calc(var(--split-text-window-height) + var(--frame-height-offset)) !important;
 }
 
+.lk-split-title__container {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: [full] minmax(0, 1fr);
+}
+
+.lk-split-title__underlay,
+.lk-split-title__overlay,
+.lk-split-title__content {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
 .lk-split-title__underlay {
     position: sticky;
-    inset: 0;
+    top: 0;
+    align-self: start;
+    justify-self: stretch;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    z-index: 2;
+    width: 100%;
     height: var(--split-overlay-height) !important;
     max-height: 100vh;
+    pointer-events: none;
     z-index: 1;
-
 }
 
 .lk-split-title__gradient {
@@ -191,13 +203,14 @@ div.container {
 .lk-split-title__overlay {
     position: sticky;
     top: 0;
+    align-self: start;
+    justify-self: stretch;
     width: 100%;
     height: var(--split-overlay-height) !important;
     max-height: 100vh;
     object-fit: cover;
     pointer-events: none;
     z-index: 5;
-    margin-top: calc(-1 * 100vh);
     display: grid;
     grid-template-columns: 2fr 3fr;
 }
@@ -217,6 +230,8 @@ div.container {
     height: var(--split-overlay-height) !important;
     max-height: 100vh;
     object-fit: cover;
+    position: relative;
+    z-index: 2;
 }
 
 .lk-split-title-overlay__img_fg {
@@ -256,6 +271,7 @@ div.container {
 
     mask-mode: luminance;
     /* interpret white as visible, black as transparent */
+    z-index: 1;
 }
 
 .lk-split-title-overlay__img_frame {
@@ -300,16 +316,20 @@ div.container {
 
 .lk-split-title__content {
     position: relative;
+    align-self: start;
+    justify-self: start;
     z-index: 3;
-    margin-top: var(--split-text-content-top);
-    margin-left: var(--split-text-content-left);
-    width: var(--split-text-window-width);
+    margin-left: clamp(0px,
+            var(--split-text-content-left),
+            calc(100% - var(--split-text-window-width)));
+    margin-top: 0;
+    width: min(var(--split-text-window-width), calc(100% - 32px));
     min-height: var(--split-text-window-height);
     backdrop-filter: blur(4px);
     border-radius: 12px;
     padding: 5rem 2rem 2rem 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
-    padding-bottom: var(--split-text-window-bottom-padding);
+    padding-bottom: clamp(2rem, 5vw, 4rem);
     -webkit-mask-image: linear-gradient(to top,
             rgba(0, 0, 0, 1) 0%,
             /* fully visible at bottom */
@@ -327,8 +347,22 @@ div.container {
 
 }
 
+@media (max-width: 1200px) {
+
+    .lk-split-title__content {
+        margin-left: auto;
+        margin-right: auto;
+        width: min(var(--split-text-window-width), calc(100% - 32px));
+    }
+}
+
 //STRAHD PAGE CUSTOMIZATIONS
 
+.lk-page__split-title#strahd-page {
+    --split-content-pane: clamp(320px, 60vw, 1800px);
+    --split-text-content-left: calc((var(--split-content-pane) - var(--split-text-window-width)) / 2);
+    --split-text-window-x: calc(var(--split-text-content-left) + (var(--split-text-window-width) / 2));
+}
 
 .lk-page__split-title#strahd-page h1 {
     margin-top: 20% !important;
@@ -356,6 +390,9 @@ div.container {
 
 .lk-page__split-title#strahd-page .lk-split-title-overlay__img_fg {
     grid-column: 1;
+    left: 0;
+    right: auto;
+    width: min(65vw, calc(var(--split-text-window-width) + var(--split-text-content-left) + 48px));
 }
 
 .lk-page__split-title#strahd-page .lk-split-title-overlay__img_frame {
