@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://use.typekit.net/uva6amx.css");
 :root {
   --theme-page-bg-image-base: url("https://www.dndbeyond.com/attachments/0/84/background_texture.png");
   --content-max: 2200px;
@@ -10,9 +9,9 @@
   --left-bg-width-narrow: clamp(200px, 20vw, 600px);
   --right-bg-width-wide: clamp(200px, 25vw, 900px);
   --left-bg-width-wide: clamp(200px, 25vw, 900px);
-  --theme-table-row-bg-hover: rgba(204, 153, 102, 0.3);
-  --theme-table-row-bg-dark: #d9e1ce;
-  --theme-table-row-bg-light: #f1f4ee;
+  --theme-table-row-bg-hover: rgb(183, 181.1052631579, 220.8947368421) ;
+  --theme-table-row-bg-dark: #d9d8ed;
+  --theme-table-row-bg-light: #e9e9f5;
   --compendium-rules-sidebar-color: #d8e3e3;
   --compendium-quote-box-color: #d5dbd4;
   --compendium-quote-box-border: #425e47;
@@ -48,8 +47,8 @@
 }
 
 @font-face {
-  font-family: "darka";
-  src: url("https://use.typekit.net/uva6amx.css");
+  font-family: "Lordish";
+  src: url("https://fonts.dndbeyond.com/LordishRegular-9322990.otf");
   font-weight: normal;
   font-style: normal;
 }
@@ -60,7 +59,7 @@
   font-style: normal;
 }
 h1 {
-  font-family: "darka", sans-serif;
+  font-family: "Lordish", sans-serif;
   --h1-font-size: 6rem;
   --h1-underline: transparent;
   color: white !important;
@@ -75,13 +74,13 @@ h1 span:first-of-type {
 }
 
 h1 {
-  font-family: "darka", sans-serif;
+  font-family: "Lordish", sans-serif;
   --h1-font-size: 8rem;
   --h1-underline: transparent;
 }
 
 .dark-lords {
-  font-family: "darka", sans-serif;
+  font-family: "Lordish", sans-serif;
   --h2-font-size: 8rem;
   --header-underline: transparent;
   --theme-page-h2-color: white !important;
@@ -771,4 +770,232 @@ ul.quick-menu.quick-menu-tier-2,
 
 .sidebar-menu-top.show-top {
   border-bottom: 1px solid lightgrey;
+}
+
+.stat-block {
+  --compendium-p-bottom: 0;
+  border: 1px solid var(--stat-block-border-color, #a7a3a0);
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 5px 8px 0 var(--stat-block-shadow, #AAA);
+  background: var(--stat-block-bg-override, #f6f3ee);
+  background-position: top;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  line-height: 19.6px;
+  border-radius: 8px;
+  outline: 1px solid var(--stat-block-border-color, #a7a3a0);
+  outline-offset: -4px;
+  font-family: var(--stat-block-font, Roboto, Helvetica, sans-serif);
+  -moz-columns: 2 384px;
+       columns: 2 384px;
+}
+.stat-block :is(h2, h3, h4, h5) {
+  --header-font-override: 22px;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 8px;
+  margin-block-end: 0;
+  -moz-column-span: all;
+       column-span: all;
+}
+.stat-block :is(h2, h3, h4, h5)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  margin: 2px auto 8px;
+  height: 1px;
+  background: var(--monster-header-underline, #7a3c2f);
+  -moz-column-span: all;
+       column-span: all;
+}
+.stat-block p {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  font-size: 15px;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+.stat-block p + p {
+  --compendium-p-top: 10px;
+}
+.stat-block > p:first-of-type {
+  margin-top: 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+.stat-block > p:first-of-type + p {
+  --compendium-p-top: 16px;
+}
+.stat-block :is(ol, ul, dl) {
+  margin-bottom: 0;
+  padding-top: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.stat-block :is(ol, ul, dl) li {
+  margin: 8px 0 0 6px;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+.stat-block .monster-header {
+  padding-top: 4px;
+  letter-spacing: 0.35px;
+  font-weight: 500;
+  color: var(--monster-header-color, #5b160c);
+  font-size: var(--monster-trait-header-size, 18px);
+  font-family: var(--monster-trait-header-font, "Roboto Condensed", Helvetica, sans-serif);
+  border-bottom: 2px solid var(--monster-header-underline, #7a3c2f);
+}
+.stat-block .monster-header + p {
+  -moz-column-break-before: avoid;
+       break-before: avoid;
+}
+.stat-block .stats {
+  display: flex;
+  gap: 10px;
+}
+.stat-block .stats + p {
+  margin-top: 10px;
+}
+.stat-block .stats .table-overflow-wrapper {
+  flex: 1 1 auto;
+}
+.stat-block .stats table.abilities-saves {
+  --theme-table-row-color: transparent;
+  flex: 1 1 auto;
+  line-height: 24px;
+  background: revert;
+  border: none;
+  font-size: 16px;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+}
+.stat-block .stats table.abilities-saves.physical {
+  --stats-score: #ede6d9;
+  --stats-mods: #ded4cc;
+  --stats-score-hover: #997f6d7d;
+  --stats-mods-hover: #996d727d;
+}
+.stat-block .stats table.abilities-saves.mental {
+  --stats-score: #d8dad1;
+  --stats-mods: #d0caca;
+  --stats-score-hover: #6d8d997d;
+  --stats-mods-hover: #756d997d;
+}
+.stat-block .stats table.abilities-saves thead {
+  border: none;
+  height: revert;
+  min-height: 45px;
+}
+.stat-block .stats table.abilities-saves thead tr {
+  height: revert;
+  min-height: 45px;
+}
+.stat-block .stats table.abilities-saves thead tr th {
+  padding: 5px 2px 0 !important;
+  background: inherit;
+  color: inherit;
+  vertical-align: bottom;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+}
+.stat-block .stats table.abilities-saves thead th:is(:first-of-type, :nth-child(2)) {
+  opacity: 0;
+  min-width: 34px;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1px !important;
+  pointer-events: none;
+}
+.stat-block .stats table.abilities-saves tbody {
+  border: none;
+}
+.stat-block .stats table.abilities-saves tbody tr {
+  background-color: var(--theme-table-row-color, #fdfdfd);
+  color: var(--theme-table-header-fg-color, #222);
+}
+.stat-block .stats table.abilities-saves tbody tr:hover {
+  background-color: var(--stats-hover);
+}
+.stat-block .stats table.abilities-saves tbody tr:hover *:nth-child(-n+3) {
+  background-color: var(--stats-score-hover);
+}
+.stat-block .stats table.abilities-saves tbody tr:hover *:nth-child(n+3) {
+  background-color: var(--stats-mods-hover);
+}
+.stat-block .stats table.abilities-saves tbody tr *:nth-child(-n+3) {
+  background-color: var(--stats-score);
+}
+.stat-block .stats table.abilities-saves tbody tr *:nth-child(n+3) {
+  background-color: var(--stats-mods);
+}
+.stat-block .stats table.abilities-saves tbody th {
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  padding-left: 6px;
+  font-size: 16px;
+}
+.stat-block .stats table.abilities-saves tbody td {
+  min-width: revert;
+  padding: 5px 10px !important;
+  border: none;
+  font-size: 16px;
+}
+.stat-block .stats table.abilities-saves tr :is(th, td) {
+  transition: 0.3s;
+}
+.stat-block p:nth-of-type(2) strong + strong {
+  margin-left: 30px;
+}
+.stat-block figure {
+  position: static;
+  margin: 0 auto;
+}
+.stat-block figure .artist-credit {
+  text-align: end;
+  right: 0;
+  left: 0;
+  bottom: -6px;
+  top: unset;
+}
+.stat-block .legendary-actions {
+  color: var(--legendary-actions-color, #696665);
+  font-style: italic;
+  line-height: 1.3;
+  font-size: 15px;
+  font-weight: 500;
+}
+.stat-block + .flexible-double-column {
+  margin-top: 36px;
+}
+
+* + .stat-block {
+  margin-top: 24px;
+}
+
+.treasure-habitat {
+  --compendium-link-color: #004b93;
+  background-color: var(--treasure-bg, #f0e9da);
+  border-top: 2px solid var(--treasure-border, #d1bc90);
+  padding: 4px 8px;
+}
+.treasure-habitat strong + strong {
+  margin-left: 4px;
+}
+.treasure-habitat + .compendium-art {
+  margin-top: 16px;
+}
+
+p + .stat-block {
+  margin-top: 12px;
+}
+
+.separator + .monster-with-metadata {
+  --monster-with-metadata-margin: 0;
 }/*# sourceMappingURL=Reimagined.css.map */
