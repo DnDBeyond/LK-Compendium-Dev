@@ -9,7 +9,7 @@
   --left-bg-width-narrow: clamp(200px, 20vw, 600px);
   --right-bg-width-wide: clamp(200px, 25vw, 900px);
   --left-bg-width-wide: clamp(200px, 25vw, 900px);
-  --theme-table-row-bg-hover: rgb(183, 181.1052631579, 220.8947368421) ;
+  --theme-table-row-bg-hover: rgb(183, 181.1052631579, 220.8947368421);
   --theme-table-row-bg-dark: #d9d8ed;
   --theme-table-row-bg-light: #e9e9f5;
   --compendium-rules-sidebar-color: #d8e3e3;
@@ -165,7 +165,7 @@ div.container {
   --split-text-content-padding-top: 20rem;
   --split-text-content-padding-bottom: 8rem;
   min-height: 100vh;
-  --split-text-content-left: calc(var(--split-text-window-x) + 50px);
+  --split-text-content-left: calc(var(--split-text-window-x) + 100px);
   --frame-height-offset: 29px;
   --split-text-frame-top: calc((var(--split-text-window-y) / 2) - (3 * var(--frame-height-offset)));
   --split-text-frame-left: calc(var(--split-text-window-x) - 325px);
@@ -357,6 +357,38 @@ div.container {
   color: white !important;
 }
 
+.lk-split-title-overlay__splotch-container_bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 6;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.lk-split-title-overlay__splotch-container_top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 6;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.lk-split-title-splotch-bottom {
+  width: 100%;
+  align-self: flex-end;
+}
+
+.lk-split-title-splotch-top {
+  width: 100%;
+}
+
 .lk-page__split-title#strahd-page {
   --split-content-pane: clamp(320px, 40vw, 900px);
   --split-text-content-left: clamp(48px, 12vw, 25%);
@@ -423,19 +455,6 @@ div.container {
 
 .lk-page__split-title#strahd-page .lk-split-title-underlay__img_bg {
   grid-column: 1;
-}
-
-.lk-page__split-title#strahd-page .lk-split-title-overlay__splotch-container_bottom {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 6;
-  width: auto;
-  height: auto;
-}
-
-.lk-page__split-title#strahd-page .lk-split-title-splotch-bottom {
-  margin-bottom: -495px;
 }
 
 .lk-page__split-title#barovia-page {
@@ -516,6 +535,10 @@ div.container {
 .lk-page__split-title#barovia-page .lk-split-title-splotch-bottom {
   width: 100% !important;
   margin-top: -300px;
+}
+
+.stat-block {
+  color: black !important;
 }
 
 .lk-page__split-title#barovia-page .lk-split-title-overlay__card_1 {

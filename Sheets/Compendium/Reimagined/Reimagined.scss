@@ -9,7 +9,7 @@
     --right-bg-width-wide: clamp(200px, 25vw, 900px);
     --left-bg-width-wide: clamp(200px, 25vw, 900px);
 
-    --theme-table-row-bg-hover: #{darken(#d9d8ed, 10%)} ;
+    --theme-table-row-bg-hover: #{darken(#d9d8ed, 10%)};
     --theme-table-row-bg-dark: #d9d8ed;
     --theme-table-row-bg-light: #e9e9f5;
     --compendium-rules-sidebar-color: #d8e3e3;
@@ -171,7 +171,7 @@ div.container {
     --split-text-content-padding-bottom: 8rem;
     min-height: 100vh;
 
-    --split-text-content-left: calc(var(--split-text-window-x) + 50px);
+    --split-text-content-left: calc(var(--split-text-window-x) + 100px);
 
     //frame locators
     --frame-height-offset: 29px;
@@ -414,6 +414,40 @@ div.container {
     color: white !important;
 }
 
+.lk-split-title-overlay__splotch-container_bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 6;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.lk-split-title-overlay__splotch-container_top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 6;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+}
+
+.lk-split-title-splotch-bottom {
+    width: 100%;
+    align-self: flex-end;
+    // align-self: flex-end;
+}
+
+.lk-split-title-splotch-top {
+    width: 100%;
+    // align-self: flex-start;
+}
+
 //STRAHD PAGE CUSTOMIZATIONS
 
 .lk-page__split-title#strahd-page {
@@ -487,17 +521,17 @@ div.container {
     grid-column: 1;
 }
 
-.lk-page__split-title#strahd-page .lk-split-title-overlay__splotch-container_bottom {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 6;
-    width: auto;
-    height: auto;
-}
+// .lk-page__split-title#strahd-page .lk-split-title-overlay__splotch-container_bottom {
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//     z-index: 6;
+//     width: auto;
+//     height: auto;
+// }
 
 .lk-page__split-title#strahd-page .lk-split-title-splotch-bottom {
-    margin-bottom: -495px
+    // margin-bottom: -495px
 }
 
 
@@ -601,6 +635,10 @@ div.container {
     width: 100% !important;
     margin-top: -300px;
 
+}
+
+.stat-block {
+    color: black !important;
 }
 
 .lk-page__split-title#barovia-page .lk-split-title-overlay__card_1 {
@@ -911,267 +949,267 @@ ul.quick-menu.quick-menu-tier-2,
 
 // MONSTER STAT BLOCK
 .stat-block {
-        --compendium-p-bottom: 0;
-        border: 1px solid var(--stat-block-border-color, #a7a3a0);
-        padding: 10px;
-        position: relative;
-        box-shadow: 0 5px 8px 0 var(--stat-block-shadow, #AAA);
-        background: var(--stat-block-bg-override, #f6f3ee);
-        background-position: top;
-        background-repeat: no-repeat;
-        font-size: 16px;
-        line-height: 19.6px;
-        border-radius: 8px;
-        outline: 1px solid var(--stat-block-border-color, #a7a3a0);
-        outline-offset: -4px;
-        font-family: var(--stat-block-font, Roboto, Helvetica, sans-serif);
-        columns: 2 384px;
+    --compendium-p-bottom: 0;
+    border: 1px solid var(--stat-block-border-color, #a7a3a0);
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 5px 8px 0 var(--stat-block-shadow, #AAA);
+    background: var(--stat-block-bg-override, #f6f3ee);
+    background-position: top;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    line-height: 19.6px;
+    border-radius: 8px;
+    outline: 1px solid var(--stat-block-border-color, #a7a3a0);
+    outline-offset: -4px;
+    font-family: var(--stat-block-font, Roboto, Helvetica, sans-serif);
+    columns: 2 384px;
 
-        :is(h2, h3, h4, h5) {
-            --header-font-override: 22px;
-            font-family: "Roboto Condensed";
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-right: 8px;
-            margin-block-end: 0;
+    :is(h2, h3, h4, h5) {
+        --header-font-override: 22px;
+        font-family: "Roboto Condensed";
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-right: 8px;
+        margin-block-end: 0;
+        column-span: all;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            margin: 2px auto 8px;
+            height: 1px;
+            background: var(--monster-header-underline, #7a3c2f);
             column-span: all;
+        }
+    }
 
-            &::after {
-                content: "";
-                display: block;
-                width: 100%;
-                margin: 2px auto 8px;
-                height: 1px;
-                background: var(--monster-header-underline, #7a3c2f);
-                column-span: all;
-            }
+    p {
+        break-inside: avoid;
+        font-size: 15px;
+        line-height: 1.4;
+        text-wrap: pretty;
+
+        +p {
+            --compendium-p-top: 10px;
         }
 
-        p {
+    }
+
+    >p:first-of-type {
+        margin-top: 0;
+        font-style: italic;
+        opacity: 0.8;
+
+        +p {
+            --compendium-p-top: 16px;
+        }
+    }
+
+    :is(ol, ul, dl) {
+        margin-bottom: 0;
+        padding-top: 0;
+        font-size: 15px;
+        line-height: 1.4;
+
+        li {
+            margin: 8px 0 0 6px;
             break-inside: avoid;
-            font-size: 15px;
-            line-height: 1.4;
-            text-wrap: pretty;
+        }
+    }
 
-            +p {
-                --compendium-p-top: 10px;
-            }
+    .monster-header {
+        padding-top: 4px;
+        letter-spacing: .35px;
+        font-weight: 500;
+        color: var(--monster-header-color, #5b160c);
+        font-size: var(--monster-trait-header-size, 18px);
+        font-family: var(--monster-trait-header-font, 'Roboto Condensed', Helvetica, sans-serif);
+        border-bottom: 2px solid var(--monster-header-underline, #7a3c2f);
 
+        +p {
+            break-before: avoid;
+        }
+    }
+
+    .stats {
+        display: flex;
+        gap: 10px;
+
+        +p {
+            margin-top: 10px;
         }
 
-        >p:first-of-type {
-            margin-top: 0;
-            font-style: italic;
-            opacity: 0.8;
-
-            +p {
-                --compendium-p-top: 16px;
-            }
+        .table-overflow-wrapper {
+            flex: 1 1 auto;
         }
 
-        :is(ol, ul, dl) {
-            margin-bottom: 0;
-            padding-top: 0;
-            font-size: 15px;
-            line-height: 1.4;
+        table.abilities-saves {
+            --theme-table-row-color: transparent;
+            flex: 1 1 auto;
+            line-height: 24px;
+            background: revert;
+            border: none;
+            font-size: 16px;
+            break-inside: avoid;
 
-            li {
-                margin: 8px 0 0 6px;
-                break-inside: avoid;
-            }
-        }
-
-        .monster-header {
-            padding-top: 4px;
-            letter-spacing: .35px;
-            font-weight: 500;
-            color: var(--monster-header-color, #5b160c);
-            font-size: var(--monster-trait-header-size, 18px);
-            font-family: var(--monster-trait-header-font, 'Roboto Condensed', Helvetica, sans-serif);
-            border-bottom: 2px solid var(--monster-header-underline, #7a3c2f);
-
-            +p {
-                break-before: avoid;
-            }
-        }
-
-        .stats {
-            display: flex;
-            gap: 10px;
-
-            +p {
-                margin-top: 10px;
+            &.physical {
+                --stats-score: #ede6d9;
+                --stats-mods: #ded4cc;
+                --stats-score-hover: #997f6d7d;
+                --stats-mods-hover: #996d727d;
             }
 
-            .table-overflow-wrapper {
-                flex: 1 1 auto;
+            &.mental {
+                --stats-score: #d8dad1;
+                --stats-mods: #d0caca;
+                --stats-score-hover: #6d8d997d;
+                --stats-mods-hover: #756d997d;
             }
 
-            table.abilities-saves {
-                --theme-table-row-color: transparent;
-                flex: 1 1 auto;
-                line-height: 24px;
-                background: revert;
+
+            thead {
                 border: none;
-                font-size: 16px;
-                break-inside: avoid;
+                height: revert;
+                min-height: 45px;
 
-                &.physical {
-                    --stats-score: #ede6d9;
-                    --stats-mods: #ded4cc;
-                    --stats-score-hover: #997f6d7d;
-                    --stats-mods-hover: #996d727d;
-                }
-
-                &.mental {
-                    --stats-score: #d8dad1;
-                    --stats-mods: #d0caca;
-                    --stats-score-hover: #6d8d997d;
-                    --stats-mods-hover: #756d997d;
-                }
-
-
-                thead {
-                    border: none;
+                tr {
                     height: revert;
                     min-height: 45px;
-
-                    tr {
-                        height: revert;
-                        min-height: 45px;
-                    }
-
-                    tr th {
-                        padding: 5px 2px 0 !important;
-                        background: inherit;
-                        color: inherit;
-                        vertical-align: bottom;
-                        border: none;
-                        text-transform: uppercase;
-                        font-weight: 500;
-                        font-size: 14px;
-                    }
-
-                    // for purposes of accessibility, we need to make the first two column headers almost invisible,
-                    // but still in the DOM. It's a janky solution, but it gets the job done.
-                    th:is(:first-of-type, :nth-child(2)) {
-                        opacity: 0;
-                        min-width: 34px;
-                        text-overflow: clip;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        font-size: 1px !important;
-                        pointer-events: none;
-                    }
                 }
 
-                tbody {
+                tr th {
+                    padding: 5px 2px 0 !important;
+                    background: inherit;
+                    color: inherit;
+                    vertical-align: bottom;
                     border: none;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
 
-                    tr {
-                        background-color: var(--theme-table-row-color, #fdfdfd);
-                        color: var(--theme-table-header-fg-color, #222);
+                // for purposes of accessibility, we need to make the first two column headers almost invisible,
+                // but still in the DOM. It's a janky solution, but it gets the job done.
+                th:is(:first-of-type, :nth-child(2)) {
+                    opacity: 0;
+                    min-width: 34px;
+                    text-overflow: clip;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    font-size: 1px !important;
+                    pointer-events: none;
+                }
+            }
 
-                        &:hover {
-                            background-color: var(--stats-hover);
+            tbody {
+                border: none;
 
-                            *:nth-child(-n+3) {
-                                background-color: var(--stats-score-hover);
-                            }
+                tr {
+                    background-color: var(--theme-table-row-color, #fdfdfd);
+                    color: var(--theme-table-header-fg-color, #222);
 
-                            *:nth-child(n+3) {
-                                background-color: var(--stats-mods-hover);
-                            }
-                        }
+                    &:hover {
+                        background-color: var(--stats-hover);
 
                         *:nth-child(-n+3) {
-                            background-color: var(--stats-score);
+                            background-color: var(--stats-score-hover);
                         }
 
                         *:nth-child(n+3) {
-                            background-color: var(--stats-mods);
+                            background-color: var(--stats-mods-hover);
                         }
                     }
 
-                    th {
-                        text-transform: uppercase;
-                        font-weight: bold;
-                        border: none;
-                        padding-left: 6px;
-                        font-size: 16px;
+                    *:nth-child(-n+3) {
+                        background-color: var(--stats-score);
                     }
 
-                    td {
-                        min-width: revert;
-                        padding: 5px 10px !important;
-                        border: none;
-                        font-size: 16px;
+                    *:nth-child(n+3) {
+                        background-color: var(--stats-mods);
                     }
-
                 }
 
-                tr :is(th, td) {
-                    transition: .3s;
+                th {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    border: none;
+                    padding-left: 6px;
+                    font-size: 16px;
+                }
+
+                td {
+                    min-width: revert;
+                    padding: 5px 10px !important;
+                    border: none;
+                    font-size: 16px;
                 }
 
             }
 
-        }
-
-        p:nth-of-type(2) strong+strong {
-            margin-left: 30px;
-        }
-
-        figure {
-            position: static;
-            margin: 0 auto;
-
-            .artist-credit {
-                text-align: end;
-                right: 0;
-                left: 0;
-                bottom: -6px;
-                top: unset;
+            tr :is(th, td) {
+                transition: .3s;
             }
+
         }
 
-        .legendary-actions {
-            color: var(--legendary-actions-color, #696665);
-            font-style: italic;
-            line-height: 1.3;
-            font-size: 15px;
-            font-weight: 500;
-        }
+    }
 
-        + .flexible-double-column {
-            margin-top: 36px;
+    p:nth-of-type(2) strong+strong {
+        margin-left: 30px;
+    }
+
+    figure {
+        position: static;
+        margin: 0 auto;
+
+        .artist-credit {
+            text-align: end;
+            right: 0;
+            left: 0;
+            bottom: -6px;
+            top: unset;
         }
     }
 
-    *+.stat-block {
-        margin-top: 24px;
+    .legendary-actions {
+        color: var(--legendary-actions-color, #696665);
+        font-style: italic;
+        line-height: 1.3;
+        font-size: 15px;
+        font-weight: 500;
     }
 
-    .treasure-habitat {
-        --compendium-link-color: #004b93;
-        background-color: var(--treasure-bg, #f0e9da);
-        border-top: 2px solid var(--treasure-border, #d1bc90);
-        padding: 4px 8px;
+    +.flexible-double-column {
+        margin-top: 36px;
+    }
+}
 
-        strong+strong {
-            margin-left: 4px;
-        }
+*+.stat-block {
+    margin-top: 24px;
+}
 
-        + .compendium-art {
-            margin-top: 16px;
-        }
+.treasure-habitat {
+    --compendium-link-color: #004b93;
+    background-color: var(--treasure-bg, #f0e9da);
+    border-top: 2px solid var(--treasure-border, #d1bc90);
+    padding: 4px 8px;
+
+    strong+strong {
+        margin-left: 4px;
     }
 
-    p + .stat-block {
-        margin-top: 12px;
+    +.compendium-art {
+        margin-top: 16px;
     }
+}
+
+p+.stat-block {
+    margin-top: 12px;
+}
 
 
-.separator + .monster-with-metadata {
+.separator+.monster-with-metadata {
     --monster-with-metadata-margin: 0;
 }
