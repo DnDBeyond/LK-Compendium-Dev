@@ -167,7 +167,7 @@ div.container {
     --split-text-window-y: 70%;
     --split-text-window-x: 50%;
     --split-overlay-height: calc(100vh + var(--header-height));
-    --split-text-content-padding-top: 20rem;
+    --split-text-content-padding-top: 25rem;
     --split-text-content-padding-bottom: 8rem;
     min-height: 100vh;
 
@@ -262,16 +262,16 @@ div.container {
 
 .lk-split-title__page-header {
     grid-column: 2;
-    margin: clamp(3rem, 8vh, 8%) auto 0;
+    margin: clamp(3rem, 9vh, 8%) auto 0 !important;
     text-align: center;
     color: white !important;
     z-index: 10;
     pointer-events: none;
 }
 
-.lk-split-title__page-header+.lk-split-title__page-header {
-    margin-top: 1.25rem;
-}
+// .lk-split-title__page-header+.lk-split-title__page-header {
+//     margin-top: 1.25rem;
+// }
 
 .lk-split-title-overlay__img_side {
     grid-column: 1;
@@ -326,7 +326,7 @@ div.container {
 .lk-split-title-overlay__img_frame {
     grid-column: 2;
     position: absolute;
-    top: var(--split-text-frame-top);
+    top: calc(var(--split-text-frame-top) + 20px);
     left: var(--split-text-frame-left);
     width: var(--split-text-frame-width);
     height: var(--split-text-frame-height) !important;
@@ -375,7 +375,6 @@ div.container {
     width: min(var(--split-text-window-width), calc(100% - 32px));
     min-height: var(--split-text-window-height);
     backdrop-filter: blur(4px);
-    border-radius: 12px;
     padding: var(--split-text-content-padding-top) 2rem var(--split-text-content-padding-bottom) 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
     padding-bottom: var(--split-text-content-padding-bottom);
@@ -414,18 +413,6 @@ div.container {
     color: white !important;
 }
 
-.lk-split-title-overlay__splotch-container_bottom {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 6;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
 .lk-split-title-overlay__splotch-container_top {
     position: absolute;
     top: 0;
@@ -456,6 +443,7 @@ div.container {
     --split-text-window-width: min(var(--split-content-pane), calc(100% - var(--split-text-content-left) - 32px));
     --split-text-window-x: calc(var(--split-text-content-left) + (var(--split-text-window-width) / 2));
     --split-text-frame-left: var(--split-text-content-left);
+    --split-text-content-padding-top: 30rem;
 }
 
 .lk-page__split-title#strahd-page .lk-split-title__page-header {
@@ -471,6 +459,7 @@ div.container {
 
 .lk-page__split-title#strahd-page .lk-split-title__content {
     padding: calc(var(--split-text-content-padding-top)* 0.8) 2rem var(--split-text-content-padding-bottom) 2rem !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .85);
 }
 
 .lk-page__split-title#strahd-page {
@@ -530,8 +519,18 @@ div.container {
 //     height: auto;
 // }
 
+.lk-page__split-title#strahd-page .lk-split-title-overlay__splotch-container_bottom {
+    grid-column: 1 / -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+}
+
 .lk-page__split-title#strahd-page .lk-split-title-splotch-bottom {
-    // margin-bottom: -495px
+    margin-bottom: -596px
 }
 
 
@@ -544,7 +543,7 @@ div.container {
 
 }
 
-.lk-page__split-title#barovia-page .lk-split-title__underlay,
+.lk-page__split-title#barovia-page .l   k-split-title__underlay,
 .lk-page__split-title#barovia-page .lk-split-title__overlay {
     grid-template-columns: 1fr;
     perspective: 900px;
@@ -568,7 +567,7 @@ div.container {
         /* 2) gray bottom fade */
         linear-gradient(to top,
             rgba(230, 227, 227, 0.75) 0%,
-            rgba(230, 227, 227, 0.75) 80.5%,
+            rgba(230, 227, 227, 1) 80.5%,
 
             rgba(230, 227, 227, 0.75) 88.5%,
             rgba(230, 227, 227, 0) 98%,
@@ -578,6 +577,7 @@ div.container {
 .lk-page__split-title#barovia-page .lk-split-title-overlay__img_frame {
     grid-column: 1;
     left: var(--split-text-content-left);
+    top: calc(var(--split-text-frame-top) + 20px);
 }
 
 
@@ -603,20 +603,15 @@ div.container {
 }
 
 .lk-page__split-title#barovia-page .lk-split-title-overlay__splotch-container_top {
-    position: sticky;
-    margin-top: -422px;
-    top: 0;
-    right: 0;
-    z-index: 6;
-    width: auto;
-    height: auto;
+    // position: sticky;
+    // margin-top: -222px;
     overflow: visible;
 }
 
 .lk-page__split-title#barovia-page .lk-split-title-splotch-top {
     position: sticky;
     margin-right: 0;
-    margin-top: -492px;
+    margin-top: -595px;
     top: 0;
     z-index: 6;
     width: 100% !important;
@@ -829,7 +824,6 @@ div.container {
     /* Chrome/Safari */
     mask-composite: exclude;
     /* Firefox */
-
     mask-mode: luminance;
     /* interpret white as visible, black as transparent */
 }
