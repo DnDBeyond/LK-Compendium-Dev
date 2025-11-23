@@ -222,8 +222,8 @@ h3::after {
     inset: 0;
     background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-base-polygon-v2.svg");
     background-repeat: no-repeat;
-    background-size: 106% auto;
-    background-position: 92% 359%;
+    background-size: 108.5% auto;
+    background-position: 71% 229%;
     margin: 0 !important;
     background-color: transparent !important;
     height: auto !important;
@@ -238,6 +238,20 @@ h3::after {
     background-repeat: no-repeat, no-repeat;
     background-size: 15% 15%, 106% auto;
     background-position: 98% 67%, 100% 230%;
+    margin: 0 !important;
+    background-color: transparent !important;
+    height: auto !important;
+    z-index: 0;
+}
+
+.efota-title.efota-title-intro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/bg-intro-polygon.svg");
+    background-repeat: no-repeat;
+    background-size: 108.5% auto;
+    background-position: 78% 81%;
     margin: 0 !important;
     background-color: transparent !important;
     height: auto !important;
@@ -323,8 +337,9 @@ h3::after {
     text-transform: uppercase;
     font-weight: 700;
     &.efota-intro-title {
-        left: 19.5% !important;
-        bottom: 77.75% !important;
+        left: 17.5% !important;
+        bottom: 72% !important;
+        font-size: 2.4rem !important;
         transform: rotate(-5deg) skew(-5deg) !important;
     }
 }
@@ -643,34 +658,114 @@ tbody th {
     border-image: linear-gradient(to bottom, #000 0%, #0000 100%) 1;
     background-clip: padding-box;
     line-height: 0.75rem;
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: -15px;
+    //     height: 100%;
+    //     width: 7px;
+    //     background-image: linear-gradient(to bottom, #000 0%, #0000 100%);
+    // }
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     right: -15px;
+    //     height: 100%;
+    //     width: 7px;
+    //     background-image: linear-gradient(to bottom, #000 0%, #0000 100%);
+    // }
     &::before {
         content: "";
         position: absolute;
         top: 0;
-        left: -15px;
-        height: 100%;
-        width: 7px;
-        background-image: linear-gradient(to bottom, #000 0%, #0000 100%);
+        right: 0;
+        border-style: solid;
+        border-color: transparent #1a1818 transparent transparent;
+        border-width: 0px 250px 70px 0;
+        height: 0;
+        width: 0;
+        z-index: 1;
     }
     &::after {
         content: "";
         position: absolute;
-        top: 0;
-        right: -15px;
+        inset: 0px -15px ;
+        pointer-events: none;
+        z-index: 0;
         height: 100%;
-        width: 7px;
-        background-image: linear-gradient(to bottom, #000 0%, #0000 100%);
+        border-style: none solid;
+        border-width: 0 7px;
+        border-image-source: linear-gradient(to bottom, #000 0%, #0000 100%);
+        border-image-slice: 1;
     }
 }
 
-.efota--genre-box.genre-triangle {
-    border-color: transparent red transparent transparent;
-    border-style: solid;
-    border-width: 0px 200px 200px 200px;
-    height: 0px;
-    width: 0px;
+@media (max-width: 600px) {
+        .efota--genre-box {
+        margin: 10px !important;
+        padding: 75px 10px 10px 10px !important;
+        line-height: 1.25rem !important;
+        text-wrap: pretty;
+        // &::before {
+        //     border-width: 0px 250px 50px 0 !important;
+        // }
+        // &::after {
+        //     height: 100% !important;
+        // }
+    }
+
 }
 
 .house-banner {
     margin-top: 10px;
+}
+
+
+.efota-dropcap {
+  position: relative;
+  --dropcap-letter-size: 3.5rem;
+   --efota-dropcap-art: url("https://media-stg.dndbeyond.com/compendium-images/efota/ui/efota-dropcap-art.png");
+}
+
+.efota-dropcap::first-line {
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+  max-width: 400px;
+}
+
+.efota-dropcap::first-letter {
+  --efota-dropcap-font: "Probeta SC", san serif;
+  font-style: normal;
+  -webkit-text-stroke: 2px #f2f1ed;
+  margin-right: 0.25rem;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #{$efota-primarycolor} !important;
+  font-family: var(--efota-dropcap-font);
+  font-size: var(--dropcap-letter-size) !important;
+  font-weight: 700 !important;
+
+  // initial-letter: 2 2;
+ @supports (initial-letter: 2 2) {
+    initial-letter: 2 2;
+    margin-right: 0.35rem;
+  }
+}
+
+.efota-dropcap::before {
+    background-image: var(--efota-dropcap-art);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% 100%;
+    position: absolute;
+    content: "";
+    // width: 3.5rem;
+    height: calc(var(--dropcap-letter-size) * 0.8);
+    aspect-ratio: 163 / 350;
+    top: 5px;
+    // transform: translateY(-25%);
+    left: calc(-1 * (var(--dropcap-letter-size) * 0.3));
+    z-index: -1;
 }
