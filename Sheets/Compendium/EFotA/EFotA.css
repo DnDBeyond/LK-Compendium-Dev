@@ -706,7 +706,7 @@ tbody th {
   }
 }
 .house-banner {
-  margin-top: 10px;
+  margin-top: 10px !important;
 }
 
 .efota-dropcap {
