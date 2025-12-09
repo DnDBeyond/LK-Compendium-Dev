@@ -463,7 +463,7 @@ div.container {
   --split-text-window-x: calc(var(--split-text-content-left));
 }
 
-.lk-page__split-title#barovia-page .lk-split-title__underlay,
+.lk-page__split-title#barovia-page .l k-split-title__underlay,
 .lk-page__split-title#barovia-page .lk-split-title__overlay {
   grid-template-columns: 1fr;
   perspective: 900px;
