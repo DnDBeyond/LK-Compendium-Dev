@@ -1,24 +1,64 @@
+# LK Compendium Dev Overview
+This repo is the single source of truth for Lorekeeper HTML/CSS from 2026 onward.
+It is maintained by Preston Swincher. Don't hesitate to reach out with questions and suggestions!
+Template testing for Greyhawk?
+
+
+## Overview
+### Repo Goals
+LKs to do compendium development in a locally hosted environment.
+
+### Architecture/File Structure
+* All files in the root directory and Styles folder are maintained by leads - LKs should not need to edit them.
+    * LKs should focus on the Sheets and Snippets folder.
+* The Sheets folder is where all LK work is done. It contains:
+    * generic-compendium-test.html and related files, which are used to display the live preview of your work (details below). Do not edit these files outside of being specifically instructed to do so.
+    * the Compendium folder, which is where we store     folders for each project, as well as a _template-book folder.
+        * Each project's folder is named for its slug, and should contain the following:
+            * .css file named for the book slug
+                * this file is the book's unique css, injected in the Advanced Settings for a project folder in the CMS
+            * a folder for each chapter. 
+                * Naming convention: 00 Chp X ThisName OR 00 App X ThisName
+                    * 00 is the chapter's code
+                    * "Chp X" is the chapter number in the book. "App X" is the Appendix number or letter. Skip if neither is relevant.
+                    * ThisName is the chapter's name.
+                    * eg: 00 Chp 1 Exploring the Aetherverse, 08 App A Magic Items
+                * Each folder must contain a .html and a .css file with an identical name to the parent folder (eg. "00 Chp1 Exploring the Aetherverse.html")
+                    * the css file is the chapter specific css, injected in the Page in the CMS
+            * Credits and TOC folder
+                * These come with boilerplate css to be updated by the project lead.
+            * assets folder
+                * this is to locally store images for use while coding. assets are NOT stored on github; this folder is just for your local use.
+            * tooltip-data folder
+                * contains json objects that have tooltips specific to this source. For example, "Demogorgon" might a tooltip in "Monsters.json". Maintained by leads.
+            * lorekeeper-ipsum-local.html
+                * a summary file containing html patterns for the project (eg. a sample quote box aside, or special header treatments)
+            * manifest.json
+                * contains metadata about the book, used by automations to edit the project. Maintained by leads.
+* The Snippets folder contains code that LKs can reuse while working on compendium pages. These include various aside treatments, layouts, etc etc. 
+
+### Setting up a project 
 To set up a project:
+    * copy the _template-book folder and rename the folder for the slug of your project
+    * rename "_template.scss" to [slug].css (note that your new file should not have a "_")
+    * fill out manifest.json
+        * add your title, slug, publisher and edition
+        * duplicate the "chapter" and "appendix" type entries for each chapter in your book - make sure to comma separate your list
+        * starting page refers to the printed page, if applicable
+        * chapter code is always a two number code (eg. "00", "01", etc)
 
-Duplicate /Sheets/Compendium/\_template
-Rename child files accordingly
-
-To preview work
+### Previewing Work
+#### Manual Method
 open generic-compendium-test.html
 Ctrl+F search for "Add CSS" and find the style code:
 
-<link rel="stylesheet" href="./Compendium/[project name]/[file name].css">
+<link rel="stylesheet" href="./Compendium/[project slug]/[project slug].css">
 Fill in the snippet to target your css (NOT the scss). eg:
-<link rel="stylesheet" href="./Compendium/Wheat/Chapter2.css">
+<link rel="stylesheet" href="./Compendium/FRAiF.css">
 
-Ctrl+F serach for "Add HTML" and find the HTMLpath variable:
-const HTMLPath = "./Compendium/[project]/[file name].html";
+Ctrl+F search for "Add HTML" and find the HTMLpath variable:
+const HTMLPath = "./Compendium/[project slug]/[chapter folder]/[chapter name].html";
 Replace the variable with your target HTML, eg:
-const HTMLPath = "./Compendium/Wheat/Chapter2.html";
-
-Save all files.
+const HTMLPath = "./Compendium/FRAiF/01 Chp 1 Faerun is Neat.html";
 
 Be sure your SASS live watcher compiles your scss into a css file!
-
-Ideas:
-Image to AWS pipeleine?

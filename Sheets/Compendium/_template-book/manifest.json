@@ -1,6 +1,36 @@
-// chapter folder name
-// page slug
-// chapter code
-// map link type (A 12, 3)
-// tooltip mixin directory?
-//edition - 5.5 or 5?
+{
+    "title": "",
+    "slug": "",
+    "publisher": "",
+    "project lead": "",
+    "edition": "5.5e",
+    "compendium-image-staging-path": "",
+    "ui-image-staging-path": "",
+    "chapters": [
+        {
+            "code": "TOC",
+            "name": "Table of Contents",
+            "type": "table of contents",
+            "starting page": 0
+        },
+        {
+            "code": "00",
+            "name": "",
+            "type": "chapter",
+            "starting page": 1,
+            "map code": "A"
+        },
+        {
+            "code": "",
+            "name": "",
+            "type": "appendix",
+            "starting page": 1
+        },
+        {
+            "code": "credits",
+            "name": "Credits",
+            "type": "credits",
+            "starting page": 100
+        }
+    ]
+}
