@@ -1,0 +1,92 @@
+{
+    "title": "Exploring Eberron",
+    "slug": "ExEB",
+    "publisher": "Visionary",
+    "project lead": "Keith Baker",
+    "edition": "5.5e",
+    "compendium-image-staging-path": "",
+    "ui-image-staging-path": "",
+    "chapters": [
+        {
+            "code": "TOC",
+            "name": "Table of Contents",
+            "type": "table of contents",
+            "starting page": 0
+        },
+        {
+            "code": "00",
+            "name": "Preface",
+            "type": "chapter",
+            "starting page": 5,
+            "map code": null
+        },
+        {
+            "code": "01",
+            "name": "Discovering Eberron",
+            "type": "chapter",
+            "starting page": 7,
+            "map code": null
+        },
+        {
+            "code": "02",
+            "name": "Species of Eberron",
+            "type": "chapter",
+            "starting page": 33,
+            "map code": null
+        },
+        {
+            "code": "03",
+            "name": "Faiths of Eberron",
+            "type": "chapter",
+            "starting page": 53,
+            "map code": null
+        },
+        {
+            "code": "04",
+            "name": "Uncharted Domains",
+            "type": "chapter",
+            "starting page": 85,
+            "map code": null
+        },
+        {
+            "code": "05",
+            "name": "Planes of Existence",
+            "type": "chapter",
+            "starting page": 151,
+            "map code": null
+        },
+        {
+            "code": "06",
+            "name": "Character Options",
+            "type": "chapter",
+            "starting page": 213,
+            "map code": null
+        },
+        {
+            "code": "07",
+            "name": "Treasures",
+            "type": "chapter",
+            "starting page": 229,
+            "map code": null
+        },
+        {
+            "code": "08",
+            "name": "Friends and Foes",
+            "type": "chapter",
+            "starting page": 243,
+            "map code": null
+        },
+        {
+            "code": "A",
+            "name": "",
+            "type": "appendix",
+            "starting page": 1
+        },
+        {
+            "code": "credits",
+            "name": "Credits",
+            "type": "credits",
+            "starting page": 100
+        }
+    ]
+}
