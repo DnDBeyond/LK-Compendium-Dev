@@ -10,57 +10,57 @@
    ========================================================================== */
 
 :root {
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      PAGE BACKGROUND IMAGES
      These control the parchment/textured page background. Override per book
      as needed for higher-resolution or themed backgrounds.
      ------------------------------------------------------------------------ */
 
-    /* Base background image used on most viewports */
-    --theme-page-bg-image-base: url("https://www.dndbeyond.com/attachments/0/84/background_texture.png");
+  /* Base background image used on most viewports */
+  --theme-page-bg-image-base: url("https://www.dndbeyond.com/attachments/0/84/background_texture.png");
 
-    /* Optional higher-resolution backgrounds (set per book if needed) */
-    --theme-page-bg-image-1024: url();
-    --theme-page-bg-image-1921: url();
-    --theme-page-bg-image-2561: url();
+  /* Optional higher-resolution backgrounds (set per book if needed) */
+  --theme-page-bg-image-1024: url();
+  --theme-page-bg-image-1921: url();
+  --theme-page-bg-image-2561: url();
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      TABLE ROW COLORS
      Used for striped compendium tables and hover states.
      ------------------------------------------------------------------------ */
 
-    /* Darker stripe / alternate row background color */
-    --theme-table-row-bg-dark: #d9e1ce;
+  /* Darker stripe / alternate row background color */
+  --theme-table-row-bg-dark: #d9e1ce;
 
-    /* Background color for table rows on hover
+  /* Background color for table rows on hover
      (derived from #d9e1ce, slightly darker for emphasis) */
-    --theme-table-row-bg-hover: #{color.scale(#d9e1ce, $lightness: -10%)};
+  --theme-table-row-bg-hover: #{color.scale(#d9e1ce, $lightness: -10%)};
 
-    /* Lighter stripe / base table row background color
+  /* Lighter stripe / base table row background color
      (derived from the original #e5eade, slightly lighter) */
-    --theme-table-row-bg-light: #{color.scale(#e5eade, $lightness: 5%)};
+  --theme-table-row-bg-light: #{color.scale(#e5eade, $lightness: 5%)};
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      TEXT BLOCKS (ASIDE ELEMENTS)
      Used by:
        - <aside class="text--quote-box">        → read-aloud text
        - <aside class="text--rules-sidebar">    → rules clarifications
      ------------------------------------------------------------------------ */
 
-    /* Background color for rules/clarification sidebars */
-    --compendium-rules-sidebar-color: #d8e3e3;
+  /* Background color for rules/clarification sidebars */
+  --compendium-rules-sidebar-color: #d8e3e3;
 
-    /* Background color for read-aloud quote boxes */
-    --compendium-quote-box-color: #d5dbd4;
+  /* Background color for read-aloud quote boxes */
+  --compendium-quote-box-color: #d5dbd4;
 
-    /* Border and corner decoration colors for quote boxes */
-    --compendium-quote-box-border: #425e47;
-    --compendium-quote-box-corner: #425e47;
+  /* Border and corner decoration colors for quote boxes */
+  --compendium-quote-box-border: #425e47;
+  --compendium-quote-box-corner: #425e47;
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      HEADER STYLING
      Affects <h1>–<h5>, typically with class="compendium-hr".
      - .compendium-hr makes headers eligible for the sidebar.
@@ -68,12 +68,12 @@
      - .page-parse-exclude on <h2> prevents mobile page splitting.
      ------------------------------------------------------------------------ */
 
-    /* Default underline color for major headers (h1–h3 by default) */
-    --header-underline: #D1A347;
+  /* Default underline color for major headers (h1–h3 by default) */
+  --header-underline: #D1A347;
 
-    /* Optional global header font and weight overrides (not active by default).
+  /* Optional global header font and weight overrides (not active by default).
      Uncomment and set as needed on a project-by-project basis. */
-    /*
+  /*
   --header-font-override: <font-family>;         // Override font for all headers
   --header-weight-override: <font-weight>;       // Override weight for all headers
 
@@ -90,13 +90,13 @@
   --h5-font-weight: <font-weight>;               // Override <h5> font weight
   */
 
-    /* Optional header ::after content controls.
+  /* Optional header ::after content controls.
      These determine whether a decorative line appears under headers.
      Typical pattern:
        - h1–h3: ''  (show underline)
        - h4–h5: none (no underline)
   */
-    /*
+  /*
   --header-after-content: '';                    // Global default for header ::after content
   --h1-after-content: '';                        // <h1> ::after content
   --h2-after-content: '';                        // <h2> ::after content
@@ -105,9 +105,9 @@
   --h5-after-content: none;                      // <h5> ::after content (none by default)
   */
 
-    /* Per-level underline color overrides.
+  /* Per-level underline color overrides.
      If set, these override --header-underline. */
-    /*
+  /*
   --h1-underline: #D1A347;
   --h2-underline: #D1A347;
   --h3-underline: #D1A347;
@@ -115,8 +115,8 @@
   --h5-underline: #D1A347;                       // Only visible if h5 has an ::after content
   */
 
-    /* Optional underline thickness overrides (border height under headers). */
-    /*
+  /* Optional underline thickness overrides (border height under headers). */
+  /*
   --header-border-height: 0.125rem;
   --h1-border-height: 0.125rem;
   --h2-border-height: 0.125rem;
@@ -126,140 +126,140 @@
   */
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      SIDEBAR (LEFT NAVIGATION) COLORS
      Controls the left-hand navigation background and highlights.
      Tier colors are used as the sidebar expands to show deeper header levels.
      ------------------------------------------------------------------------ */
 
-    /* General sidebar background */
-    --compendium-sidebar-bg: #f4fff5;
+  /* General sidebar background */
+  --compendium-sidebar-bg: #f4fff5;
 
-    /* Tier colors (levels correspond roughly to header depth in the sidebar). */
-    --compendium-sidebar-tier-1: #e3f4e6; // Used for top-level entries (e.g., h1). Docs: tier-1.
-    /* --compendium-sidebar-tier-2: #e4f0e0;  // Optional tier for h2 if needed (doc mentions this level). */
-    --compendium-sidebar-tier-3: #e4f0e0; // Used for mid-level entries (e.g., h3).
-    --compendium-sidebar-tier-4: #d4ead2; // Used for deeper entries (e.g., h4/h5).
-    --compendium-sidebar-tier-5: #b1c8aa; // Extra depth / legacy usage.
+  /* Tier colors (levels correspond roughly to header depth in the sidebar). */
+  --compendium-sidebar-tier-1: #e3f4e6; // Used for top-level entries (e.g., h1). Docs: tier-1.
+  /* --compendium-sidebar-tier-2: #e4f0e0;  // Optional tier for h2 if needed (doc mentions this level). */
+  --compendium-sidebar-tier-3: #e4f0e0; // Used for mid-level entries (e.g., h3).
+  --compendium-sidebar-tier-4: #d4ead2; // Used for deeper entries (e.g., h4/h5).
+  --compendium-sidebar-tier-5: #b1c8aa; // Extra depth / legacy usage.
 
-    /* Left border indicating the active sidebar link */
-    --sidebar-active-border: #549d60;
+  /* Left border indicating the active sidebar link */
+  --sidebar-active-border: #549d60;
 
-    /* Background of the active sidebar entry (row highlight) */
-    --sidebar-active-bg: #99ce85;
+  /* Background of the active sidebar entry (row highlight) */
+  --sidebar-active-bg: #99ce85;
 
-    /* Border color when hovering a sidebar entry
+  /* Border color when hovering a sidebar entry
      (derived from #549d60, darker for better contrast) */
-    --sidebar-hover-border: #{color.scale(#549d60, $lightness: -20%)};
+  --sidebar-hover-border: #{color.scale(#549d60, $lightness: -20%)};
 
-    /* Background color when hovering a sidebar entry */
-    --sidebar-hover-bg: #96c592;
+  /* Background color when hovering a sidebar entry */
+  --sidebar-hover-bg: #96c592;
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      “BACK TO TOP” / NAV-TO-TOP BUTTON
      Small button that lets users quickly scroll back to the top of the page.
      ------------------------------------------------------------------------ */
 
-    /* Default nav-to-top background */
-    --nav-to-top-bg: #549d60;
+  /* Default nav-to-top background */
+  --nav-to-top-bg: #549d60;
 
-    /* Hover background for nav-to-top
+  /* Hover background for nav-to-top
      (derived from #549d60, slightly darker) */
-    --nav-to-top-hover-bg: #{color.scale(#549d60, $lightness: -10%)};
+  --nav-to-top-hover-bg: #{color.scale(#549d60, $lightness: -10%)};
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      IMAGE CAPTION LINK COLORS
      Used when <figcaption> contains clickable links under images.
      ------------------------------------------------------------------------ */
 
-    /* Background color for caption-level links/buttons */
-    --theme-image-caption-link-bg-color: #549d60;
+  /* Background color for caption-level links/buttons */
+  --theme-image-caption-link-bg-color: #549d60;
 
-    /* Hover color for caption-level links/buttons
+  /* Hover color for caption-level links/buttons
      (derived from #549d60, slightly darker) */
-    --theme-image-caption-link-hover-color: #{color.scale(#549d60, $lightness: -10%)};
+  --theme-image-caption-link-hover-color: #{color.scale(#549d60, $lightness: -10%)};
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      TOOLTIP VARIABLES (BASE)
      The mixin below injects the base tooltip variables used by new tooltips.
      Specific values for contrast mode are defined in the #{$for-contrast} block.
      ------------------------------------------------------------------------ */
 
-    @include mixins.new-tooltips;
+  @include mixins.new-tooltips;
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      LINK COLORS
      General body text link colors used throughout the compendium.
      ------------------------------------------------------------------------ */
 
-    /* Primary link color (body text links). Not currently overridden here.
+  /* Primary link color (body text links). Not currently overridden here.
      Uncomment and define to explicitly set the base link color. */
-    /*
+  /*
   --compendium-link-color: #006ABE;              // Standard link color
   */
 
-    /* Higher-contrast link color (e.g., hover/focus/visited). */
-    --compendium-link-contrast: #0053A3;
+  /* Higher-contrast link color (e.g., hover/focus/visited). */
+  --compendium-link-contrast: #0053A3;
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      NAVIGATION ICONS & TEXT
      Icons are usually defined via SCSS variables from vars.scss.
      Text colors affect nav link states above/below the main content.
      ------------------------------------------------------------------------ */
 
-    /* Compendium navigation icon (provided via $red-comp) */
-    --nav-comp-icon: #{$red-comp};
+  /* Compendium navigation icon (provided via $red-comp) */
+  --nav-comp-icon: #{$red-comp};
 
-    /* “Previous page” arrow icon */
-    --nav-prev-icon: #{$red-prev};
+  /* “Previous page” arrow icon */
+  --nav-prev-icon: #{$red-prev};
 
-    /* “Next page” arrow icon */
-    --nav-next-icon: #{$red-next};
+  /* “Next page” arrow icon */
+  --nav-next-icon: #{$red-next};
 
-    /* Active nav link text color */
-    --nav-active-text: #3c3c3c;
+  /* Active nav link text color */
+  --nav-active-text: #3c3c3c;
 
-    /* Hovered nav link text color */
-    --nav-hover-text: #1d1d1d;
+  /* Hovered nav link text color */
+  --nav-hover-text: #1d1d1d;
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      BUTTON VARIABLES
      Used by .compendium--button / .compendium-button elements.
      ------------------------------------------------------------------------ */
 
-    /*
+  /*
   --compendium-button-bg: #1c9aef;              // Background color of compendium buttons
   --compendium-button-text: #f9f9f9;            // Text color for compendium buttons
   --compendium-button-hover-bg: #0e7eca;        // Hover background color for buttons
   */
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      PARAGRAPH SPACING OVERRIDES
      Used to fine-tune spacing between <p> tags where legacy Cobalt styles
      or condensed-group blocks would otherwise cause inconsistent gaps.
      ------------------------------------------------------------------------ */
 
-    /*
+  /*
   --compendium-p-bottom: 0.75rem;               // Default margin-bottom for <p>
   --compendium-p-top: 0;                        // Default margin-top for <p>
   */
 
 
-    /* ------------------------------------------------------------------------
+  /* ------------------------------------------------------------------------
      STAT BLOCK VARIABLES (MODERN FORMAT)
      These affect the newer (.stat-block) monster stat blocks used for 2024+
      content. Legacy stat blocks are heavily class-driven and not controlled
      by these variables.
      ------------------------------------------------------------------------ */
 
-    /*
+  /*
   --stat-block-bg-override: #f2e6da;            // Override entire stat-block background
   --stat-block-scrollbar: #D1A347;              // Color for the top/bottom stat-block scrollbars
   --stat-block-divider: #7b1f1f;                // Color for divider lines within stat blocks
@@ -283,27 +283,27 @@
    ========================================================================== */
 
 #{$for-contrast} {
-    /* Default tooltip color (generic tooltips) */
-    --compendium-default-tooltip: #036634;
+  /* Default tooltip color (generic tooltips) */
+  --compendium-default-tooltip: #036634;
 
-    /* Skill tooltip color (shares palette with default in this theme) */
-    --compendium-skill-tooltip: #036634;
+  /* Skill tooltip color (shares palette with default in this theme) */
+  --compendium-skill-tooltip: #036634;
 
-    /* Item tooltip color */
-    --compendium-item-tooltip: #623A1E;
+  /* Item tooltip color */
+  --compendium-item-tooltip: #623A1E;
 
-    /* Rule tooltip color */
-    --compendium-rule-tooltip: #6A5009;
+  /* Rule tooltip color */
+  --compendium-rule-tooltip: #6A5009;
 
-    /* Sense tooltip color */
-    --compendium-sense-tooltip: #A41B96;
+  /* Sense tooltip color */
+  --compendium-sense-tooltip: #A41B96;
 
-    /* Monster tooltip color */
-    --compendium-monster-tooltip: #a70000;
+  /* Monster tooltip color */
+  --compendium-monster-tooltip: #a70000;
 
-    /* Condition tooltip color (documented variable, not previously defined).
+  /* Condition tooltip color (documented variable, not previously defined).
      Uncomment and set if a distinct condition color is desired. */
-    /*
+  /*
   --compendium-condition-tooltip: #5a8100;
   */
 }
