@@ -1,0 +1,105 @@
+regex snippets et al
+
+↓
+↑
+
+<!-- H2 HEADER -->\n<h2
+—
+-
+“ ”
+
+find all '
+replace w ’
+
+<ul class="list--hidden">
+
+©
+
+2014 -> 2024 Monster Equivalence
+    Acolyte     ->      Priest Acolyte
+    Cult Fanatic    ->  Cultist Fanatic
+    Cyclops     ->      Cyclops Sentry
+    Diseased Giant Rats ->  Giant Rat
+    Flying Sword    ->  Animated Flying Sword
+    Quipper     ->      Piranha
+    Sahuagin    ->      Sahuagin Warrior
+    Shrieker    ->      Shrieker Fungus
+    Thug        ->      Tough
+    Veteran     ->      Warrior Veteran
+
+Regex 2014 -> 2024 Monster find
+Acolyte|Cult Fanatic|Cyclops|Diseased Giant Rats| Flying Sword|Quipper|Sahuagin|Shrieker|Thug|Veteran
+
+Actions Regex
+    Attack|Dash|Disengage|Dodge|Help|Hide|Influence|Magic|Ready|Search|Study|Utilize
+
+
+qoSsem-xosrak-cyswi0!?
+
+Rules Tooltips
+    Bloodied|Bright Light|Burning|Concentration|Cone|Cube|Cylinder|D20 Test|Damage Threshold|Dehydration|Difficult Terrain|Dim Light|Emanation|Friendly|Half Cover|Heavily Obscured|Heroic Inspiration|High Jump|Hostile|Indifferent|Lightly Obscured|Line|Long Jump|Malnutrition|Shape-Shifting|Sphere|Stable|Suffocation|Surprise|Temporary Hit Points|Three-Quarters Cover|Total Cover|Unarmed Strike
+
+
+û
+’’’’’’’’’’’’’’’’’
+
+
+
+
+
+
+Conditions Regex
+Blinded|Charmed|Deafened|Exhaustion|Frightened|Grappled|Incapacitated|Invisible|Paralyzed|Petrified|Poisoned|Prone|Restrained|Stunned|Unconscious
+
+
+Actions
+    Attack
+    Dash
+    Disengage
+    Dodge
+    Help
+    Hide
+    Influence
+    Magic
+    Ready
+    Search
+    Study
+    Utilize
+
+Conditions
+    Blinded
+    Charmed
+    Deafened
+    Exhaustion
+    Frightened
+    Grappled
+    Incapacitated
+    Invisible
+    Paralyzed
+    Petrified
+    Poisoned
+    Prone
+    Restrained
+    Stunned
+    Unconscious
+
+
+
+
+
+
+
+
+Monster Audit
+    Aarakocra Aeromancer|Aarakocra Skirmisher|Aberrant Cultist|Aboleth|Abominable Yeti|Air Elemental|Allosaurus|Animal Lord|Animated Armor|Animated Broom|Animated Flying Sword|Animated Rug of Smothering|Ankheg|Ankylosaurus|Ape|Arcanaloth|Arch-hag|Archelon|Archmage|Archpriest|Assassin|Awakened Shrub|Awakened Tree|Axe Beak|Azer Pyromancer|Azer Sentinel|Baboon|Badger|Balor|Bandit|Bandit Captain|Bandit Crime Lord|Bandit Deceiver|Banshee|Barbed Devil|Barlgura|Basilisk|Bat|Bearded Devil|Behir|Beholder|Beholder Zombie|Berserker|Berserker Commander|Black Bear|Black dragons (all)|Black Pudding|Blink Dog|Blob of Annihilation|Blood Hawk|Blue dragons (all)|Blue Slaad|Boar|Bone Devil|Bone Naga|Brass dragons (all)|Brazen Gorgon|Bronze dragons (all)|Brown Bear|Bugbear Stalker|Bugbear Warrior|Bugbears (all)|Bulette|Bulette Pup|Bullywug Bog Sage|Bullywug Warrior|Cambion|Camel|Carrion Crawler|Cat|Centaur Trooper|Centaur Warden|Chain Devil|Chasme|Chimera|Chuul|Clay Golem|Cloaker|Cloud Giant|Cockatrice|Cockatrice Regent|Colossus|Commoner|Constrictor Snake|Copper dragons (all)|Couatl|Crab|Crawling Claw|Crocodile|Cultist|Cultist Fanatic|Cultist Hierophant|Cyclops Oracle|Cyclops Sentry|Dao|Darkmantle|Death Cultist|Death Dog|Death Knight|Death Knight Aspirant|Death Slaad|Death Tyrant|Deer|Demilich|Deva|Dire Wolf|Dire Worg|Displacer Beast|Djinni|Doppelganger|Dracolich|Draft Horse|Dragon Turtle|Dretch|Dretches (all)|Drider|Druid|Dryad|Dust Mephit|Eagle|Earth Elemental|Efreeti|Elemental Cataclysm|Elemental Cultist|Elephant|Elk|Empyrean|Empyrean Iota|Empyreans (all)|Erinyes|Ettercap|Ettin|Faerie Dragon Adult|Faerie Dragon Youth|Fiend Cultist|Fire Elemental|Fire Giant|Flameskull|Flaming Skeleton|Flesh Golem|Flumph|Flying Snake|Fomorian|Frog|Frost Giant|Galeb Duhr|Gargoyle|Gas Spore Fungus|Gelatinous Cube|Ghast|Ghast Gravecaller|Ghost|Ghoul|Giant Ape|Giant Axe Beak|Giant Badger|Giant Bat|Giant Boar|Giant Centipede|Giant Constrictor Snake|Giant Crab|Giant Crocodile|Giant Eagle|Giant Elk|Giant Fire Beetle|Giant Frog|Giant Goat|Giant Hyena|Giant Lizard|Giant Octopus|Giant Owl|Giant Rat|Giant Scorpion|Giant Seahorse|Giant Shark|Giant Spider|Giant Squid|Giant Toad|Giant Venomous Snake|Giant Vulture|Giant Wasp|Giant Weasel|Giant Wolf Spider|Gibbering Mouther|Githyanki Dracomancer|Githyanki Knight|Githyanki Soldier|Githzerai Monk|Githzerai Psion|Githzerai Zerth|Glabrezu|Gladiator|Gnoll Demoniac|Gnoll Fang of Yeenoghu|Gnoll Pack Lord|Gnoll Warrior|Goat|Goblin Boss|Goblin Hexer|Goblin Minion|Goblin Warrior|Goblins (all)|Gold dragons (all)|Gorgon|Goristro|Graveyard Revenant|Gray Ooze|Gray Slaad|Green dragons (all)|Green Hag|Green Slaad|Grell|Grick|Grick Ancient|Griffon|Grimlock|Guard|Guard Captain|Guardian Naga|Gulthias Blight|Half-Dragon|Harpy|Haunting Revenant|Hawk|Hell Hound|Helmed Horror|Hezrou|Hill Giant|Hippogriff|Hippopotamus|Hobgoblin Captain|Hobgoblin Warlord|Hobgoblin Warrior|Hobgoblins (all)|Homunculus|Hook Horror|Horned Devil|Hunter Shark|Hydra|Hyena|Ice Devil|Ice Mephit|Imp|Incubus|Intellect Devourer|Invisible Stalker|Iron Golem|Jackal|Jackalwere|Juvenile Shadow Dragon|Kenku|Killer Whale|Knight|Kobold Warrior|Kraken|Kuo-toa|Kuo-toa Archpriest|Kuo-toa Monitor|Kuo-toa Whip|Lacedon Ghoul|Lamia|Larva|Lemure|Lemures (all)|Lich|Lion|Lizard|Lizardfolk Geomancer|Lizardfolk Sovereign|Mage|Mage Apprentice|Magma Mephit|Magmin|Mammoth|Manes|Manes (all)|Manes Vaporspawn|Manticore|Marid|Marilith|Mastiff|Medusa|Merfolk Skirmisher|Merfolk Wavebender|Merrow|Mezzoloth|Mimic|Mind Flayer|Mind Flayer Arcanist|Minotaur of Baphomet|Minotaur Skeleton|Modron Duodrone|Modron Monodrone|Modron Pentadrone|Modron Quadrone|Modron Tridrone|Mud Mephit|Mule|Mummy|Mummy Lord|Myconid Adult|Myconid Sovereign|Myconid Spore Servant|Myconid Sprout|Nalfeshnee|Needle Blight|Night Hag|Nightmare|Noble|Noble Prodigy|Nothic|Nycaloth|Ochre Jelly|Octopus|Ogre|Ogre Zombie|Ogrillon Ogre|Oni|Otyugh|Owl|Owlbear|Panther|Pegasus|Performer|Performer Legend|Performer Maestro|Peryton|Phase Spider|Piercer|Piranha|Pirate|Pirate Admiral|Pirate Captain|Pit Fiend|Pixie|Pixie Wonderbringer|Planetar|Plesiosaurus|Polar Bear|Poltergeist|Pony|Priest|Priest Acolyte|Primeval Owlbear|Pseudodragon|Psychic Gray Ooze|Pteranodon|Purple Worm|Quaggoth|Quaggoth Thonot|Quasit|Questing Knight|Rakshasa|Rat|Raven|Red dragons (all)|Red Slaad|Reef Shark|Remorhaz|Revenant|Rhinoceros|Riding Horse|Roc|Roper|Rust Monster|Saber-Toothed Tiger|Sahuagin Baron|Sahuagin Priest|Sahuagin Warrior|Salamander|Salamander Fire Snake|Salamander Inferno Master|Satyr|Satyr Revelmaster|Scarecrow|Scorpion|Scout|Scout Captain|Sea Hag|Seahorse|Shadow|Shadow Demon|Shadow Dragon|Shambling Mound|Shield Guardian|Shrieker Fungus|Silver dragons (all)|Skeleton|Slaad Tadpole|Smoke Mephit|Solar|Spectator|Specter|Sphinx of Lore|Sphinx of Secrets|Sphinx of Valor|Sphinx of Wonder|Spider|Spined Devil|Spirit Naga|Sprite|Spy|Spy Master|Steam Mephit|Stirge|Stone Giant|Stone Golem|Storm Giant|Succubus|Swarm of Bats|Swarm of Crawling Claws|Swarm of Dretches|Swarm of Insects|Swarm of Larvae|Swarm of Lemures|Swarm of Piranhas|Swarm of Rats|Swarm of Ravens|Swarm of Stirges
+
+
+
+
+
+    Spells Audit
+        Zone of Truth|Yolande’s Regal Presence|Wrathful Smite|Word of Recall|Word of Radiance|Witch Bolt|Wish|Wind Wall|Wind Walk|Weird|Web|Water Walk|Water Breathing|Warding Bond|Wall of Thorns|Wall of Stone|Wall of Ice|Wall of Force|Wall of Fire|Vitriolic Sphere|Vicious Mockery|Vampiric Touch|Unseen Servant|Tsunami|True Strike|True Seeing|True Resurrection|True Polymorph|Tree Stride|Transport via Plants|Tongues|Toll the Dead|Time Stop|Thunderwave|Thunderous Smite|Thunderclap|Thorn Whip|Thaumaturgy|Tenser’s Floating Disk|Teleportation Circle|Teleport|Telepathy|Telekinesis|Tasha’s Hideous Laughter|Tasha’s Bubbling Cauldron|Synaptic Static|Symbol|Swift Quiver|Sunburst|Sunbeam|Summon Undead|Summon Fiend|Summon Fey|Summon Elemental|Summon Dragon|Summon Construct|Summon Celestial|Summon Beast|Summon Aberration|Suggestion|Suggestion|Storm of Vengeance|Stoneskin|Stone Shape|Stinking Cloud|Stinking Cloud|Steel Wind Strike|Starry Wisp|Staggering Smite|Spiritual Weapon|Spirit Guardians|Spike Growth|Spider Climb|Speak with Plants|Speak with Dead|Speak with Animals|Spare the Dying|Sorcerous Burst|Slow|Sleet Storm|Sleep|Simulacrum|Silent Image|Silence|Shocking Grasp|Shining Smite|Shillelagh|Shield of Faith|Shield|Shatter|Shapechange|Sequester|Sending|Seeming|See Invisibility|Searing Smite|Scrying|Scorching Ray|Sanctuary|Sacred Flame|Rope Trick|Revivify|Reverse Gravity|Resurrection|Resistance|Remove Curse|Reincarnate|Regenerate|Ray of Sickness|Ray of Frost|Ray of Enfeeblement|Rary’s Telepathic Bond|Raise Dead|Purify Food and Drink|Protection from Poison|Protection from Evil and Good|Protection from Energy|Project Image|Programmed Illusion|Produce Flame|Prismatic Wall|Prismatic Spray|Prestidigitation|Prayer of Healing|Power Word Stun|Power Word Kill|Power Word Heal|Power Word Fortify|Polymorph|Poison Spray|Plant Growth|Plane Shift|Planar Binding|Planar Ally|Phantom Steed|Phantasmal Killer|Phantasmal Force|Passwall|Pass without Trace|Otto’s Irresistible Dance|Otiluke’s Resilient Sphere|Otiluke’s Freezing Sphere|Nystul’s Magic Aura|Nondetection|Move Earth|Mordenkainen’s Sword|Mordenkainen’s Private Sanctum|Mordenkainen’s Magnificent Mansion|Mordenkainen’s Faithful Hound|Moonbeam|Modify Memory|Misty Step|Mislead|Mirror Image|Mirage Arcane|Minor Illusion|Mind Spike|Mind Sliver|Mind Blank|Meteor Swarm|Message|Mending|Melf’s Acid Arrow|Meld into Stone|Maze|Mass Suggestion|Mass Healing Word|Mass Heal|Mass Cure Wounds|Major Image|Magic Weapon|Magic Mouth|Magic Mouth|Magic Missile|Magic Jar|Magic Circle|Mage Hand|Mage Armor|Longstrider|Locate Object|Locate Creature|Locate Animals or Plants|Lightning Bolt|Lightning Arrow|Light|Levitate|Lesser Restoration|Leomund’s Tiny Hut|Leomund’s Secret Chest|Legend Lore|Knock|Jump|Jallarzi’s Storm of Radiance|Invisibility|Insect Plague|Inflict Wounds|Incendiary Cloud|Imprisonment|Illusory Script|Identify|Ice Storm|Ice Knife|Hypnotic Pattern|Hunter’s Mark|Hunger of Hadar|Holy Aura|Hold Person|Hold Monster|Hex|Heroism|Heroes’ Feast|Hellish Rebuke|Heat Metal|Healing Word|Heal|Haste|Harm|Hallucinatory Terrain|Hallow|Hail of Thorns|Gust of Wind|Gust of Wind|Guiding Bolt|Guidance|Guards and Wards|Guardian of Faith|Greater Restoration|Greater Invisibility|Grease|Grasping Vine|Goodberry|Glyph of Warding|Globe of Invulnerability|Glibness|Giant Insect|Gentle Repose|Geas|Gate|Gaseous Form|Friends|Freedom of Movement|Fount of Moonlight|Foresight|Forcecage|Forbiddance|Fog Cloud|Fly|Flesh to Stone|Flaming Sphere|Flame Strike|Flame Blade|Fireball|Fire Storm|Fire Shield|Fire Bolt|Finger of Death|Find Traps|Find the Path|Find Steed|Find Familiar|Feign Death|Feather Fall|Fear|False Life|Faerie Fire|Fabricate|Eyebite|Expeditious Retreat|Evard’s Black Tentacles|Etherealness|Enthrall|Entangle|Ensnaring Strike|Enlarge/Reduce|Enhance Ability|Elementalism|Elemental Weapon|Eldritch Blast|Earthquake|Druidcraft|Dream|Drawmij’s Instant Summons|Dragon’s Breath|Dominate Person|Dominate Monster|Dominate Beast|Divine Word|Divine Smite|Divine Favor|Divination|Dissonant Whispers|Dispel Magic|Dispel Magic|Dispel Evil and Good|Disintegrate|Disguise Self|Dimension Door|Detect Thoughts|Detect Poison and Disease|Detect Magic|Detect Evil and Good|Destructive Wave|Demiplane|Delayed Blast Fireball|Death Ward|Daylight|Darkvision|Darkness|Dancing Lights|Dancing Lights|Cure Wounds|Crusader’s Mantle|Crown of Madness|Creation|Create Undead|Create or Destroy Water|Create Food and Water|Counterspell|Cordon of Arrows|Control Weather|Control Water|Continual Flame|Contingency|Contagion|Contact Other Plane|Conjure Woodland Beings|Conjure Volley|Conjure Minor Elementals|Conjure Fey|Conjure Elemental|Conjure Celestial|Conjure Barrage|Conjure Animals|Confusion|Cone of Cold|Compulsion|Comprehend Languages|Compelled Duel|Commune with Nature|Commune|Command|Color Spray|Cloudkill|Cloud of Daggers|Clone|Clairvoyance|Circle of Power|Circle of Death|Chromatic Orb|Chill Touch|Charm Person|Charm Monster|Chain Lightning|Calm Emotions|Call Lightning|Burning Hands|Blur|Blink|Blindness/Deafness|Blinding Smite|Blight|Bless|Blade Ward|Blade Barrier|Bigby’s Hand|Bestow Curse|Befuddlement|Beast Sense|Beacon of Hope|Barkskin|Banishment|Banishing Smite|Bane|Awaken|Aura of Vitality|Aura of Purity|Aura of Life|Augury|Astral Projection|Arms of Hadar|Armor of Agathys|Arcane Vigor|Arcane Lock|Arcane Gate|Arcane Eye|Antipathy/Sympathy|Antimagic Field|Antilife Shell|Animate Objects|Animate Dead|Animal Shapes|Animal Messenger|Animal Friendship|Alter Self|Alarm|Aid|Acid Splash
+
+
+
+Deeplinks
